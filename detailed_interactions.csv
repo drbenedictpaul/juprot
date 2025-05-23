@@ -1,0 +1,151 @@
+Complex,Interaction_Type,Protein_Residue,Protein_Atom,Ligand_Residue,Ligand_Atom,Distance
+3eqm.cif,Close Contact,ARG 115,CD,ASD,O2,3.66
+3eqm.cif,Close Contact,ARG 115,NE,ASD,C12,3.84
+3eqm.cif,Close Contact,ARG 115,NE,ASD,O2,3.97
+3eqm.cif,Close Contact,ARG 115,CZ,ASD,C12,3.85
+3eqm.cif,Close Contact,ARG 115,CZ,ASD,O2,3.91
+3eqm.cif,Close Contact,ARG 115,NH1,ASD,O2,3.44
+3eqm.cif,Close Contact,ILE 133,CG2,ASD,C1,3.89
+3eqm.cif,Close Contact,ILE 133,CG2,ASD,C11,3.78
+3eqm.cif,Close Contact,PHE 134,CZ,ASD,O2,3.99
+3eqm.cif,Close Contact,TRP 224,CZ3,ASD,C3,3.95
+3eqm.cif,Close Contact,TRP 224,CZ3,ASD,O1,3.61
+3eqm.cif,Close Contact,TRP 224,CH2,ASD,C3,3.81
+3eqm.cif,Close Contact,TRP 224,CH2,ASD,C4,3.87
+3eqm.cif,Close Contact,TRP 224,CH2,ASD,O1,3.87
+3eqm.cif,Close Contact,ILE 305,O,ASD,O1,3.98
+3eqm.cif,Close Contact,ILE 305,CG1,ASD,O1,3.89
+3eqm.cif,Close Contact,ALA 306,N,ASD,O1,3.95
+3eqm.cif,Close Contact,ALA 306,CA,ASD,C2,3.95
+3eqm.cif,Close Contact,ALA 306,CA,ASD,C3,3.99
+3eqm.cif,Close Contact,ALA 306,CA,ASD,O1,3.45
+3eqm.cif,Close Contact,ALA 306,O,ASD,O1,3.9
+3eqm.cif,Close Contact,ASP 309,CB,ASD,C3,3.77
+3eqm.cif,Close Contact,ASP 309,CB,ASD,C4,3.64
+3eqm.cif,Close Contact,ASP 309,CB,ASD,O1,3.32
+3eqm.cif,Close Contact,ASP 309,CG,ASD,O1,3.44
+3eqm.cif,Close Contact,ASP 309,OD2,ASD,C3,3.68
+3eqm.cif,Close Contact,ASP 309,OD2,ASD,C4,3.9
+3eqm.cif,Close Contact,ASP 309,OD2,ASD,O1,2.72
+3eqm.cif,Close Contact,THR 310,CG2,ASD,C19,3.65
+3eqm.cif,Close Contact,THR 310,CG2,ASD,C4,3.66
+3eqm.cif,Close Contact,THR 310,CG2,ASD,C5,3.61
+3eqm.cif,Close Contact,THR 310,CG2,ASD,C6,3.75
+3eqm.cif,Close Contact,VAL 370,CG1,ASD,C18,3.42
+3eqm.cif,Close Contact,LEU 372,O,ASD,C15,3.65
+3eqm.cif,Close Contact,LEU 372,O,ASD,C16,3.45
+3eqm.cif,Close Contact,LEU 372,O,ASD,C17,3.87
+3eqm.cif,Close Contact,LEU 372,O,ASD,C18,3.48
+3eqm.cif,Close Contact,VAL 373,CA,ASD,O2,3.83
+3eqm.cif,Close Contact,VAL 373,C,ASD,O2,3.79
+3eqm.cif,Close Contact,MET 374,N,ASD,C16,3.98
+3eqm.cif,Close Contact,MET 374,N,ASD,C17,3.63
+3eqm.cif,Close Contact,MET 374,N,ASD,O2,2.84
+3eqm.cif,Close Contact,MET 374,CA,ASD,O2,3.63
+3eqm.cif,Close Contact,MET 374,O,ASD,O2,3.79
+3eqm.cif,Close Contact,MET 374,CB,ASD,O2,3.5
+3eqm.cif,Close Contact,LEU 477,O,ASD,C15,3.56
+3eqm.cif,Close Contact,LEU 477,CD1,ASD,C7,3.81
+3eqm.cif,Close Contact,LEU 477,CD2,ASD,C15,3.48
+3eqm.cif,Close Contact,LEU 477,CD2,ASD,C16,3.8
+3eqm.cif,Hydrogen Bond,ARG 115,NH1,ASD,O2,3.44
+3eqm.cif,Hydrogen Bond,ASP 309,OD2,ASD,O1,2.72
+3eqm.cif,Hydrogen Bond,MET 374,N,ASD,O2,2.84
+3eqm.cif,Non-Bonded,ARG 115,CZ,ASD,C12,3.85
+3eqm.cif,Non-Bonded,ILE 133,CG2,ASD,C1,3.89
+3eqm.cif,Non-Bonded,ILE 133,CG2,ASD,C11,3.78
+3eqm.cif,Non-Bonded,TRP 224,CZ3,ASD,C3,3.95
+3eqm.cif,Non-Bonded,TRP 224,CH2,ASD,C3,3.81
+3eqm.cif,Non-Bonded,TRP 224,CH2,ASD,C4,3.87
+3eqm.cif,Non-Bonded,ALA 306,CA,ASD,C2,3.95
+3eqm.cif,Non-Bonded,ALA 306,CA,ASD,C3,3.99
+3eqm.cif,Non-Bonded,ASP 309,CB,ASD,C3,3.77
+3eqm.cif,Non-Bonded,ASP 309,CB,ASD,C4,3.64
+3eqm.cif,Non-Bonded,THR 310,CG2,ASD,C19,3.65
+3eqm.cif,Non-Bonded,THR 310,CG2,ASD,C4,3.66
+3eqm.cif,Non-Bonded,THR 310,CG2,ASD,C5,3.61
+3eqm.cif,Non-Bonded,THR 310,CG2,ASD,C6,3.75
+3eqm.cif,Non-Bonded,VAL 370,CG1,ASD,C18,3.42
+3eqm.cif,Non-Bonded,LEU 477,CD1,ASD,C7,3.81
+3eqm.cif,Non-Bonded,LEU 477,CD2,ASD,C15,3.48
+3eqm.cif,Non-Bonded,LEU 477,CD2,ASD,C16,3.8
+5jkw.cif,Close Contact,ARG 115,CD,TES,O17,3.78
+5jkw.cif,Close Contact,ARG 115,NE,TES,C12,3.94
+5jkw.cif,Close Contact,ARG 115,CZ,TES,C12,3.95
+5jkw.cif,Close Contact,ARG 115,CZ,TES,O17,3.94
+5jkw.cif,Close Contact,ARG 115,NH1,TES,O17,3.27
+5jkw.cif,Close Contact,ILE 133,CG2,TES,C11,3.76
+5jkw.cif,Close Contact,ILE 133,CG2,TES,C12,3.89
+5jkw.cif,Close Contact,ILE 133,CD1,TES,C2,3.98
+5jkw.cif,Close Contact,PHE 134,CZ,TES,C17,3.82
+5jkw.cif,Close Contact,TRP 224,CZ3,TES,C3,3.9
+5jkw.cif,Close Contact,TRP 224,CZ3,TES,O3,3.75
+5jkw.cif,Close Contact,TRP 224,CZ3,TES,C4,3.76
+5jkw.cif,Close Contact,TRP 224,CH2,TES,C3,3.83
+5jkw.cif,Close Contact,TRP 224,CH2,TES,C4,3.63
+5jkw.cif,Close Contact,TRP 224,CH2,TES,C5,3.94
+5jkw.cif,Close Contact,ILE 305,O,TES,O3,3.94
+5jkw.cif,Close Contact,ILE 305,CG1,TES,O3,3.8
+5jkw.cif,Close Contact,ALA 306,N,TES,O3,3.86
+5jkw.cif,Close Contact,ALA 306,CA,TES,C2,3.96
+5jkw.cif,Close Contact,ALA 306,CA,TES,C3,3.95
+5jkw.cif,Close Contact,ALA 306,CA,TES,O3,3.32
+5jkw.cif,Close Contact,ALA 306,C,TES,O3,3.98
+5jkw.cif,Close Contact,ALA 306,O,TES,C3,3.96
+5jkw.cif,Close Contact,ALA 306,O,TES,O3,3.71
+5jkw.cif,Close Contact,ASP 309,CB,TES,C3,3.89
+5jkw.cif,Close Contact,ASP 309,CB,TES,O3,3.43
+5jkw.cif,Close Contact,ASP 309,CB,TES,C4,3.77
+5jkw.cif,Close Contact,ASP 309,CG,TES,O3,3.5
+5jkw.cif,Close Contact,ASP 309,OD2,TES,C3,3.75
+5jkw.cif,Close Contact,ASP 309,OD2,TES,O3,2.76
+5jkw.cif,Close Contact,THR 310,CG2,TES,C3,3.89
+5jkw.cif,Close Contact,THR 310,CG2,TES,C4,3.43
+5jkw.cif,Close Contact,THR 310,CG2,TES,C5,3.46
+5jkw.cif,Close Contact,THR 310,CG2,TES,C6,3.75
+5jkw.cif,Close Contact,THR 310,CG2,TES,C19,3.52
+5jkw.cif,Close Contact,VAL 370,CG1,TES,C18,3.66
+5jkw.cif,Close Contact,VAL 370,CG2,TES,C19,3.95
+5jkw.cif,Close Contact,LEU 372,O,TES,C15,3.58
+5jkw.cif,Close Contact,LEU 372,O,TES,C16,3.46
+5jkw.cif,Close Contact,LEU 372,O,TES,C18,3.64
+5jkw.cif,Close Contact,VAL 373,CA,TES,O17,3.49
+5jkw.cif,Close Contact,VAL 373,C,TES,O17,3.53
+5jkw.cif,Close Contact,VAL 373,CG1,TES,O17,3.81
+5jkw.cif,Close Contact,MET 374,N,TES,C16,3.92
+5jkw.cif,Close Contact,MET 374,N,TES,C17,3.79
+5jkw.cif,Close Contact,MET 374,N,TES,O17,2.67
+5jkw.cif,Close Contact,MET 374,CA,TES,O17,3.57
+5jkw.cif,Close Contact,MET 374,O,TES,O17,3.58
+5jkw.cif,Close Contact,MET 374,CB,TES,O17,3.59
+5jkw.cif,Close Contact,MET 374,CG,TES,C16,3.84
+5jkw.cif,Close Contact,LEU 477,O,TES,C15,3.94
+5jkw.cif,Close Contact,LEU 477,CD2,TES,C15,3.66
+5jkw.cif,Close Contact,LEU 477,CD2,TES,C16,3.91
+5jkw.cif,Hydrogen Bond,ARG 115,NH1,TES,O17,3.27
+5jkw.cif,Hydrogen Bond,ASP 309,OD2,TES,O3,2.76
+5jkw.cif,Hydrogen Bond,MET 374,N,TES,O17,2.67
+5jkw.cif,Non-Bonded,ARG 115,CZ,TES,C12,3.95
+5jkw.cif,Non-Bonded,ILE 133,CG2,TES,C11,3.76
+5jkw.cif,Non-Bonded,ILE 133,CG2,TES,C12,3.89
+5jkw.cif,Non-Bonded,ILE 133,CD1,TES,C2,3.98
+5jkw.cif,Non-Bonded,PHE 134,CZ,TES,C17,3.82
+5jkw.cif,Non-Bonded,TRP 224,CZ3,TES,C3,3.9
+5jkw.cif,Non-Bonded,TRP 224,CZ3,TES,C4,3.76
+5jkw.cif,Non-Bonded,TRP 224,CH2,TES,C3,3.83
+5jkw.cif,Non-Bonded,TRP 224,CH2,TES,C4,3.63
+5jkw.cif,Non-Bonded,TRP 224,CH2,TES,C5,3.94
+5jkw.cif,Non-Bonded,ALA 306,CA,TES,C2,3.96
+5jkw.cif,Non-Bonded,ALA 306,CA,TES,C3,3.95
+5jkw.cif,Non-Bonded,ASP 309,CB,TES,C3,3.89
+5jkw.cif,Non-Bonded,ASP 309,CB,TES,C4,3.77
+5jkw.cif,Non-Bonded,THR 310,CG2,TES,C3,3.89
+5jkw.cif,Non-Bonded,THR 310,CG2,TES,C4,3.43
+5jkw.cif,Non-Bonded,THR 310,CG2,TES,C5,3.46
+5jkw.cif,Non-Bonded,THR 310,CG2,TES,C6,3.75
+5jkw.cif,Non-Bonded,THR 310,CG2,TES,C19,3.52
+5jkw.cif,Non-Bonded,VAL 370,CG1,TES,C18,3.66
+5jkw.cif,Non-Bonded,VAL 370,CG2,TES,C19,3.95
+5jkw.cif,Non-Bonded,MET 374,CG,TES,C16,3.84
+5jkw.cif,Non-Bonded,LEU 477,CD2,TES,C15,3.66
+5jkw.cif,Non-Bonded,LEU 477,CD2,TES,C16,3.91

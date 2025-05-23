@@ -3,7 +3,7 @@ using BioStructures
 using LinearAlgebra
 
 function distance(atom1, atom2)
-    return norm(coords(atom1) - coords(atom2))
+    return norm(BioStructures.coords(atom1) - BioStructures.coords(atom2))
 end
 
 function is_donor_or_acceptor(atom)

@@ -2,67 +2,80 @@
 using BioStructures
 using LinearAlgebra
 
-# Include the hydrogen bond detection script
+# Include detection and output scripts
 include("detect_hbonds.jl")
+include("detect_nonbonded.jl")
+include("output_results.jl")
 
-# Specify the path to your CIF file
-cif_file = "3eqm.cif"  # Update with the full path if not in the project directory
+# Prompt user for exactly two CIF files
+println("Enter the native CIF file path:")
+native_cif = strip(readline())
+println("Enter the mutated CIF file path:")
+mutated_cif = strip(readline())
+cif_files = [native_cif, mutated_cif]
 
-# Read the CIF file
-structure = read(cif_file, MMCIFFormat)
-
-# Check the number of models
-models = collectmodels(structure)
-println("Number of models: ", length(models))
-
-# Select the first model
-model = structure[1]
-
-# Select protein atoms (standard amino acid residues)
-protein_atoms = collectatoms(model, standardselector)
-println("Number of protein atoms: ", length(protein_atoms))
-
-# List all non-protein, non-water residue names
-non_protein_atoms = collectatoms(model, atom -> !standardselector(atom) && resname(atom) != "HOH" && resname(atom) != "WAT")
-unique_resnames = unique(resname(atom) for atom in non_protein_atoms)
-println("Available ligand residue names: ", unique_resnames)
-
-# Prompt user to select a ligand
-println("Enter the ligand residue name to analyze (e.g., ASD for androstenedione): ")
-ligand_resname = strip(readline())
-if !(ligand_resname in unique_resnames)
-    println("Error: '$ligand_resname' not found in available ligands. Exiting.")
+if any(isempty, cif_files)
+    println("Error: Both native and mutated CIF files must be provided. Exiting.")
     exit(1)
 end
 
-# Define a custom ligand selector based on user input
-function ligand_selector(atom)
-    resname(atom) == ligand_resname
-end
-ligand_atoms = collectatoms(model, ligand_selector)
-println("Number of ligand atoms: ", length(ligand_atoms))
+# Store results and structures for each complex
+complex_results = Dict{String, Dict}()
+structures = Dict{String, Any}()
 
-# Find close contacts
-close_contacts = []
-threshold = 4.0
-for p_atom in protein_atoms
-    for l_atom in ligand_atoms
-        dist = distance(p_atom, l_atom)
-        if dist < threshold
-            push!(close_contacts, (p_atom, l_atom, dist))
+# Process each CIF file
+for cif_file in cif_files
+    println("\nProcessing $cif_file...")
+    # Read the CIF file
+    structure = read(cif_file, MMCIFFormat)
+    models = collectmodels(structure)
+    println("Number of models: ", length(models))
+    model = structure[1]
+
+    # Select protein atoms
+    protein_atoms = collectatoms(model, standardselector)
+    println("Number of protein atoms: ", length(protein_atoms))
+
+    # List non-protein, non-water residue names
+    non_protein_atoms = collectatoms(model, atom -> !standardselector(atom) && resname(atom) != "HOH" && resname(atom) != "WAT")
+    unique_resnames = unique(resname(atom) for atom in non_protein_atoms)
+    println("Available ligand residue names: ", unique_resnames)
+
+    # Prompt user to select a ligand
+    println("Enter the ligand residue name to analyze for $cif_file (e.g., ASD for androstenedione): ")
+    ligand_resname = strip(readline())
+    if !(ligand_resname in unique_resnames)
+        println("Error: '$ligand_resname' not found in available ligands. Skipping $cif_file.")
+        continue
+    end
+
+    # Define ligand selector
+    function ligand_selector(atom)
+        resname(atom) == ligand_resname
+    end
+    ligand_atoms = collectatoms(model, ligand_selector)
+    println("Number of ligand atoms: ", length(ligand_atoms))
+
+    # Find close contacts
+    close_contacts = []
+    threshold = 4.0
+    for p_atom in protein_atoms
+        for l_atom in ligand_atoms
+            dist = distance(p_atom, l_atom)
+            if dist < threshold
+                push!(close_contacts, (p_atom, l_atom, dist))
+            end
         end
     end
-end
 
-# Identify interacting amino acids and count interactions
-interacting_residues = Dict{String, Int}()
-for (p_atom, l_atom, dist) in close_contacts
-    res_key = "$(resname(p_atom)) $(resnumber(p_atom))"
-    interacting_residues[res_key] = get(interacting_residues, res_key, 0) + 1
-end
+    # Identify interacting amino acids
+    interacting_residues = Dict{String, Int}()
+    for (p_atom, l_atom, dist) in close_contacts
+        res_key = "$(resname(p_atom)) $(resnumber(p_atom))"
+        interacting_residues[res_key] = get(interacting_residues, res_key, 0) + 1
+    end
 
-# Find residue with maximum interactions
-let
+    # Find residue with maximum interactions
     max_residue = ""
     max_count = 0
     for (res, count) in interacting_residues
@@ -72,35 +85,25 @@ let
         end
     end
 
-    # Print close contacts
-    println("Number of close contacts: ", length(close_contacts))
-    for contact in close_contacts[1:min(5, length(close_contacts))]
-        p_atom, l_atom, dist = contact
-        println("Close contact: Protein atom: ", atomname(p_atom), " (", resname(p_atom), " ", resnumber(p_atom), ")",
-                " - Ligand atom: ", atomname(l_atom), " (", resname(l_atom), ")",
-                " - Distance: ", round(dist, digits=2), " Å")
-    end
-
-    # Detect and print hydrogen bonds
+    # Detect hydrogen bonds and non-bonded interactions
     hbonds = detect_hbonds(protein_atoms, ligand_atoms)
-    print_hbonds(hbonds)
+    nonbonded = detect_nonbonded(protein_atoms, ligand_atoms)
 
-    # Print interacting residues
-    println("\nInteracting amino acids and interaction counts:")
-    for (res, count) in sort(collect(interacting_residues), by=x->x[2], rev=true)
-        println("Residue: $res, Interactions: $count")
-    end
-    if !isempty(max_residue)
-        println("Residue with maximum interactions: $max_residue ($max_count interactions)")
-    else
-        println("No interacting residues found.")
-    end
+    # Store results and structure
+    complex_name = basename(cif_file)
+    complex_results[complex_name] = Dict(
+        :close_contacts => close_contacts,
+        :hbonds => hbonds,
+        :nonbonded => nonbonded,
+        :interacting_residues => interacting_residues,
+        :max_residue => max_residue,
+        :max_count => max_count,
+        :ligand_resname => ligand_resname
+    )
+    structures[complex_name] = structure
 end
 
-# Inspect ligand residue names
-if !isempty(ligand_atoms)
-    unique_ligand_resnames = unique(resname(atom) for atom in ligand_atoms)
-    println("Selected ligand residue name: ", unique_ligand_resnames)
-else
-    println("Warning: No ligand atoms detected for '$ligand_resname'.")
-end
+# Generate and save side-by-side comparison
+compare_and_save_results(complex_results, "comparison_table.csv", "residue_interactions.png", 
+                        structures[cif_files[1]], structures[cif_files[2]])
+print_analytical_summary(complex_results)
