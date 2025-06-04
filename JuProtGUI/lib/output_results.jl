@@ -221,8 +221,8 @@ function compare_and_save_results(complex_results, output_file, plot_file, nativ
         end
     end
     detail_df = DataFrame(detail_rows)
-    CSV.write("detailed_interactions.csv", detail_df)
-    println("Detailed interactions saved to detailed_interactions.csv")
+    CSV.write(joinpath("public", "outputs", "detailed_interactions.csv"), detail_df)
+    println("Detailed interactions saved to public/outputs/detailed_interactions.csv")
 
     residues = sort(collect(all_residues))
     native_counts = [get(native_result[:interacting_residues], res, 0) for res in residues]

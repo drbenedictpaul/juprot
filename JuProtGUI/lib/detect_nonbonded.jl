@@ -1,10 +1,8 @@
 # detect_nonbonded.jl
 using BioStructures
 using LinearAlgebra
+using Main.JuProtGUI.Utils: nonbonded_distance
 
-function distance(atom1, atom2)
-    return norm(BioStructures.coords(atom1) - BioStructures.coords(atom2))
-end
 
 function is_hydrophobic(atom)
     atom_name = atomname(atom)
@@ -19,7 +17,7 @@ function detect_nonbonded(protein_atoms, ligand_atoms)
         if is_hydrophobic(p_atom)
             for l_atom in ligand_atoms
                 if is_hydrophobic(l_atom)
-                    dist = distance(p_atom, l_atom)
+                    dist = nonbonded_distance(p_atom, l_atom)
                     if dist < distance_threshold
                         push!(nonbonded, (p_atom, l_atom, dist, "Hydrophobic Interaction"))
                     end

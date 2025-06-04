@@ -1,10 +1,8 @@
 # detect_hbonds.jl
 using BioStructures
 using LinearAlgebra
+using Main.JuProtGUI.Utils: hbond_distance
 
-function distance(atom1, atom2)
-    return norm(BioStructures.coords(atom1) - BioStructures.coords(atom2))
-end
 
 function is_donor(atom)
     atom_name = atomname(atom)
@@ -22,7 +20,7 @@ function detect_hbonds(protein_atoms, ligand_atoms)
 
     for p_atom in protein_atoms
         for l_atom in ligand_atoms
-            dist = distance(p_atom, l_atom)
+            dist = hbond_distance(p_atom, l_atom)
             if dist < distance_threshold
                 if is_donor(p_atom) && is_acceptor(l_atom)
                     push!(hbonds, (p_atom, l_atom, dist, "Protein Donor -> Ligand Acceptor"))

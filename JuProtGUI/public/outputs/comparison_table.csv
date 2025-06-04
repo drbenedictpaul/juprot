@@ -1,0 +1,15 @@
+Metric,Native,Mutated
+Ligand,ASD,TES
+Total Interactions,49,53
+Interaction Difference,,4
+Hydrogen Bonds,2,2
+H-Bond Difference,,0
+Non-Bonded (Hydrophobic),18,24
+Non-Bonded Difference,,6
+π-π Stacking,101,0
+π-π Difference,,-101
+Top Interacting Residues,"ASP 309 (7), MET 374 (6), ARG 115 (6)","ALA 306 (7), MET 374 (7), ASP 309 (6)"
+Changed Residues,,"VAL 370: Native=1, Mutated=2; VAL 373: Native=2, Mutated=3; ALA 306: Native=5, Mutated=7; MET 374: Native=6, Mutated=7; LEU 477: Native=4, Mutated=3; LEU 372: Native=4, Mutated=3; ILE 133: Native=2, Mutated=3; ASP 309: Native=7, Mutated=6; THR 310: Native=4, Mutated=5; TRP 224: Native=5, Mutated=6; ARG 115: Native=6, Mutated=5"
+H-Bond Residues,"ARG 115, MET 374","ARG 115, MET 374"
+π-π Residues,"TRP 224, PHE 134, PHE 221",
+Binding Insight,Hydrophobic dominate (36.7%),Hydrophobic dominate (45.3%)

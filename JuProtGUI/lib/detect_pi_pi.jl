@@ -1,10 +1,8 @@
 # detect_pi_pi.jl
 using BioStructures
 using LinearAlgebra
+using Main.JuProtGUI.Utils: pipi_distance
 
-function distance(atom1, atom2)
-    return norm(BioStructures.coords(atom1) - BioStructures.coords(atom2))
-end
 
 function is_aromatic(atom)
     res_name = resname(atom)
@@ -19,7 +17,7 @@ function detect_pi_pi(protein_atoms, ligand_atoms)
         if is_aromatic(p_atom)
             for l_atom in ligand_atoms
                 if is_aromatic(l_atom)
-                    dist = distance(p_atom, l_atom)
+                    dist = pipi_distance(p_atom, l_atom)
                     if dist < distance_threshold
                         push!(pi_pi, (p_atom, l_atom, dist, "π-π Stacking"))
                     end
