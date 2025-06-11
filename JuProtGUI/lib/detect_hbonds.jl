@@ -1,8 +1,7 @@
 # detect_hbonds.jl
 using BioStructures
 using LinearAlgebra
-using Main.JuProtGUI.Utils: hbond_distance
-
+using JuProtGUI.Utils: hbond_distance
 
 function is_donor(atom)
     atom_name = atomname(atom)

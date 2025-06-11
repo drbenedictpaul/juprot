@@ -1,8 +1,7 @@
 # detect_pi_pi.jl
 using BioStructures
 using LinearAlgebra
-using Main.JuProtGUI.Utils: pipi_distance
-
+using JuProtGUI.Utils: pipi_distance
 
 function is_aromatic(atom)
     res_name = resname(atom)

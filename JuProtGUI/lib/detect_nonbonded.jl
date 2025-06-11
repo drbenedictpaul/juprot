@@ -1,8 +1,7 @@
 # detect_nonbonded.jl
 using BioStructures
 using LinearAlgebra
-using Main.JuProtGUI.Utils: nonbonded_distance
-
+using JuProtGUI.Utils: nonbonded_distance
 
 function is_hydrophobic(atom)
     atom_name = atomname(atom)
