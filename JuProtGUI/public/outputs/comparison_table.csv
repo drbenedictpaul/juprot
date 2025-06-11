@@ -1,15 +1,15 @@
-Metric,Native,Mutated
-Ligand,TES,ASD
-Total Interactions,53,49
-Interaction Difference,,-4
+Metric,First_Complex,Second_Complex
+Ligand,ASD,TES
+Total Interactions,49,53
+Interaction Difference,,4
 Hydrogen Bonds,2,2
 H-Bond Difference,,0
-Non-Bonded (Hydrophobic),24,18
-Non-Bonded Difference,,-6
-π-π Stacking,0,101
-π-π Difference,,101
-Top Interacting Residues,"ALA 306 (7), MET 374 (7), ASP 309 (6)","ASP 309 (7), MET 374 (6), ARG 115 (6)"
-Changed Residues,,"VAL 370: Native=2, Mutated=1; VAL 373: Native=3, Mutated=2; ALA 306: Native=7, Mutated=5; MET 374: Native=7, Mutated=6; LEU 477: Native=3, Mutated=4; LEU 372: Native=3, Mutated=4; ILE 133: Native=3, Mutated=2; ASP 309: Native=6, Mutated=7; THR 310: Native=5, Mutated=4; TRP 224: Native=6, Mutated=5; ARG 115: Native=5, Mutated=6"
+Non-Bonded (Hydrophobic),18,24
+Non-Bonded Difference,,6
+π-π Stacking,101,0
+π-π Difference,,-101
+Top Interacting Residues,"ASP 309 (7), MET 374 (6), ARG 115 (6)","ALA 306 (7), MET 374 (7), ASP 309 (6)"
+Changed Residues,,"VAL 370: First=1, Second=2; VAL 373: First=2, Second=3; ALA 306: First=5, Second=7; MET 374: First=6, Second=7; LEU 477: First=4, Second=3; LEU 372: First=4, Second=3; ILE 133: First=2, Second=3; ASP 309: First=7, Second=6; THR 310: First=4, Second=5; TRP 224: First=5, Second=6; ARG 115: First=6, Second=5"
 H-Bond Residues,"ARG 115, MET 374","ARG 115, MET 374"
-π-π Residues,,"TRP 224, PHE 134, PHE 221"
-Binding Insight,Hydrophobic dominate (45.3%),Hydrophobic dominate (36.7%)
+π-π Residues,"TRP 224, PHE 134, PHE 221",
+Binding Insight,Hydrophobic dominate (36.7%),Hydrophobic dominate (45.3%)
