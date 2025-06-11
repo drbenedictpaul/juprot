@@ -110,7 +110,7 @@ route("/") do
     <!DOCTYPE html>
     <html>
     <head>
-        <title>juProt GUI</title>
+        <title>juProt</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 40px; }
             .container { max-width: 800px; margin: auto; }
@@ -127,22 +127,23 @@ route("/") do
             <h1>juProt: Protein-Ligand Interaction Analysis</h1>
             <form action="/analyze" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="native_cif">Native CIF File:</label>
+                    <label for="native_cif">Native or First Complex CIF File:</label>
                     <input type="file" id="native_cif" name="native_cif" accept=".cif" required>
                 </div>
                 <div class="form-group">
-                    <label for="native_ligand">Native Ligand Residue Name (e.g., ASD):</label>
+                    <label for="native_ligand">Native or First Complex Ligand Name (e.g., ASD):</label>
                     <input type="text" id="native_ligand" name="native_ligand" required>
                 </div>
                 <div class="form-group">
-                    <label for="mutated_cif">Mutated CIF File:</label>
+                    <label for="mutated_cif">Mutated or Second Complex CIF File:</label>
                     <input type="file" id="mutated_cif" name="mutated_cif" accept=".cif" required>
                 </div>
                 <div class="form-group">
-                    <label for="mutated_ligand">Mutated Ligand Residue Name (e.g., TES):</label>
+                    <label for="mutated_ligand">Mutated or Second Complex Ligand Name (e.g., TES):</label>
                     <input type="text" id="mutated_ligand" name="mutated_ligand" required>
                 </div>
                 <button type="submit">Run Analysis</button>
+                <p><a href="/how-to-use">How to Use</a></p>
             </form>
         </div>
     </body>
@@ -192,6 +193,60 @@ route("/analyze", method=POST) do
                 <pre>$(result["summary"])</pre>
             </div>
             <p><a href="/">Run Another Analysis</a></p>
+        </div>
+    </body>
+    </html>
+    """)
+end
+
+route("/how-to-use") do
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>juProt: How to Use</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .container { max-width: 800px; margin: auto; }
+            h1, h2 { color: #007bff; }
+            p { line-height: 1.6; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>How to Use juProt</h1>
+            <p>juProt is a web-based tool for comparing protein-ligand interactions between two complexes, including native (e.g., from X-ray crystallography or NMR) or docked complexes (e.g., from molecular docking of native or mutated proteins).</p>
+            <h2>Protocol</h2>
+            <ol>
+                <li><strong>Prepare CIF Files</strong>: Obtain two protein-ligand complex CIF files (e.g., from PDB or docking software).</li>
+                <li><strong>Access the App</strong>: Visit <a href="/">juProt</a>.</li>
+                <li><strong>Upload Files</strong>:
+                    <ul>
+                        <li>Upload the first CIF file under "Native or First Complex CIF File".</li>
+                        <li>Enter the ligand residue name (e.g., ASD) for the first complex.</li>
+                        <li>Upload the second CIF file under "Mutated or Second Complex CIF File".</li>
+                        <li>Enter the ligand residue name (e.g., TES) for the second complex.</li>
+                    </ul>
+                </li>
+                <li><strong>Run Analysis</strong>: Click "Run Analysis" to compare interactions (hydrogen bonds, non-bonded contacts, pi-pi interactions).</li>
+                <li><strong>View Results</strong>:
+                    <ul>
+                        <li>Download the comparison table (CSV) for interaction counts.</li>
+                        <li>Download detailed interactions (CSV) for specific bonds.</li>
+                        <li>View or download the bar chart (PNG) comparing residue interactions.</li>
+                        <li>Read the analytical summary for insights.</li>
+                    </ul>
+                </li>
+            </ol>
+            <h2>Applications</h2>
+            <ul>
+                <li><strong>Structural Biology</strong>: Compare native and mutated protein-ligand complexes to study mutation effects.</li>
+                <li><strong>Drug Design</strong>: Analyze docked complexes to evaluate ligand binding differences.</li>
+                <li><strong>Protein Engineering</strong>: Assess interaction changes in engineered proteins.</li>
+            </ul>
+            <p><a href="/">Back to Home</a></p>
         </div>
     </body>
     </html>
