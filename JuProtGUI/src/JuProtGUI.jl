@@ -15,8 +15,8 @@ function process_cif_files(native_file, mutated_file, native_ligand, mutated_lig
     structures = Dict{String, Any}()
     output_dir = "public/outputs"
     mkpath(output_dir)
-    native_path = joinpath(output_dir, "native.cif")
-    mutated_path = joinpath(output_dir, "mutated.cif")
+    native_path = joinpath(output_dir, "first_complex.cif")
+    mutated_path = joinpath(output_dir, "second_complex.cif")
     write(native_path, native_file.data)
     write(mutated_path, mutated_file.data)
     cif_files = [native_path, mutated_path]
@@ -178,11 +178,12 @@ route("/analyze", method=POST) do
     <body>
         <div class="container">
             <h1>Analysis Results</h1>
+            <p>Comparison of interactions for the First Complex and Second Complex:</p>
             <div class="result">
                 <h2>Downloads</h2>
                 <p><a href="/outputs/comparison_table.csv">Download Comparison Table (CSV)</a></p>
-<p><a href="/outputs/detailed_interactions.csv">Download Detailed Interactions (CSV)</a></p>
-<p><a href="/outputs/residue_interactions.png">Download Bar Chart (PNG)</a></p>
+                <p><a href="/outputs/detailed_interactions.csv">Download Detailed Interactions (CSV)</a></p>
+                <p><a href="/outputs/residue_interactions.png">Download Bar Chart (PNG)</a></p>
             </div>
             <div class="result">
                 <h2>Residue Interaction Plot</h2>

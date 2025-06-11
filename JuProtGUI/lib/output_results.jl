@@ -233,7 +233,7 @@ function compare_and_save_results(complex_results, output_file, plot_file, nativ
     bar_width = 0.35
     plt = bar(
         x .- bar_width/2, native_counts,
-        label="Native ($native_name)",
+        label="First Complex ($native_name)",
         color=:blue,
         alpha=0.6,
         bar_width=bar_width,
@@ -247,7 +247,7 @@ function compare_and_save_results(complex_results, output_file, plot_file, nativ
     )
     bar!(plt,
         x .+ bar_width/2, mutated_counts,
-        label="Mutated ($mutated_name)",
+        label="Second Complex ($mutated_name)",
         color=:red,
         alpha=0.6,
         bar_width=bar_width
