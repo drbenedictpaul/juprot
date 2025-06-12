@@ -20,7 +20,7 @@ function get_ligand_names(cif_file)
     end
 end
 
-function process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand)
+function process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand, hbond_min, hbond_max, nonbonded_min, nonbonded_max)
     complex_results = Dict{String, Dict}()
     structures = Dict{String, Any}()
     output_dir = "public/outputs"
@@ -44,7 +44,6 @@ function process_cif_files(first_cif_path, second_cif_path, first_ligand, second
                 return Dict("error" => "Ligand '$ligand_resname' not found in $cif_file")
             end
             close_contacts = []
-            hbond_range = get(SETTINGS, :hbond_distance_range, (2.0, 3.5))
             for p_atom in protein_atoms
                 for l_atom in ligand_atoms
                     dist = hbond_distance(p_atom, l_atom)
@@ -66,9 +65,8 @@ function process_cif_files(first_cif_path, second_cif_path, first_ligand, second
                     max_count = count
                 end
             end
-            hbonds = detect_hbonds(protein_atoms, ligand_atoms, hbond_range[1], hbond_range[2])
-            nonbonded_range = get(SETTINGS, :nonbonded_distance_range, (3.0, 4.0))
-            nonbonded = detect_nonbonded(protein_atoms, ligand_atoms, nonbonded_range[1], nonbonded_range[2])
+            hbonds = detect_hbonds(protein_atoms, ligand_atoms, hbond_min, hbond_max)
+            nonbonded = detect_nonbonded(protein_atoms, ligand_atoms, nonbonded_min, nonbonded_max)
             complex_name = basename(cif_file)
             complex_results[complex_name] = Dict(
                 :close_contacts => close_contacts,
@@ -134,17 +132,16 @@ route("/") do
             <h1>juProt: Protein-Ligand Interaction Analysis</h1>
             <form action="/select-ligands" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="first_cif">First Complex CIF File:</label>
+                    <label for="first_cif">Native or First Complex CIF File:</label>
                     <input type="file" id="first_cif" name="first_cif" accept=".cif" required>
                 </div>
                 <div class="form-group">
-                    <label for="second_cif">Second Complex CIF File:</label>
+                    <label for="second_cif">Mutated or Second Complex CIF File:</label>
                     <input type="file" id="second_cif" name="second_cif" accept=".cif" required>
                 </div>
                 <button type="submit">Load Ligands</button>
             </form>
             <p><a href="/how-to-use">How to Use</a></p>
-            <p><a href="/settings">Settings</a></p>
         </div>
     </body>
     </html>
@@ -169,45 +166,63 @@ route("/select-ligands", method=POST) do
     end
 
     html("""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>juProt: Select Ligands</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .container { max-width: 800px; margin: auto; }
-            .form-group { margin-bottom: 20px; }
-            label { display: block; margin-bottom: 5px; }
-            select { width: 100%; padding: 8px; }
-            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-            button:hover { background: #0056b3; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>juProt: Select Ligands</h1>
-            <form action="/analyze" method="post">
-                <input type="hidden" name="first_cif_path" value="$first_path">
-                <input type="hidden" name="second_cif_path" value="$second_path">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>juProt: Select Ligands</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: auto; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; }
+        select, input[type=number] { width: 100%; padding: 8px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .settings-section { margin-top: 40px; }
+        .settings-title { color: #007bff; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>juProt: Select Ligands</h1>
+        <form action="/analyze" method="post">
+            <input type="hidden" name="first_cif_path" value="$first_path">
+            <input type="hidden" name="second_cif_path" value="$second_path">
+            <div class="form-group">
+                <label for="first_ligand">Native or First Complex Ligand:</label>
+                <select id="first_ligand" name="first_ligand" required>
+                    $(join(["<option value='$ligand'>$ligand</option>" for ligand in first_ligands], ""))
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="second_ligand">Mutated or Second Complex Ligand:</label>
+                <select id="second_ligand" name="second_ligand" required>
+                    $(join(["<option value='$ligand'>$ligand</option>" for ligand in second_ligands], ""))
+                </select>
+            </div>
+            <button type="submit">Run Analysis</button>
+            <div class="settings-section">
+                <h2 class="settings-title">Settings</h2>
                 <div class="form-group">
-                    <label for="first_ligand">First Complex Ligand:</label>
-                    <select id="first_ligand" name="first_ligand" required>
-                        $(join(["<option value='$ligand'>$ligand</option>" for ligand in first_ligands], ""))
-                    </select>
+                    <label for="hbond_distance">H-bond Distance Range (Å):</label>
+                    <input type="number" id="hbond_distance_min" name="hbond_distance_min" step="0.1" min="0" max="5" value="2.0" required> to 
+                    <input type="number" id="hbond_distance_max" name="hbond_distance_max" step="0.1" min="0" max="5" value="3.5" required>
                 </div>
                 <div class="form-group">
-                    <label for="second_ligand">Second Complex Ligand:</label>
-                    <select id="second_ligand" name="second_ligand" required>
-                        $(join(["<option value='$ligand'>$ligand</option>" for ligand in second_ligands], ""))
-                    </select>
+                    <label for="nonbonded_distance">Non-bonded Distance Range (Å):</label>
+                    <input type="number" id="nonbonded_distance_min" name="nonbonded_distance_min" step="0.1" min="0" max="5" value="3.0" required> to 
+                    <input type="number" id="nonbonded_distance_max" name="nonbonded_distance_max" step="0.1" min="0" max="5" value="4.0" required>
                 </div>
-                <button type="submit">Run Analysis</button>
-            </form>
-            <p><a href="/">Back to Home</a></p>
-        </div>
-    </body>
-    </html>
-    """)
+            </div>
+        </form>
+        <p><a href="/">Back to Home</a></p>
+    </div>
+</body>
+</html>
+""")
+
 end
 
 route("/analyze", method=POST) do
@@ -215,7 +230,11 @@ route("/analyze", method=POST) do
     second_cif_path = postpayload(:second_cif_path)
     first_ligand = postpayload(:first_ligand)
     second_ligand = postpayload(:second_ligand)
-    result = process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand)
+    hbond_min = parse(Float64, postpayload(:hbond_distance_min, "2.0"))
+    hbond_max = parse(Float64, postpayload(:hbond_distance_max, "3.5"))
+    nonbonded_min = parse(Float64, postpayload(:nonbonded_distance_min, "3.0"))
+    nonbonded_max = parse(Float64, postpayload(:nonbonded_distance_max, "4.0"))
+    result = process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand, hbond_min, hbond_max, nonbonded_min, nonbonded_max)
     if haskey(result, "error")
         return html("<h1>Error</h1><p>$(result["error"])</p>")
     end
@@ -237,7 +256,7 @@ route("/analyze", method=POST) do
     <body>
         <div class="container">
             <h1>Analysis Results</h1>
-            <p>Comparison of interactions for the First Complex and Second Complex:</p>
+            <p>Comparison of interactions for the Native or First Complex and Mutated or Second Complex:</p>
             <div class="result">
                 <h2>Downloads</h2>
                 <p><a href="/outputs/comparison_table.csv">Download Comparison Table (CSV)</a></p>
@@ -257,59 +276,6 @@ route("/analyze", method=POST) do
     </body>
     </html>
     """)
-end
-
-route("/settings") do
-    html("""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>juProt: Settings</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .container { max-width: 800px; margin: auto; }
-            h1, h2 { color: #007bff; }
-            .form-group { margin-bottom: 20px; }
-            label { display: block; margin-bottom: 5px; }
-            input[type=number] { width: 100%; padding: 8px; }
-            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-            button:hover { background: #0056b3; }
-            a { color: #007bff; text-decoration: none; }
-            a:hover { text-decoration: underline; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>juProt: Settings</h1>
-            <p>Customize the bond distance ranges for interaction analysis.</p>
-            <form action="/settings" method="post">
-                <div class="form-group">
-                    <label for="hbond_distance">H-bond Distance Range (Å):</label>
-                    <input type="number" id="hbond_distance_min" name="hbond_distance_min" step="0.1" min="0" max="5" value="2.0" required> to 
-                    <input type="number" id="hbond_distance_max" name="hbond_distance_max" step="0.1" min="0" max="5" value="3.5" required>
-                </div>
-                <div class="form-group">
-                    <label for="nonbonded_distance">Non-bonded Distance Range (Å):</label>
-                    <input type="number" id="nonbonded_distance_min" name="nonbonded_distance_min" step="0.1" min="0" max="5" value="3.0" required> to 
-                    <input type="number" id="nonbonded_distance_max" name="nonbonded_distance_max" step="0.1" min="0" max="5" value="4.0" required>
-                </div>
-                <button type="submit">Save Settings</button>
-            </form>
-            <p><a href="/">Back to Home</a></p>
-        </div>
-    </body>
-    </html>
-    """)
-end
-
-route("/settings", method=POST) do
-    hbond_min = parse(Float64, postpayload(:hbond_distance_min, "2.0"))
-    hbond_max = parse(Float64, postpayload(:hbond_distance_max, "3.5"))
-    nonbonded_min = parse(Float64, postpayload(:nonbonded_distance_min, "3.0"))
-    nonbonded_max = parse(Float64, postpayload(:nonbonded_distance_max, "4.0"))
-    SETTINGS[:hbond_distance_range] = (hbond_min, hbond_max)
-    SETTINGS[:nonbonded_distance_range] = (nonbonded_min, nonbonded_max)
-    html("<h1>Settings Saved</h1><p>Bond distance ranges updated successfully. <a href='/'>Return to Home</a></p>")
 end
 
 route("/how-to-use") do
@@ -337,9 +303,10 @@ route("/how-to-use") do
                 <li><strong>Access the App</strong>: Visit <a href="/">juProt</a>.</li>
                 <li><strong>Upload Files</strong>:
                     <ul>
-                        <li>Upload the first CIF file under "First Complex CIF File".</li>
-                        <li>Upload the second CIF file under "Second Complex CIF File".</li>
+                        <li>Upload the first CIF file under "Native or First Complex CIF File".</li>
+                        <li>Upload the second CIF file under "Mutated or Second Complex CIF File".</li>
                         <li>Select ligands from the dropdown menus for each complex.</li>
+                        <li>Optionally adjust H-bond and non-bonded distance ranges below "Run Analysis" (default: 2.0–3.5 Å for H-bonds, 3.0–4.0 Å for non-bonded).</li>
                     </ul>
                 </li>
                 <li><strong>Run Analysis</strong>: Click "Run Analysis" to compare interactions (hydrogen bonds, non-bonded contacts).</li>

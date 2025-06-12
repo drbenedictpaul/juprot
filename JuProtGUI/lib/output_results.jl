@@ -202,26 +202,26 @@ function compare_and_save_results(complex_results, output_file, plot_file, first
     x = 1:n
     bar_width = 0.35
     plt = bar(
-        x .- bar_width/2, first_counts,
-        label="First Complex",
-        color=:blue,
-        alpha=0.6,
-        bar_width=bar_width,
-        xticks=(1:n, residues),
-        xrotation=45,
-        xlabel="Residue",
-        ylabel="Interaction Count",
-        title="Residue Interaction Counts",
-        legend=:topright,
-        size=(800, 600)
-    )
-    bar!(plt,
-        x .+ bar_width/2, second_counts,
-        label="Second Complex",
-        color=:red,
-        alpha=0.6,
-        bar_width=bar_width
-    )
+    x .- bar_width/2, first_counts,
+    label="Native or First Complex",
+    color=:blue,
+    alpha=0.6,
+    bar_width=bar_width,
+    xticks=(1:n, residues),
+    xrotation=45,
+    xlabel="Residue",
+    ylabel="Interaction Count",
+    title="Residue Interaction Counts",
+    legend=:topright,
+    size=(800, 600)
+)
+bar!(plt,
+    x .+ bar_width/2, second_counts,
+    label="Mutated or Second Complex",
+    color=:red,
+    alpha=0.6,
+    bar_width=bar_width
+)
 
     savefig(plt, plot_file)
     println("Bar chart saved to $plot_file")
@@ -232,7 +232,7 @@ function print_analytical_summary(complex_results)
     for complex_name in ordered_complexes
         if haskey(complex_results, complex_name)
             result = complex_results[complex_name]
-            display_name = complex_name == "first_complex.cif" ? "First Complex" : "Second Complex"
+            display_name = complex_name == "first_complex.cif" ? "Native or First Complex" : "Mutated or Second Complex"
             total_interactions = length(result[:close_contacts])
             println("\nAnalytical Summary for $display_name (Ligand: $(result[:ligand_resname])):")
             println("Total Interactions: ", total_interactions, " (all atom pairs within 4.0 Å)")
