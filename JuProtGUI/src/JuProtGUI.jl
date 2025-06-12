@@ -1,51 +1,54 @@
-# JuProtGUI/src/JuProtGUI.jl
 module JuProtGUI
 using Genie, Genie.Router, Genie.Renderer, Genie.Renderer.Html, Genie.Requests
 using BioStructures, CSV, DataFrames, Plots, LinearAlgebra
 using Genie.Assets
 
-const SETTINGS = Dict{Symbol, Any}()
-
 include("../lib/utils.jl")
 include("../lib/output_results.jl")
 include("../lib/detect_hbonds.jl")
 include("../lib/detect_nonbonded.jl")
-include("../lib/detect_pi_pi.jl")
 
-function process_cif_files(native_file, mutated_file, native_ligand, mutated_ligand)
+const SETTINGS = Dict{Symbol, Any}()
+
+function get_ligand_names(cif_file)
+    try
+        structure = read(cif_file, MMCIFFormat)
+        non_protein_atoms = collectatoms(structure, atom -> !standardselector(atom) && resname(atom) != "HOH" && resname(atom) != "WAT")
+        return unique(resname(atom) for atom in non_protein_atoms)
+    catch
+        return []
+    end
+end
+
+function process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand)
     complex_results = Dict{String, Dict}()
     structures = Dict{String, Any}()
     output_dir = "public/outputs"
     mkpath(output_dir)
-    native_path = joinpath(output_dir, "first_complex.cif")
-    mutated_path = joinpath(output_dir, "second_complex.cif")
-    write(native_path, native_file.data)
-    write(mutated_path, mutated_file.data)
-    cif_files = [native_path, mutated_path]
-    ligand_resnames = [native_ligand, mutated_ligand]
+    first_path = joinpath(output_dir, "first_complex.cif")
+    second_path = joinpath(output_dir, "second_complex.cif")
+    cp(first_cif_path, first_path, force=true)
+    cp(second_cif_path, second_path, force=true)
+    cif_files = [first_path, second_path]
+    ligand_resnames = [first_ligand, second_ligand]
 
     for (i, cif_file) in enumerate(cif_files)
         try
             structure = read(cif_file, MMCIFFormat)
-            models = collectmodels(structure)
             model = structure[1]
             protein_atoms = collectatoms(model, standardselector)
-            non_protein_atoms = collectatoms(model, atom -> !standardselector(atom) && resname(atom) != "HOH" && resname(atom) != "WAT")
-            unique_resnames = unique(resname(atom) for atom in non_protein_atoms)
             ligand_resname = ligand_resnames[i]
-            if !(ligand_resname in unique_resnames)
-                return Dict("error" => "Ligand '$ligand_resname' not found in $cif_file")
-            end
             ligand_selector(atom) = resname(atom) == ligand_resname
             ligand_atoms = collectatoms(model, ligand_selector)
+            if isempty(ligand_atoms)
+                return Dict("error" => "Ligand '$ligand_resname' not found in $cif_file")
+            end
             close_contacts = []
-            threshold = 4.0
             hbond_range = get(SETTINGS, :hbond_distance_range, (2.0, 3.5))
-            nonbonded_range = get(SETTINGS, :nonbonded_distance_range, (3.0, 4.0))
             for p_atom in protein_atoms
-            for l_atom in ligand_atoms
-                dist = hbond_distance(p_atom, l_atom)
-                    if hbond_range[1] <= dist <= hbond_range[2]
+                for l_atom in ligand_atoms
+                    dist = hbond_distance(p_atom, l_atom)
+                    if dist < 4.0
                         push!(close_contacts, (p_atom, l_atom, dist, "Close Contact"))
                     end
                 end
@@ -63,15 +66,14 @@ function process_cif_files(native_file, mutated_file, native_ligand, mutated_lig
                     max_count = count
                 end
             end
-            hbonds = detect_hbonds(protein_atoms, ligand_atoms)
+            hbonds = detect_hbonds(protein_atoms, ligand_atoms, hbond_range[1], hbond_range[2])
+            nonbonded_range = get(SETTINGS, :nonbonded_distance_range, (3.0, 4.0))
             nonbonded = detect_nonbonded(protein_atoms, ligand_atoms, nonbonded_range[1], nonbonded_range[2])
-            pi_pi = detect_pi_pi(protein_atoms, ligand_atoms)
             complex_name = basename(cif_file)
             complex_results[complex_name] = Dict(
                 :close_contacts => close_contacts,
                 :hbonds => hbonds,
                 :nonbonded => nonbonded,
-                :pi_pi => pi_pi,
                 :interacting_residues => interacting_residues,
                 :max_residue => max_residue,
                 :max_count => max_count,
@@ -87,7 +89,7 @@ function process_cif_files(native_file, mutated_file, native_ligand, mutated_lig
     plot_file = joinpath(output_dir, "residue_interactions.png")
     try
         compare_and_save_results(complex_results, output_file, plot_file, 
-                                structures[basename(cif_files[1])], structures[basename(cif_files[2])])
+                                structures["first_complex.cif"], structures["second_complex.cif"])
         summary = capture_analytical_summary(complex_results)
         return Dict(
             "comparison_table" => output_file,
@@ -120,36 +122,88 @@ route("/") do
             .container { max-width: 800px; margin: auto; }
             .form-group { margin-bottom: 20px; }
             label { display: block; margin-bottom: 5px; }
-            input[type=file], input[type=text] { width: 100%; padding: 8px; }
+            input[type=file] { width: 100%; padding: 8px; }
             button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
             button:hover { background: #0056b3; }
-            pre { background: #f8f9fa; padding: 10px; border-radius: 5px; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
         </style>
     </head>
     <body>
         <div class="container">
             <h1>juProt: Protein-Ligand Interaction Analysis</h1>
-            <form action="/analyze" method="post" enctype="multipart/form-data">
+            <form action="/select-ligands" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="native_cif">Native or First Complex CIF File:</label>
-                    <input type="file" id="native_cif" name="native_cif" accept=".cif" required>
+                    <label for="first_cif">First Complex CIF File:</label>
+                    <input type="file" id="first_cif" name="first_cif" accept=".cif" required>
                 </div>
                 <div class="form-group">
-                    <label for="native_ligand">Native or First Complex Ligand Name (e.g., ASD):</label>
-                    <input type="text" id="native_ligand" name="native_ligand" required>
+                    <label for="second_cif">Second Complex CIF File:</label>
+                    <input type="file" id="second_cif" name="second_cif" accept=".cif" required>
+                </div>
+                <button type="submit">Load Ligands</button>
+            </form>
+            <p><a href="/how-to-use">How to Use</a></p>
+            <p><a href="/settings">Settings</a></p>
+        </div>
+    </body>
+    </html>
+    """)
+end
+
+route("/select-ligands", method=POST) do
+    first_file = filespayload("first_cif")
+    second_file = filespayload("second_cif")
+    output_dir = "public/outputs"
+    mkpath(output_dir)
+    first_path = joinpath(output_dir, "temp_first.cif")
+    second_path = joinpath(output_dir, "temp_second.cif")
+    write(first_path, first_file.data)
+    write(second_path, second_file.data)
+
+    first_ligands = get_ligand_names(first_path)
+    second_ligands = get_ligand_names(second_path)
+
+    if isempty(first_ligands) || isempty(second_ligands)
+        return html("<h1>Error</h1><p>No ligands found in one or both CIF files.</p>")
+    end
+
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>juProt: Select Ligands</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .container { max-width: 800px; margin: auto; }
+            .form-group { margin-bottom: 20px; }
+            label { display: block; margin-bottom: 5px; }
+            select { width: 100%; padding: 8px; }
+            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+            button:hover { background: #0056b3; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>juProt: Select Ligands</h1>
+            <form action="/analyze" method="post">
+                <input type="hidden" name="first_cif_path" value="$first_path">
+                <input type="hidden" name="second_cif_path" value="$second_path">
+                <div class="form-group">
+                    <label for="first_ligand">First Complex Ligand:</label>
+                    <select id="first_ligand" name="first_ligand" required>
+                        $(join(["<option value='$ligand'>$ligand</option>" for ligand in first_ligands], ""))
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="mutated_cif">Mutated or Second Complex CIF File:</label>
-                    <input type="file" id="mutated_cif" name="mutated_cif" accept=".cif" required>
-                </div>
-                <div class="form-group">
-                    <label for="mutated_ligand">Mutated or Second Complex Ligand Name (e.g., TES):</label>
-                    <input type="text" id="mutated_ligand" name="mutated_ligand" required>
+                    <label for="second_ligand">Second Complex Ligand:</label>
+                    <select id="second_ligand" name="second_ligand" required>
+                        $(join(["<option value='$ligand'>$ligand</option>" for ligand in second_ligands], ""))
+                    </select>
                 </div>
                 <button type="submit">Run Analysis</button>
-                <p><a href="/how-to-use">How to Use</a></p>
-                <p><a href="/settings">Settings</a></p>
             </form>
+            <p><a href="/">Back to Home</a></p>
         </div>
     </body>
     </html>
@@ -157,11 +211,11 @@ route("/") do
 end
 
 route("/analyze", method=POST) do
-    native_file = filespayload("native_cif")
-    mutated_file = filespayload("mutated_cif")
-    native_ligand = postpayload(:native_ligand)
-    mutated_ligand = postpayload(:mutated_ligand)
-    result = process_cif_files(native_file, mutated_file, native_ligand, mutated_ligand)
+    first_cif_path = postpayload(:first_cif_path)
+    second_cif_path = postpayload(:second_cif_path)
+    first_ligand = postpayload(:first_ligand)
+    second_ligand = postpayload(:second_ligand)
+    result = process_cif_files(first_cif_path, second_cif_path, first_ligand, second_ligand)
     if haskey(result, "error")
         return html("<h1>Error</h1><p>$(result["error"])</p>")
     end
@@ -199,60 +253,6 @@ route("/analyze", method=POST) do
                 <pre>$(result["summary"])</pre>
             </div>
             <p><a href="/">Run Another Analysis</a></p>
-        </div>
-    </body>
-    </html>
-    """)
-end
-
-route("/how-to-use") do
-    html("""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>juProt: How to Use</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .container { max-width: 800px; margin: auto; }
-            h1, h2 { color: #007bff; }
-            p { line-height: 1.6; }
-            a { color: #007bff; text-decoration: none; }
-            a:hover { text-decoration: underline; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>How to Use juProt</h1>
-            <p>juProt is a web-based tool for comparing protein-ligand interactions between two complexes, including native (e.g., from X-ray crystallography or NMR) or docked complexes (e.g., from molecular docking of native or mutated proteins).</p>
-            <h2>Protocol</h2>
-            <ol>
-                <li><strong>Prepare CIF Files</strong>: Obtain two protein-ligand complex CIF files (e.g., from PDB or docking software).</li>
-                <li><strong>Access the App</strong>: Visit <a href="/">juProt</a>.</li>
-                <li><strong>Upload Files</strong>:
-                    <ul>
-                        <li>Upload the first CIF file under "Native or First Complex CIF File".</li>
-                        <li>Enter the ligand residue name (e.g., ASD) for the first complex.</li>
-                        <li>Upload the second CIF file under "Mutated or Second Complex CIF File".</li>
-                        <li>Enter the ligand residue name (e.g., TES) for the second complex.</li>
-                    </ul>
-                </li>
-                <li><strong>Run Analysis</strong>: Click "Run Analysis" to compare interactions (hydrogen bonds, non-bonded contacts, pi-pi interactions).</li>
-                <li><strong>View Results</strong>:
-                    <ul>
-                        <li>Download the comparison table (CSV) for interaction counts.</li>
-                        <li>Download detailed interactions (CSV) for specific bonds.</li>
-                        <li>View or download the bar chart (PNG) comparing residue interactions.</li>
-                        <li>Read the analytical summary for insights.</li>
-                    </ul>
-                </li>
-            </ol>
-            <h2>Applications</h2>
-            <ul>
-                <li><strong>Structural Biology</strong>: Compare native and mutated protein-ligand complexes to study mutation effects.</li>
-                <li><strong>Drug Design</strong>: Analyze docked complexes to evaluate ligand binding differences.</li>
-                <li><strong>Protein Engineering</strong>: Assess interaction changes in engineered proteins.</li>
-            </ul>
-            <p><a href="/">Back to Home</a></p>
         </div>
     </body>
     </html>
@@ -310,6 +310,59 @@ route("/settings", method=POST) do
     SETTINGS[:hbond_distance_range] = (hbond_min, hbond_max)
     SETTINGS[:nonbonded_distance_range] = (nonbonded_min, nonbonded_max)
     html("<h1>Settings Saved</h1><p>Bond distance ranges updated successfully. <a href='/'>Return to Home</a></p>")
+end
+
+route("/how-to-use") do
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>juProt: How to Use</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .container { max-width: 800px; margin: auto; }
+            h1, h2 { color: #007bff; }
+            p { line-height: 1.6; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>How to Use juProt</h1>
+            <p>juProt is a web-based tool for comparing protein-ligand interactions between two complexes, including native (e.g., from X-ray crystallography or NMR) or docked complexes (e.g., from molecular docking of native or mutated proteins).</p>
+            <h2>Protocol</h2>
+            <ol>
+                <li><strong>Prepare CIF Files</strong>: Obtain two protein-ligand complex CIF files (e.g., from PDB or docking software).</li>
+                <li><strong>Access the App</strong>: Visit <a href="/">juProt</a>.</li>
+                <li><strong>Upload Files</strong>:
+                    <ul>
+                        <li>Upload the first CIF file under "First Complex CIF File".</li>
+                        <li>Upload the second CIF file under "Second Complex CIF File".</li>
+                        <li>Select ligands from the dropdown menus for each complex.</li>
+                    </ul>
+                </li>
+                <li><strong>Run Analysis</strong>: Click "Run Analysis" to compare interactions (hydrogen bonds, non-bonded contacts).</li>
+                <li><strong>View Results</strong>:
+                    <ul>
+                        <li>Download the comparison table (CSV) for interaction counts.</li>
+                        <li>Download detailed interactions (CSV) for specific bonds.</li>
+                        <li>View or download the bar chart (PNG) comparing residue interactions.</li>
+                        <li>Read the analytical summary for insights.</li>
+                    </ul>
+                </li>
+            </ol>
+            <h2>Applications</h2>
+            <ul>
+                <li><strong>Structural Biology</strong>: Compare native and mutated protein-ligand complexes to study mutation effects.</li>
+                <li><strong>Drug Design</strong>: Analyze docked complexes to evaluate ligand binding differences.</li>
+                <li><strong>Protein Engineering</strong>: Assess interaction changes in engineered proteins.</li>
+            </ul>
+            <p><a href="/">Back to Home</a></p>
+        </div>
+    </body>
+    </html>
+    """)
 end
 
 end

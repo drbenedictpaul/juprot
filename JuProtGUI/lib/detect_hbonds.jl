@@ -1,4 +1,3 @@
-# detect_hbonds.jl
 using BioStructures
 using LinearAlgebra
 using JuProtGUI.Utils: hbond_distance
@@ -13,14 +12,12 @@ function is_acceptor(atom)
     return startswith(atom_name, "O") || (startswith(atom_name, "N") && startswith(atom_name, "NE2"))  # Oxygen or histidine NE2 acceptors
 end
 
-function detect_hbonds(protein_atoms, ligand_atoms)
+function detect_hbonds(protein_atoms, ligand_atoms, min_distance::Float64, max_distance::Float64)
     hbonds = []
-    distance_threshold = 3.5
-
     for p_atom in protein_atoms
         for l_atom in ligand_atoms
             dist = hbond_distance(p_atom, l_atom)
-            if dist < distance_threshold
+            if min_distance <= dist <= max_distance
                 if is_donor(p_atom) && is_acceptor(l_atom)
                     push!(hbonds, (p_atom, l_atom, dist, "Protein Donor -> Ligand Acceptor"))
                 elseif is_donor(l_atom) && is_acceptor(p_atom)
