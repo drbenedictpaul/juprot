@@ -4,6 +4,8 @@ using Genie, Genie.Router, Genie.Renderer, Genie.Renderer.Html, Genie.Requests
 using BioStructures, CSV, DataFrames, Plots, LinearAlgebra
 using Genie.Assets
 
+const SETTINGS = Dict{Symbol, Any}()
+
 include("../lib/utils.jl")
 include("../lib/output_results.jl")
 include("../lib/detect_hbonds.jl")
@@ -38,10 +40,12 @@ function process_cif_files(native_file, mutated_file, native_ligand, mutated_lig
             ligand_atoms = collectatoms(model, ligand_selector)
             close_contacts = []
             threshold = 4.0
+            hbond_range = get(SETTINGS, :hbond_distance_range, (2.0, 3.5))
+            nonbonded_range = get(SETTINGS, :nonbonded_distance_range, (3.0, 4.0))
             for p_atom in protein_atoms
-                for l_atom in ligand_atoms
-                    dist = hbond_distance(p_atom, l_atom)
-                    if dist < threshold
+            for l_atom in ligand_atoms
+                dist = hbond_distance(p_atom, l_atom)
+                    if hbond_range[1] <= dist <= hbond_range[2]
                         push!(close_contacts, (p_atom, l_atom, dist, "Close Contact"))
                     end
                 end
@@ -60,7 +64,7 @@ function process_cif_files(native_file, mutated_file, native_ligand, mutated_lig
                 end
             end
             hbonds = detect_hbonds(protein_atoms, ligand_atoms)
-            nonbonded = detect_nonbonded(protein_atoms, ligand_atoms)
+            nonbonded = detect_nonbonded(protein_atoms, ligand_atoms, nonbonded_range[1], nonbonded_range[2])
             pi_pi = detect_pi_pi(protein_atoms, ligand_atoms)
             complex_name = basename(cif_file)
             complex_results[complex_name] = Dict(
@@ -144,6 +148,7 @@ route("/") do
                 </div>
                 <button type="submit">Run Analysis</button>
                 <p><a href="/how-to-use">How to Use</a></p>
+                <p><a href="/settings">Settings</a></p>
             </form>
         </div>
     </body>
@@ -252,6 +257,59 @@ route("/how-to-use") do
     </body>
     </html>
     """)
+end
+
+route("/settings") do
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>juProt: Settings</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .container { max-width: 800px; margin: auto; }
+            h1, h2 { color: #007bff; }
+            .form-group { margin-bottom: 20px; }
+            label { display: block; margin-bottom: 5px; }
+            input[type=number] { width: 100%; padding: 8px; }
+            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+            button:hover { background: #0056b3; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>juProt: Settings</h1>
+            <p>Customize the bond distance ranges for interaction analysis.</p>
+            <form action="/settings" method="post">
+                <div class="form-group">
+                    <label for="hbond_distance">H-bond Distance Range (Å):</label>
+                    <input type="number" id="hbond_distance_min" name="hbond_distance_min" step="0.1" min="0" max="5" value="2.0" required> to 
+                    <input type="number" id="hbond_distance_max" name="hbond_distance_max" step="0.1" min="0" max="5" value="3.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="nonbonded_distance">Non-bonded Distance Range (Å):</label>
+                    <input type="number" id="nonbonded_distance_min" name="nonbonded_distance_min" step="0.1" min="0" max="5" value="3.0" required> to 
+                    <input type="number" id="nonbonded_distance_max" name="nonbonded_distance_max" step="0.1" min="0" max="5" value="4.0" required>
+                </div>
+                <button type="submit">Save Settings</button>
+            </form>
+            <p><a href="/">Back to Home</a></p>
+        </div>
+    </body>
+    </html>
+    """)
+end
+
+route("/settings", method=POST) do
+    hbond_min = parse(Float64, postpayload(:hbond_distance_min, "2.0"))
+    hbond_max = parse(Float64, postpayload(:hbond_distance_max, "3.5"))
+    nonbonded_min = parse(Float64, postpayload(:nonbonded_distance_min, "3.0"))
+    nonbonded_max = parse(Float64, postpayload(:nonbonded_distance_max, "4.0"))
+    SETTINGS[:hbond_distance_range] = (hbond_min, hbond_max)
+    SETTINGS[:nonbonded_distance_range] = (nonbonded_min, nonbonded_max)
+    html("<h1>Settings Saved</h1><p>Bond distance ranges updated successfully. <a href='/'>Return to Home</a></p>")
 end
 
 end

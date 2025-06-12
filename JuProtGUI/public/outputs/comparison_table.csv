@@ -1,15 +1,15 @@
 Metric,First_Complex,Second_Complex
 Ligand,ASD,TES
-Total Interactions,49,53
-Interaction Difference,,4
+Total Interactions,10,9
+Interaction Difference,,-1
 Hydrogen Bonds,2,2
 H-Bond Difference,,0
-Non-Bonded (Hydrophobic),18,24
-Non-Bonded Difference,,6
+Non-Bonded (Hydrophobic),41,46
+Non-Bonded Difference,,5
 π-π Stacking,101,0
 π-π Difference,,-101
-Top Interacting Residues,"ASP 309 (7), MET 374 (6), ARG 115 (6)","ALA 306 (7), MET 374 (7), ASP 309 (6)"
-Changed Residues,,"VAL 370: First=1, Second=2; VAL 373: First=2, Second=3; ALA 306: First=5, Second=7; MET 374: First=6, Second=7; LEU 477: First=4, Second=3; LEU 372: First=4, Second=3; ILE 133: First=2, Second=3; ASP 309: First=7, Second=6; THR 310: First=4, Second=5; TRP 224: First=5, Second=6; ARG 115: First=6, Second=5"
+Top Interacting Residues,"ASP 309 (3), LEU 372 (2), VAL 370 (1)","ASP 309 (2), THR 310 (2), VAL 373 (1)"
+Changed Residues,,"VAL 370: First=1, Second=0; VAL 373: First=0, Second=1; LEU 372: First=2, Second=1; ASP 309: First=3, Second=2; THR 310: First=0, Second=2; LEU 477: First=1, Second=0"
 H-Bond Residues,"ARG 115, MET 374","ARG 115, MET 374"
 π-π Residues,"TRP 224, PHE 134, PHE 221",
-Binding Insight,Hydrophobic dominate (36.7%),Hydrophobic dominate (45.3%)
+Binding Insight,Hydrophobic dominate (410.0%),Hydrophobic dominate (511.1%)

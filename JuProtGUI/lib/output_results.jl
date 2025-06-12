@@ -537,8 +537,9 @@ function print_analytical_summary(complex_results)
                 push!(pi_pi_residues, "$(resname(p_atom)) $(resnumber(p_atom))")
             end
             println("Residues with π-π Stacking: ", join(pi_pi_residues, ", "))
-            hbond_percent = length(result[:close_contacts]) > 0 ? round((length(result[:hbonds]) / length(result[:close_contacts])) * 100, digits=1) : 0.0
-            nonbonded_percent = length(result[:close_contacts]) > 0 ? round((length(result[:nonbonded]) / length(result[:close_contacts])) * 100, digits=1) : 0.0
+            total_specific = length(result[:hbonds]) + length(result[:nonbonded]) + length(result[:pi_pi])
+            hbond_percent = total_specific > 0 ? round((length(result[:hbonds]) / total_specific) * 100, digits=1) : 0.0
+            nonbonded_percent = total_specific > 0 ? round((length(result[:nonbonded]) / total_specific) * 100, digits=1) : 0.0
             println("Binding Insight: ", hbond_percent > nonbonded_percent ? "Hydrogen bonds dominate ($hbond_percent%)" : "Hydrophobic interactions dominate ($nonbonded_percent%)")
         end
     end
