@@ -1,13 +1,7 @@
-Metric,Native_or_First_Complex,Mutated_or_Second_Complex
-Ligand,ASD,HEM
-Total Close Contacts,64,150
-Close Contact Difference,,86
-Hydrogen Bonds,0,0
-H-Bond Difference,,0
-Hydrophobic Interactions,5,0
-Hydrophobic Difference,,-5
-Top Interacting Residues,"MET 374 (8), TRP 224 (8), ALA 306 (7)","CYS 437 (28), ARG 435 (16), ARG 115 (15)"
-Changed Residues,,"VAL 370: Native=1, Mutated=5; VAL 373: Native=3, Mutated=5; ILE 305: Native=4, Mutated=0; LEU 152: Native=0, Mutated=3; GLY 439: Native=0, Mutated=4; ALA 306: Native=7, Mutated=4; MET 364: Native=0, Mutated=2; MET 447: Native=0, Mutated=2; PRO 429: Native=0, Mutated=3; MET 374: Native=8, Mutated=0; SER 314: Native=0, Mutated=1; ARG 435: Native=0, Mutated=16; ILE 132: Native=0, Mutated=5; PHE 430: Native=0, Mutated=13; ALA 443: Native=0, Mutated=1; GLY 436: Native=0, Mutated=4; LEU 477: Native=4, Mutated=0; ALA 438: Native=0, Mutated=5; LEU 372: Native=4, Mutated=0; ILE 133: Native=5, Mutated=4; PHE 134: Native=2, Mutated=0; ARG 375: Native=0, Mutated=10; MET 311: Native=0, Mutated=1; MET 446: Native=0, Mutated=1; MET 107: Native=0, Mutated=1; ASP 309: Native=7, Mutated=0; THR 310: Native=4, Mutated=5; GLY 431: Native=0, Mutated=1; TRP 224: Native=8, Mutated=0; ARG 145: Native=0, Mutated=5; TRP 141: Native=0, Mutated=6; CYS 437: Native=0, Mutated=28; ARG 115: Native=7, Mutated=15"
-H-Bond Residues,,
-Hydrophobic Residues,"TRP 224, ILE 133, LEU 477",
-Binding Insight,Hydrophobic interactions dominate (100.0%),Hydrophobic interactions dominate (0.0%)
+Metric,First_Complex,Second_Complex
+Ligand Name,EST,DHT
+Total H-Bonds Detected,3,2
+Difference in H-Bonds (Second - First),,-1
+Top Interacting Residues (ResID Count),"GLY 186 (1), SER 142 (1), GLU 282 (1)","TYR 155 (1), GLU 282 (1)"
+Residues with Changed Interaction Counts,,"GLY 186: First=1, Second=0; SER 142: First=1, Second=0; TYR 155: First=0, Second=1"
+Unique Residues Forming H-Bonds,"GLU 282, GLY 186, SER 142","GLU 282, TYR 155"
