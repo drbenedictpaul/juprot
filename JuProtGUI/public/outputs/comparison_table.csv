@@ -1,12 +1,13 @@
-Metric,First_Complex,Second_Complex
-Ligand,TXF,CTX
-Total Interactions,378,264
-Interaction Difference,,-114
-Hydrogen Bonds,6,2
-H-Bond Difference,,-4
-Non-Bonded (Hydrophobic),330,255
-Non-Bonded Difference,,-75
-Top Interacting Residues,"PHE 435 (55), ASP 273 (47), LEU 440 (32)","LEU 304 (45), LEU 368 (24), LEU 363 (21)"
-Changed Residues,,"LEU 368: First=0, Second=24; ILE 438: First=2, Second=0; PHE 101: First=0, Second=7; TYR 326: First=27, Second=0; ARG 316: First=5, Second=0; MET 364: First=0, Second=12; LEU 97: First=0, Second=3; GLY 356: First=0, Second=1; LEU 388: First=0, Second=9; PRO 317: First=0, Second=4; GLU 275: First=25, Second=0; VAL 313: First=15, Second=0; ALA 431: First=5, Second=0; LEU 271: First=2, Second=0; MET 306: First=7, Second=0; PRO 461: First=0, Second=4; LEU 309: First=21, Second=0; CYS 269: First=22, Second=0; LYS 414: First=0, Second=21; VAL 254: First=0, Second=4; GLU 441: First=7, Second=0; ALA 272: First=24, Second=0; MET 361: First=0, Second=8; LEU 449: First=2, Second=0; LEU 342: First=8, Second=0; LEU 345: First=6, Second=0; PHE 435: First=55, Second=0; TRP 357: First=0, Second=12; LEU 318: First=0, Second=4; SER 221: First=0, Second=12; SER 369: First=0, Second=13; TYR 366: First=0, Second=1; GLY 142: First=0, Second=8; HIS 468: First=0, Second=14; PHE 303: First=0, Second=1; LEU 440: First=32, Second=0; HIS 434: First=10, Second=0; LEU 268: First=14, Second=0; LEU 363: First=0, Second=21; ILE 359: First=0, Second=3; GLY 143: First=0, Second=6; SER 305: First=0, Second=6; LEU 418: First=0, Second=2; MET 446: First=2, Second=0; ILE 349: First=9, Second=0; TRP 305: First=8, Second=0; GLY 371: First=0, Second=7; PRO 360: First=0, Second=8; LEU 304: First=0, Second=45; LEU 358: First=0, Second=3; ALA 93: First=0, Second=1; ASP 273: First=47, Second=0; LEU 265: First=4, Second=0; ASN 346: First=19, Second=0"
-H-Bond Residues,ASP 273,LEU 363
-Binding Insight,Hydrophobic dominate (98.2%),Hydrophobic dominate (99.2%)
+Metric,Native_or_First_Complex,Mutated_or_Second_Complex
+Ligand,ASD,HEM
+Total Close Contacts,64,150
+Close Contact Difference,,86
+Hydrogen Bonds,0,0
+H-Bond Difference,,0
+Hydrophobic Interactions,5,0
+Hydrophobic Difference,,-5
+Top Interacting Residues,"MET 374 (8), TRP 224 (8), ALA 306 (7)","CYS 437 (28), ARG 435 (16), ARG 115 (15)"
+Changed Residues,,"VAL 370: Native=1, Mutated=5; VAL 373: Native=3, Mutated=5; ILE 305: Native=4, Mutated=0; LEU 152: Native=0, Mutated=3; GLY 439: Native=0, Mutated=4; ALA 306: Native=7, Mutated=4; MET 364: Native=0, Mutated=2; MET 447: Native=0, Mutated=2; PRO 429: Native=0, Mutated=3; MET 374: Native=8, Mutated=0; SER 314: Native=0, Mutated=1; ARG 435: Native=0, Mutated=16; ILE 132: Native=0, Mutated=5; PHE 430: Native=0, Mutated=13; ALA 443: Native=0, Mutated=1; GLY 436: Native=0, Mutated=4; LEU 477: Native=4, Mutated=0; ALA 438: Native=0, Mutated=5; LEU 372: Native=4, Mutated=0; ILE 133: Native=5, Mutated=4; PHE 134: Native=2, Mutated=0; ARG 375: Native=0, Mutated=10; MET 311: Native=0, Mutated=1; MET 446: Native=0, Mutated=1; MET 107: Native=0, Mutated=1; ASP 309: Native=7, Mutated=0; THR 310: Native=4, Mutated=5; GLY 431: Native=0, Mutated=1; TRP 224: Native=8, Mutated=0; ARG 145: Native=0, Mutated=5; TRP 141: Native=0, Mutated=6; CYS 437: Native=0, Mutated=28; ARG 115: Native=7, Mutated=15"
+H-Bond Residues,,
+Hydrophobic Residues,"TRP 224, ILE 133, LEU 477",
+Binding Insight,Hydrophobic interactions dominate (100.0%),Hydrophobic interactions dominate (0.0%)

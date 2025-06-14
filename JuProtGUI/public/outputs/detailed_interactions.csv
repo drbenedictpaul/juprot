@@ -1,1236 +1,220 @@
 Complex,Interaction_Type,Protein_Residue,Protein_Atom,Ligand_Residue,Ligand_Atom,Distance,Bond_Description
-First Complex,Close Contact,LEU 268,O,TXF,C24,3.68,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C6,3.9,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C6,3.9,Close Contact
-First Complex,Close Contact,LEU 271,CD2,TXF,C25,3.86,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C24,3.73,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C9,3.59,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C10,3.37,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C5,3.69,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C3,3.99,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C2,3.96,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,N1,3.71,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C31,3.67,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C3,3.41,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C2,3.12,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,N1,2.78,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C31,3.17,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,N1,3.88,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C31,3.38,Close Contact
-First Complex,Close Contact,GLU 275,CD,TXF,O29,3.32,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,O29,3.38,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,O29,2.51,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C26,3.18,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C25,3.18,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C10,3.79,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C18,3.74,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,O29,3.8,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C27,3.62,Close Contact
-First Complex,Close Contact,LEU 309,CD1,TXF,C9,3.83,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,O29,3.25,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C26,3.8,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C27,3.66,Close Contact
-First Complex,Close Contact,ARG 316,NH2,TXF,O29,3.63,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,O16,3.97,Close Contact
-First Complex,Close Contact,TYR 326,CZ,TXF,O16,3.66,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C13,3.95,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C15,3.63,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,O16,2.52,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C21,3.91,Close Contact
-First Complex,Close Contact,ASN 346,CG,TXF,O16,3.38,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,C15,3.25,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,O16,2.47,Close Contact
-First Complex,Close Contact,ASN 346,ND2,TXF,O16,3.58,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,C15,3.49,Close Contact
-First Complex,Close Contact,ALA 431,O,TXF,C19,3.6,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C20,3.51,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C20,3.94,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C19,3.74,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C20,3.96,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C19,3.79,Close Contact
-First Complex,Close Contact,PHE 435,CB,TXF,C19,3.77,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,C5,3.91,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,O4,3.84,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C5,3.6,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,O4,3.07,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C3,3.98,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,O4,3.97,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C2,3.6,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C30,3.81,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C22,4.0,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C21,3.31,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C20,3.46,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C6,3.9,Close Contact
-First Complex,Close Contact,GLU 441,CA,TXF,C30,3.73,Close Contact
-First Complex,Close Contact,GLU 441,O,TXF,C30,3.65,Close Contact
-First Complex,Close Contact,MET 446,SD,TXF,C30,3.54,Close Contact
-First Complex,Close Contact,LEU 449,CD1,TXF,C30,3.74,Close Contact
-First Complex,Close Contact,LEU 265,CD2,TXF,C21,3.89,Close Contact
-First Complex,Close Contact,LEU 268,C,TXF,C7,3.98,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C24,3.64,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C7,3.87,Close Contact
-First Complex,Close Contact,LEU 268,CB,TXF,C7,3.95,Close Contact
-First Complex,Close Contact,LEU 268,CD2,TXF,C24,3.77,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C6,3.81,Close Contact
-First Complex,Close Contact,CYS 269,CB,TXF,C31,3.97,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C6,3.92,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C25,3.81,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C24,3.63,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C9,3.91,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C10,3.67,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C5,3.82,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,N1,3.51,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C31,3.74,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C3,3.85,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C2,3.62,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,N1,2.8,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C31,3.45,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C30,3.59,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,N1,3.47,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C31,3.32,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C30,3.98,Close Contact
-First Complex,Close Contact,GLU 275,CD,TXF,O29,3.33,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,O29,2.68,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,C26,3.32,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,C25,3.22,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,O29,3.25,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C10,3.54,Close Contact
-First Complex,Close Contact,TRP 305,CH2,TXF,C10,3.88,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C18,3.89,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C9,3.75,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,O29,3.62,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,C27,3.91,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C27,3.65,Close Contact
-First Complex,Close Contact,LEU 309,CD1,TXF,C9,3.84,Close Contact
-First Complex,Close Contact,LEU 309,CD2,TXF,O29,3.94,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,O29,3.51,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C26,3.98,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C27,3.79,Close Contact
-First Complex,Close Contact,ARG 316,NH2,TXF,O29,3.67,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,C13,3.87,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,O16,3.68,Close Contact
-First Complex,Close Contact,TYR 326,CZ,TXF,O16,3.47,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C13,3.88,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C15,3.6,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,O16,2.42,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C22,3.84,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C21,3.68,Close Contact
-First Complex,Close Contact,ASN 346,CG,TXF,O16,3.66,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,C15,3.59,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,O16,2.66,Close Contact
-First Complex,Close Contact,ASN 346,ND2,TXF,O16,3.95,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,C15,3.49,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,O16,3.91,Close Contact
-First Complex,Close Contact,ALA 431,O,TXF,C19,3.41,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C21,3.89,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C20,3.35,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C19,3.78,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C19,3.8,Close Contact
-First Complex,Close Contact,PHE 435,CB,TXF,C19,3.93,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,C5,3.96,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,O4,3.94,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C5,3.49,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,O4,3.03,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C3,3.61,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C2,3.69,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,O4,3.65,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,C2,3.67,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C3,3.97,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C2,3.57,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,N1,3.95,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C31,3.58,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C21,3.58,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C20,3.63,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C6,3.92,Close Contact
-First Complex,Close Contact,GLU 441,O,TXF,C30,3.55,Close Contact
-First Complex,Close Contact,LEU 449,CD1,TXF,C30,3.51,Close Contact
-First Complex,Close Contact,LEU 265,CD2,TXF,C21,3.73,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C24,3.56,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C7,3.89,Close Contact
-First Complex,Close Contact,LEU 268,CD2,TXF,C24,3.91,Close Contact
-First Complex,Close Contact,CYS 269,N,TXF,C6,4.0,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C6,3.78,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C31,3.97,Close Contact
-First Complex,Close Contact,CYS 269,O,TXF,C31,3.86,Close Contact
-First Complex,Close Contact,CYS 269,CB,TXF,C31,3.63,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C6,3.74,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C31,3.71,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C24,3.84,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C9,3.63,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C10,3.41,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C5,3.75,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,N1,3.67,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C30,3.95,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C3,4.0,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C2,3.8,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,N1,2.82,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C31,3.51,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C30,3.32,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,N1,3.8,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C31,3.94,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C30,3.77,Close Contact
-First Complex,Close Contact,GLU 275,CD,TXF,O29,3.43,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,O29,3.53,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,O29,2.6,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C26,3.3,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C25,3.32,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C9,3.93,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C10,3.63,Close Contact
-First Complex,Close Contact,TRP 305,CH2,TXF,C10,3.95,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C18,3.95,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,O29,3.71,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C26,3.99,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C27,3.53,Close Contact
-First Complex,Close Contact,LEU 309,CD1,TXF,C9,3.97,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,O29,3.35,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C26,3.9,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C27,3.88,Close Contact
-First Complex,Close Contact,ARG 316,NH2,TXF,O29,3.84,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,O16,3.86,Close Contact
-First Complex,Close Contact,TYR 326,CZ,TXF,O16,3.63,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C15,3.76,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,O16,2.56,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C22,3.96,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C21,3.88,Close Contact
-First Complex,Close Contact,ASN 346,CG,TXF,O16,3.59,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,C15,3.6,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,O16,2.54,Close Contact
-First Complex,Close Contact,ASN 346,ND2,TXF,O16,3.97,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,C15,3.47,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,O16,3.86,Close Contact
-First Complex,Close Contact,ALA 431,O,TXF,C19,3.37,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C21,3.84,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C20,3.3,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C19,3.99,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C20,3.88,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C19,3.68,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C20,3.85,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C19,3.66,Close Contact
-First Complex,Close Contact,PHE 435,CB,TXF,C19,3.73,Close Contact
-First Complex,Close Contact,PHE 435,CD2,TXF,C5,3.97,Close Contact
-First Complex,Close Contact,PHE 435,CD2,TXF,O4,4.0,Close Contact
-First Complex,Close Contact,PHE 435,CE2,TXF,C10,3.97,Close Contact
-First Complex,Close Contact,PHE 435,CE2,TXF,C5,3.58,Close Contact
-First Complex,Close Contact,PHE 435,CE2,TXF,O4,3.16,Close Contact
-First Complex,Close Contact,PHE 435,CE2,TXF,C3,3.38,Close Contact
-First Complex,Close Contact,PHE 435,CE2,TXF,C2,3.67,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,C3,3.82,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,C2,3.72,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C2,3.77,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,N1,3.89,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C31,3.4,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C30,3.97,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C21,3.49,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C20,3.66,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C6,3.78,Close Contact
-First Complex,Close Contact,GLU 441,O,TXF,C30,3.93,Close Contact
-First Complex,Close Contact,MET 446,SD,TXF,C2,4.0,Close Contact
-First Complex,Close Contact,LEU 265,CD2,TXF,C21,3.92,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C24,3.7,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C7,3.99,Close Contact
-First Complex,Close Contact,LEU 268,CB,TXF,C7,3.92,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C6,3.86,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C31,3.96,Close Contact
-First Complex,Close Contact,CYS 269,O,TXF,C31,3.89,Close Contact
-First Complex,Close Contact,CYS 269,CB,TXF,C31,3.57,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C6,3.93,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C31,3.75,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C24,3.87,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C9,3.64,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C10,3.3,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C5,3.55,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,N1,3.66,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C31,3.97,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C3,3.57,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C2,3.64,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,N1,2.85,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C31,3.49,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C30,3.62,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,N1,3.67,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C31,3.67,Close Contact
-First Complex,Close Contact,GLU 275,CD,TXF,O29,3.47,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,O29,2.65,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,C26,3.34,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,C25,3.32,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,O29,3.54,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C10,3.69,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C18,3.82,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C9,3.91,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,O29,3.91,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C26,3.99,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C27,3.64,Close Contact
-First Complex,Close Contact,LEU 309,CD1,TXF,C9,3.7,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,O29,3.48,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C26,3.93,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C27,3.61,Close Contact
-First Complex,Close Contact,ARG 316,NH2,TXF,O29,3.73,Close Contact
-First Complex,Close Contact,TYR 326,CD1,TXF,C26,3.95,Close Contact
-First Complex,Close Contact,TYR 326,CZ,TXF,O16,3.82,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C13,3.8,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C15,3.6,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,O16,2.67,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C22,3.64,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C21,3.62,Close Contact
-First Complex,Close Contact,LEU 345,CD2,TXF,C14,3.71,Close Contact
-First Complex,Close Contact,LEU 345,CD2,TXF,C15,3.81,Close Contact
-First Complex,Close Contact,LEU 345,CD2,TXF,O16,3.94,Close Contact
-First Complex,Close Contact,ASN 346,CG,TXF,O16,3.48,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,C15,3.57,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,O16,2.48,Close Contact
-First Complex,Close Contact,ASN 346,ND2,TXF,O16,3.81,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,C15,3.49,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,O16,3.83,Close Contact
-First Complex,Close Contact,ALA 431,O,TXF,C19,3.51,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C21,3.8,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C20,3.43,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C20,3.95,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C19,3.74,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C19,3.82,Close Contact
-First Complex,Close Contact,PHE 435,CB,TXF,C19,3.95,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C5,3.65,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,O4,3.23,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C3,3.66,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C2,3.63,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,C2,3.6,Close Contact
-First Complex,Close Contact,ILE 438,CD1,TXF,C20,3.96,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C2,3.55,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,N1,3.66,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C31,3.31,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C30,3.71,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C21,3.53,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C20,3.47,Close Contact
-First Complex,Close Contact,GLU 441,C,TXF,C30,3.93,Close Contact
-First Complex,Close Contact,GLU 441,O,TXF,C30,3.14,Close Contact
-First Complex,Close Contact,LEU 265,CD2,TXF,C21,3.86,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C28,3.66,Close Contact
-First Complex,Close Contact,LEU 268,O,TXF,C7,3.89,Close Contact
-First Complex,Close Contact,CYS 269,CA,TXF,C6,3.81,Close Contact
-First Complex,Close Contact,CYS 269,CB,TXF,C31,3.83,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C6,3.85,Close Contact
-First Complex,Close Contact,CYS 269,SG,TXF,C31,3.63,Close Contact
-First Complex,Close Contact,LEU 271,CD2,TXF,C27,3.96,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C27,3.95,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C28,3.7,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C9,3.63,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C10,3.32,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C5,3.67,Close Contact
-First Complex,Close Contact,ALA 272,CB,TXF,C3,3.88,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,N1,3.67,Close Contact
-First Complex,Close Contact,ASP 273,CG,TXF,C30,3.95,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C3,3.86,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C2,3.54,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,N1,2.88,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C31,3.97,Close Contact
-First Complex,Close Contact,ASP 273,OD1,TXF,C30,3.22,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,N1,3.77,Close Contact
-First Complex,Close Contact,ASP 273,OD2,TXF,C30,3.87,Close Contact
-First Complex,Close Contact,GLU 275,CD,TXF,O29,3.27,Close Contact
-First Complex,Close Contact,GLU 275,OE1,TXF,O29,3.22,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,O29,2.58,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C26,3.32,Close Contact
-First Complex,Close Contact,GLU 275,OE2,TXF,C27,3.25,Close Contact
-First Complex,Close Contact,TRP 305,CZ3,TXF,C10,3.67,Close Contact
-First Complex,Close Contact,MET 306,CE,TXF,C18,3.96,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,O29,3.75,Close Contact
-First Complex,Close Contact,LEU 309,O,TXF,C25,3.93,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C26,3.91,Close Contact
-First Complex,Close Contact,LEU 309,CB,TXF,C25,3.65,Close Contact
-First Complex,Close Contact,LEU 309,CD1,TXF,C9,3.77,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,O29,3.42,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C26,3.89,Close Contact
-First Complex,Close Contact,VAL 313,CG2,TXF,C25,3.61,Close Contact
-First Complex,Close Contact,ARG 316,NH2,TXF,O29,3.68,Close Contact
-First Complex,Close Contact,TYR 326,CD1,TXF,C26,3.98,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,C13,3.8,Close Contact
-First Complex,Close Contact,TYR 326,CE1,TXF,O16,3.65,Close Contact
-First Complex,Close Contact,TYR 326,CZ,TXF,O16,3.49,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C13,3.96,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,C15,3.73,Close Contact
-First Complex,Close Contact,TYR 326,OH,TXF,O16,2.6,Close Contact
-First Complex,Close Contact,LEU 342,CD2,TXF,C21,3.79,Close Contact
-First Complex,Close Contact,LEU 345,CG,TXF,C15,3.62,Close Contact
-First Complex,Close Contact,LEU 345,CD2,TXF,C14,3.82,Close Contact
-First Complex,Close Contact,LEU 345,CD2,TXF,C15,3.21,Close Contact
-First Complex,Close Contact,ASN 346,CG,TXF,O16,3.68,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,C15,3.28,Close Contact
-First Complex,Close Contact,ASN 346,OD1,TXF,O16,2.66,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,C15,3.56,Close Contact
-First Complex,Close Contact,ILE 349,CD1,TXF,O16,3.23,Close Contact
-First Complex,Close Contact,ALA 431,O,TXF,C19,3.73,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C21,3.98,Close Contact
-First Complex,Close Contact,HIS 434,CD2,TXF,C20,3.58,Close Contact
-First Complex,Close Contact,PHE 435,N,TXF,C19,3.82,Close Contact
-First Complex,Close Contact,PHE 435,CA,TXF,C19,3.86,Close Contact
-First Complex,Close Contact,PHE 435,CB,TXF,C19,3.92,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,C5,3.93,Close Contact
-First Complex,Close Contact,PHE 435,CD1,TXF,O4,3.84,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C5,3.69,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,O4,3.13,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C3,3.66,Close Contact
-First Complex,Close Contact,PHE 435,CE1,TXF,C2,3.63,Close Contact
-First Complex,Close Contact,PHE 435,CZ,TXF,C2,3.82,Close Contact
-First Complex,Close Contact,ILE 438,CD1,TXF,C20,3.98,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,N1,3.81,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C31,3.01,Close Contact
-First Complex,Close Contact,LEU 440,O,TXF,C30,3.92,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C21,3.94,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C20,3.66,Close Contact
-First Complex,Close Contact,LEU 440,CD1,TXF,C6,3.78,Close Contact
-First Complex,Close Contact,GLU 441,O,TXF,C30,3.56,Close Contact
-First Complex,Hydrogen Bond,ASP 273,OD1,TXF,N1,2.78,Ligand Donor -> Protein Acceptor
-First Complex,Hydrogen Bond,ASP 273,OD1,TXF,N1,2.8,Ligand Donor -> Protein Acceptor
-First Complex,Hydrogen Bond,ASP 273,OD2,TXF,N1,3.47,Ligand Donor -> Protein Acceptor
-First Complex,Hydrogen Bond,ASP 273,OD1,TXF,N1,2.82,Ligand Donor -> Protein Acceptor
-First Complex,Hydrogen Bond,ASP 273,OD1,TXF,N1,2.85,Ligand Donor -> Protein Acceptor
-First Complex,Hydrogen Bond,ASP 273,OD1,TXF,N1,2.88,Ligand Donor -> Protein Acceptor
-First Complex,Non-Bonded,LEU 268,O,TXF,C24,3.68,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C6,3.9,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C6,3.9,Non-Bonded
-First Complex,Non-Bonded,LEU 271,CD2,TXF,C25,3.86,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C24,3.73,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C9,3.59,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C10,3.37,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C5,3.69,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C3,3.99,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C2,3.96,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,N1,3.71,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C31,3.67,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C3,3.41,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C2,3.12,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C31,3.17,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C31,3.38,Non-Bonded
-First Complex,Non-Bonded,GLU 275,CD,TXF,O29,3.32,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C26,3.18,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C25,3.18,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C10,3.79,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C18,3.74,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C27,3.62,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD1,TXF,C9,3.83,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,O29,3.25,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C26,3.8,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C27,3.66,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,O16,3.97,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CZ,TXF,O16,3.66,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C13,3.95,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C15,3.63,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C21,3.91,Non-Bonded
-First Complex,Non-Bonded,ASN 346,CG,TXF,O16,3.38,Non-Bonded
-First Complex,Non-Bonded,ASN 346,OD1,TXF,C15,3.25,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,C15,3.49,Non-Bonded
-First Complex,Non-Bonded,ALA 431,O,TXF,C19,3.6,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C20,3.51,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C20,3.94,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C19,3.74,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C20,3.96,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C19,3.79,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CB,TXF,C19,3.77,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,C5,3.91,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,O4,3.84,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C5,3.6,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,O4,3.07,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C3,3.98,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,O4,3.97,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C2,3.6,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C30,3.81,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C22,4.0,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C21,3.31,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C20,3.46,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C6,3.9,Non-Bonded
-First Complex,Non-Bonded,GLU 441,CA,TXF,C30,3.73,Non-Bonded
-First Complex,Non-Bonded,GLU 441,O,TXF,C30,3.65,Non-Bonded
-First Complex,Non-Bonded,MET 446,SD,TXF,C30,3.54,Non-Bonded
-First Complex,Non-Bonded,LEU 449,CD1,TXF,C30,3.74,Non-Bonded
-First Complex,Non-Bonded,LEU 265,CD2,TXF,C21,3.89,Non-Bonded
-First Complex,Non-Bonded,LEU 268,C,TXF,C7,3.98,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C24,3.64,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C7,3.87,Non-Bonded
-First Complex,Non-Bonded,LEU 268,CB,TXF,C7,3.95,Non-Bonded
-First Complex,Non-Bonded,LEU 268,CD2,TXF,C24,3.77,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C6,3.81,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CB,TXF,C31,3.97,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C6,3.92,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C25,3.81,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C24,3.63,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C9,3.91,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C10,3.67,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C5,3.82,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,N1,3.51,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C31,3.74,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C3,3.85,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C2,3.62,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C31,3.45,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C30,3.59,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C31,3.32,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C30,3.98,Non-Bonded
-First Complex,Non-Bonded,GLU 275,CD,TXF,O29,3.33,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE1,TXF,C26,3.32,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE1,TXF,C25,3.22,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C10,3.54,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CH2,TXF,C10,3.88,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C18,3.89,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C9,3.75,Non-Bonded
-First Complex,Non-Bonded,LEU 309,O,TXF,C27,3.91,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C27,3.65,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD1,TXF,C9,3.84,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD2,TXF,O29,3.94,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,O29,3.51,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C26,3.98,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C27,3.79,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,C13,3.87,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,O16,3.68,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CZ,TXF,O16,3.47,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C13,3.88,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C15,3.6,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C22,3.84,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C21,3.68,Non-Bonded
-First Complex,Non-Bonded,ASN 346,CG,TXF,O16,3.66,Non-Bonded
-First Complex,Non-Bonded,ASN 346,OD1,TXF,C15,3.59,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,C15,3.49,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,O16,3.91,Non-Bonded
-First Complex,Non-Bonded,ALA 431,O,TXF,C19,3.41,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C21,3.89,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C20,3.35,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C19,3.78,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C19,3.8,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CB,TXF,C19,3.93,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,C5,3.96,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,O4,3.94,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C5,3.49,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,O4,3.03,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C3,3.61,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C2,3.69,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,O4,3.65,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,C2,3.67,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C3,3.97,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C2,3.57,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C31,3.58,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C21,3.58,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C20,3.63,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C6,3.92,Non-Bonded
-First Complex,Non-Bonded,GLU 441,O,TXF,C30,3.55,Non-Bonded
-First Complex,Non-Bonded,LEU 449,CD1,TXF,C30,3.51,Non-Bonded
-First Complex,Non-Bonded,LEU 265,CD2,TXF,C21,3.73,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C24,3.56,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C7,3.89,Non-Bonded
-First Complex,Non-Bonded,LEU 268,CD2,TXF,C24,3.91,Non-Bonded
-First Complex,Non-Bonded,CYS 269,N,TXF,C6,4.0,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C6,3.78,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C31,3.97,Non-Bonded
-First Complex,Non-Bonded,CYS 269,O,TXF,C31,3.86,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CB,TXF,C31,3.63,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C6,3.74,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C31,3.71,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C24,3.84,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C9,3.63,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C10,3.41,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C5,3.75,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,N1,3.67,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C30,3.95,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C3,4.0,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C2,3.8,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C31,3.51,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C30,3.32,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C31,3.94,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C30,3.77,Non-Bonded
-First Complex,Non-Bonded,GLU 275,CD,TXF,O29,3.43,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C26,3.3,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C25,3.32,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C9,3.93,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C10,3.63,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CH2,TXF,C10,3.95,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C18,3.95,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C26,3.99,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C27,3.53,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD1,TXF,C9,3.97,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,O29,3.35,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C26,3.9,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C27,3.88,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,O16,3.86,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CZ,TXF,O16,3.63,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C15,3.76,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C22,3.96,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C21,3.88,Non-Bonded
-First Complex,Non-Bonded,ASN 346,CG,TXF,O16,3.59,Non-Bonded
-First Complex,Non-Bonded,ASN 346,OD1,TXF,C15,3.6,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,C15,3.47,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,O16,3.86,Non-Bonded
-First Complex,Non-Bonded,ALA 431,O,TXF,C19,3.37,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C21,3.84,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C20,3.3,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C19,3.99,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C20,3.88,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C19,3.68,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C20,3.85,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C19,3.66,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CB,TXF,C19,3.73,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD2,TXF,C5,3.97,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD2,TXF,O4,4.0,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE2,TXF,C10,3.97,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE2,TXF,C5,3.58,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE2,TXF,O4,3.16,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE2,TXF,C3,3.38,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE2,TXF,C2,3.67,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,C3,3.82,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,C2,3.72,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C2,3.77,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C31,3.4,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C30,3.97,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C21,3.49,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C20,3.66,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C6,3.78,Non-Bonded
-First Complex,Non-Bonded,GLU 441,O,TXF,C30,3.93,Non-Bonded
-First Complex,Non-Bonded,MET 446,SD,TXF,C2,4.0,Non-Bonded
-First Complex,Non-Bonded,LEU 265,CD2,TXF,C21,3.92,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C24,3.7,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C7,3.99,Non-Bonded
-First Complex,Non-Bonded,LEU 268,CB,TXF,C7,3.92,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C6,3.86,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C31,3.96,Non-Bonded
-First Complex,Non-Bonded,CYS 269,O,TXF,C31,3.89,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CB,TXF,C31,3.57,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C6,3.93,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C31,3.75,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C24,3.87,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C9,3.64,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C10,3.3,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C5,3.55,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,N1,3.66,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C31,3.97,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C3,3.57,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C2,3.64,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C31,3.49,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C30,3.62,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C31,3.67,Non-Bonded
-First Complex,Non-Bonded,GLU 275,CD,TXF,O29,3.47,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE1,TXF,C26,3.34,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE1,TXF,C25,3.32,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C10,3.69,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C18,3.82,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C9,3.91,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C26,3.99,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C27,3.64,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD1,TXF,C9,3.7,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,O29,3.48,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C26,3.93,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C27,3.61,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CD1,TXF,C26,3.95,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CZ,TXF,O16,3.82,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C13,3.8,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C15,3.6,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C22,3.64,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C21,3.62,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CD2,TXF,C14,3.71,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CD2,TXF,C15,3.81,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CD2,TXF,O16,3.94,Non-Bonded
-First Complex,Non-Bonded,ASN 346,CG,TXF,O16,3.48,Non-Bonded
-First Complex,Non-Bonded,ASN 346,OD1,TXF,C15,3.57,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,C15,3.49,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,O16,3.83,Non-Bonded
-First Complex,Non-Bonded,ALA 431,O,TXF,C19,3.51,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C21,3.8,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C20,3.43,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C20,3.95,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C19,3.74,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C19,3.82,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CB,TXF,C19,3.95,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C5,3.65,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,O4,3.23,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C3,3.66,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C2,3.63,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,C2,3.6,Non-Bonded
-First Complex,Non-Bonded,ILE 438,CD1,TXF,C20,3.96,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C2,3.55,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C31,3.31,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C30,3.71,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C21,3.53,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C20,3.47,Non-Bonded
-First Complex,Non-Bonded,GLU 441,C,TXF,C30,3.93,Non-Bonded
-First Complex,Non-Bonded,GLU 441,O,TXF,C30,3.14,Non-Bonded
-First Complex,Non-Bonded,LEU 265,CD2,TXF,C21,3.86,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C28,3.66,Non-Bonded
-First Complex,Non-Bonded,LEU 268,O,TXF,C7,3.89,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CA,TXF,C6,3.81,Non-Bonded
-First Complex,Non-Bonded,CYS 269,CB,TXF,C31,3.83,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C6,3.85,Non-Bonded
-First Complex,Non-Bonded,CYS 269,SG,TXF,C31,3.63,Non-Bonded
-First Complex,Non-Bonded,LEU 271,CD2,TXF,C27,3.96,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C27,3.95,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C28,3.7,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C9,3.63,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C10,3.32,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C5,3.67,Non-Bonded
-First Complex,Non-Bonded,ALA 272,CB,TXF,C3,3.88,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,N1,3.67,Non-Bonded
-First Complex,Non-Bonded,ASP 273,CG,TXF,C30,3.95,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C3,3.86,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C2,3.54,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C31,3.97,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD1,TXF,C30,3.22,Non-Bonded
-First Complex,Non-Bonded,ASP 273,OD2,TXF,C30,3.87,Non-Bonded
-First Complex,Non-Bonded,GLU 275,CD,TXF,O29,3.27,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C26,3.32,Non-Bonded
-First Complex,Non-Bonded,GLU 275,OE2,TXF,C27,3.25,Non-Bonded
-First Complex,Non-Bonded,TRP 305,CZ3,TXF,C10,3.67,Non-Bonded
-First Complex,Non-Bonded,MET 306,CE,TXF,C18,3.96,Non-Bonded
-First Complex,Non-Bonded,LEU 309,O,TXF,C25,3.93,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C26,3.91,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CB,TXF,C25,3.65,Non-Bonded
-First Complex,Non-Bonded,LEU 309,CD1,TXF,C9,3.77,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,O29,3.42,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C26,3.89,Non-Bonded
-First Complex,Non-Bonded,VAL 313,CG2,TXF,C25,3.61,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CD1,TXF,C26,3.98,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,C13,3.8,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CE1,TXF,O16,3.65,Non-Bonded
-First Complex,Non-Bonded,TYR 326,CZ,TXF,O16,3.49,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C13,3.96,Non-Bonded
-First Complex,Non-Bonded,TYR 326,OH,TXF,C15,3.73,Non-Bonded
-First Complex,Non-Bonded,LEU 342,CD2,TXF,C21,3.79,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CG,TXF,C15,3.62,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CD2,TXF,C14,3.82,Non-Bonded
-First Complex,Non-Bonded,LEU 345,CD2,TXF,C15,3.21,Non-Bonded
-First Complex,Non-Bonded,ASN 346,CG,TXF,O16,3.68,Non-Bonded
-First Complex,Non-Bonded,ASN 346,OD1,TXF,C15,3.28,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,C15,3.56,Non-Bonded
-First Complex,Non-Bonded,ILE 349,CD1,TXF,O16,3.23,Non-Bonded
-First Complex,Non-Bonded,ALA 431,O,TXF,C19,3.73,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C21,3.98,Non-Bonded
-First Complex,Non-Bonded,HIS 434,CD2,TXF,C20,3.58,Non-Bonded
-First Complex,Non-Bonded,PHE 435,N,TXF,C19,3.82,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CA,TXF,C19,3.86,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CB,TXF,C19,3.92,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,C5,3.93,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CD1,TXF,O4,3.84,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C5,3.69,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,O4,3.13,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C3,3.66,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CE1,TXF,C2,3.63,Non-Bonded
-First Complex,Non-Bonded,PHE 435,CZ,TXF,C2,3.82,Non-Bonded
-First Complex,Non-Bonded,ILE 438,CD1,TXF,C20,3.98,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C31,3.01,Non-Bonded
-First Complex,Non-Bonded,LEU 440,O,TXF,C30,3.92,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C21,3.94,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C20,3.66,Non-Bonded
-First Complex,Non-Bonded,LEU 440,CD1,TXF,C6,3.78,Non-Bonded
-First Complex,Non-Bonded,GLU 441,O,TXF,C30,3.56,Non-Bonded
-Second Complex,Close Contact,ALA 93,CB,CTX,CB1,3.99,Close Contact
-Second Complex,Close Contact,LEU 97,CD1,CTX,C11,3.89,Close Contact
-Second Complex,Close Contact,PHE 101,CE2,CTX,C11,3.77,Close Contact
-Second Complex,Close Contact,PHE 101,CZ,CTX,C11,3.54,Close Contact
-Second Complex,Close Contact,GLY 142,N,CTX,C10,3.9,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C9,3.88,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C10,3.97,Close Contact
-Second Complex,Close Contact,GLY 143,N,CTX,C9,3.62,Close Contact
-Second Complex,Close Contact,GLY 143,CA,CTX,CA,3.98,Close Contact
-Second Complex,Close Contact,SER 221,CB,CTX,C10,3.69,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,CA,3.45,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C9,3.4,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C10,3.28,Close Contact
-Second Complex,Close Contact,PHE 303,O,CTX,C21,3.46,Close Contact
-Second Complex,Close Contact,LEU 304,C,CTX,C21,3.76,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,CA1,3.63,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,C2,3.7,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,C21,3.78,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,OL,3.4,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,CA1,3.58,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C1,3.55,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C2,3.88,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C21,3.44,Close Contact
-Second Complex,Close Contact,LEU 304,CG,CTX,OL,3.89,Close Contact
-Second Complex,Close Contact,LEU 304,CG,CTX,C1,3.95,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,OL,3.36,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C1,3.75,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C6,3.72,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C1,3.94,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C6,3.72,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,NI,3.86,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,C21,3.13,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,C22,3.39,Close Contact
-Second Complex,Close Contact,PRO 317,CB,CTX,C15,3.86,Close Contact
-Second Complex,Close Contact,LEU 318,CD2,CTX,C16,3.6,Close Contact
-Second Complex,Close Contact,LEU 318,CD2,CTX,C17,3.85,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C12,3.6,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C13,3.45,Close Contact
-Second Complex,Close Contact,TRP 357,NE1,CTX,C12,3.82,Close Contact
-Second Complex,Close Contact,TRP 357,NE1,CTX,C13,3.76,Close Contact
-Second Complex,Close Contact,PRO 360,C,CTX,C11,3.53,Close Contact
-Second Complex,Close Contact,PRO 360,O,CTX,C11,3.83,Close Contact
-Second Complex,Close Contact,PRO 360,CB,CTX,C10,3.83,Close Contact
-Second Complex,Close Contact,PRO 360,CB,CTX,C11,3.64,Close Contact
-Second Complex,Close Contact,MET 361,N,CTX,C11,3.3,Close Contact
-Second Complex,Close Contact,MET 361,N,CTX,C12,3.76,Close Contact
-Second Complex,Close Contact,MET 361,CA,CTX,C11,3.43,Close Contact
-Second Complex,Close Contact,MET 361,CA,CTX,C12,3.55,Close Contact
-Second Complex,Close Contact,MET 361,CB,CTX,C11,3.94,Close Contact
-Second Complex,Close Contact,MET 361,CB,CTX,C12,3.49,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,CA1,3.8,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,C22,3.38,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C2,3.67,Close Contact
-Second Complex,Close Contact,LEU 363,CD1,CTX,C13,3.85,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C14,3.6,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C19,3.96,Close Contact
-Second Complex,Close Contact,MET 364,CE,CTX,C14,3.57,Close Contact
-Second Complex,Close Contact,MET 364,CE,CTX,C15,3.69,Close Contact
-Second Complex,Close Contact,LEU 368,C,CTX,C5,3.93,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C5,3.04,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C6,3.85,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C4,3.89,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C9,3.71,Close Contact
-Second Complex,Close Contact,LEU 368,CB,CTX,C9,3.5,Close Contact
-Second Complex,Close Contact,LEU 368,CB,CTX,C10,3.93,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C5,3.7,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C6,3.51,Close Contact
-Second Complex,Close Contact,SER 369,C,CTX,C6,3.86,Close Contact
-Second Complex,Close Contact,SER 369,O,CTX,C6,3.6,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,C16,3.6,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,C17,3.4,Close Contact
-Second Complex,Close Contact,GLY 371,O,CTX,C16,3.98,Close Contact
-Second Complex,Close Contact,LEU 388,CG,CTX,C14,3.83,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C14,3.3,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C19,3.74,Close Contact
-Second Complex,Close Contact,LYS 414,CD,CTX,CA,3.41,Close Contact
-Second Complex,Close Contact,LYS 414,CD,CTX,C17,3.65,Close Contact
-Second Complex,Close Contact,LYS 414,CE,CTX,CA,3.35,Close Contact
-Second Complex,Close Contact,LYS 414,CE,CTX,C17,3.94,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CA,3.28,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CB,3.55,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C15,3.87,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C16,3.36,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C17,3.05,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C18,3.33,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C19,3.84,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,C20,3.97,Close Contact
-Second Complex,Close Contact,LEU 418,CD1,CTX,CA,3.42,Close Contact
-Second Complex,Close Contact,PRO 461,CB,CTX,C19,3.75,Close Contact
-Second Complex,Close Contact,PRO 461,CG,CTX,C19,3.95,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C11,3.52,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C12,3.66,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C10,3.84,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C11,3.77,Close Contact
-Second Complex,Close Contact,LEU 97,CD1,CTX,C11,3.91,Close Contact
-Second Complex,Close Contact,PHE 101,CE2,CTX,C11,3.64,Close Contact
-Second Complex,Close Contact,PHE 101,CZ,CTX,C11,3.36,Close Contact
-Second Complex,Close Contact,PHE 101,CZ,CTX,C12,3.98,Close Contact
-Second Complex,Close Contact,GLY 142,N,CTX,C10,3.89,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C9,3.84,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C10,4.0,Close Contact
-Second Complex,Close Contact,GLY 143,N,CTX,C9,3.77,Close Contact
-Second Complex,Close Contact,GLY 143,CA,CTX,CA,3.98,Close Contact
-Second Complex,Close Contact,SER 221,CB,CTX,C10,3.81,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,CA,3.61,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C9,3.49,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C10,3.37,Close Contact
-Second Complex,Close Contact,VAL 254,CG2,CTX,C14,3.98,Close Contact
-Second Complex,Close Contact,VAL 254,CG2,CTX,C15,3.91,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,CA1,3.46,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,C2,3.41,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,OL,3.55,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,CA1,3.73,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C1,3.58,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C2,3.79,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,OL,3.67,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C1,3.76,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C6,3.61,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C6,3.95,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C16,3.53,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C17,3.45,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,NI,3.92,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,C22,3.88,Close Contact
-Second Complex,Close Contact,PRO 317,CB,CTX,C15,3.72,Close Contact
-Second Complex,Close Contact,LEU 318,CD2,CTX,C16,3.98,Close Contact
-Second Complex,Close Contact,TRP 357,CA,CTX,C12,3.91,Close Contact
-Second Complex,Close Contact,TRP 357,O,CTX,C12,3.73,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C12,3.29,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C13,3.34,Close Contact
-Second Complex,Close Contact,TRP 357,NE1,CTX,C12,3.93,Close Contact
-Second Complex,Close Contact,LEU 358,CD2,CTX,C12,3.83,Close Contact
-Second Complex,Close Contact,ILE 359,CG1,CTX,C13,3.78,Close Contact
-Second Complex,Close Contact,PRO 360,C,CTX,C11,3.75,Close Contact
-Second Complex,Close Contact,PRO 360,O,CTX,C11,3.97,Close Contact
-Second Complex,Close Contact,PRO 360,CB,CTX,C11,3.64,Close Contact
-Second Complex,Close Contact,MET 361,N,CTX,C11,3.7,Close Contact
-Second Complex,Close Contact,MET 361,CA,CTX,C11,3.94,Close Contact
-Second Complex,Close Contact,LEU 363,C,CTX,CA1,3.83,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,CA1,3.13,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,CB1,3.84,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,NI,3.37,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,C21,3.13,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C1,3.82,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C2,3.42,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C3,3.99,Close Contact
-Second Complex,Close Contact,LEU 363,CD1,CTX,C13,3.81,Close Contact
-Second Complex,Close Contact,MET 364,CG,CTX,C3,3.92,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C14,3.46,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C15,3.91,Close Contact
-Second Complex,Close Contact,TYR 366,O,CTX,C10,3.89,Close Contact
-Second Complex,Close Contact,LEU 368,C,CTX,C9,3.92,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C5,2.97,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C6,3.73,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C4,3.94,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C8,3.95,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C9,2.89,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C10,3.67,Close Contact
-Second Complex,Close Contact,LEU 368,CB,CTX,C9,3.86,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C5,3.91,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C6,3.57,Close Contact
-Second Complex,Close Contact,SER 369,C,CTX,C6,3.52,Close Contact
-Second Complex,Close Contact,SER 369,O,CTX,OL,3.96,Close Contact
-Second Complex,Close Contact,SER 369,O,CTX,C6,3.33,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,C16,3.75,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,C17,3.42,Close Contact
-Second Complex,Close Contact,LEU 388,CG,CTX,C14,3.85,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C14,3.29,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C19,3.84,Close Contact
-Second Complex,Close Contact,LYS 414,CD,CTX,CA,3.63,Close Contact
-Second Complex,Close Contact,LYS 414,CE,CTX,CA,3.64,Close Contact
-Second Complex,Close Contact,LYS 414,CE,CTX,C17,3.69,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CA,3.03,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CB,3.51,Close Contact
-Second Complex,Close Contact,LEU 418,CD1,CTX,CA,3.41,Close Contact
-Second Complex,Close Contact,PRO 461,CB,CTX,C19,3.83,Close Contact
-Second Complex,Close Contact,PRO 461,CG,CTX,C19,3.95,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C10,3.95,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C11,3.5,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C12,3.57,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C10,3.91,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C11,3.93,Close Contact
-Second Complex,Close Contact,LEU 97,CD1,CTX,C11,3.75,Close Contact
-Second Complex,Close Contact,PHE 101,CE2,CTX,C11,3.8,Close Contact
-Second Complex,Close Contact,PHE 101,CZ,CTX,C11,3.44,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C9,3.83,Close Contact
-Second Complex,Close Contact,GLY 142,CA,CTX,C10,3.99,Close Contact
-Second Complex,Close Contact,GLY 143,N,CTX,C9,3.78,Close Contact
-Second Complex,Close Contact,GLY 143,CA,CTX,CA,3.95,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,CA,3.21,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,CB,3.99,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C9,3.86,Close Contact
-Second Complex,Close Contact,SER 221,OG,CTX,C10,3.81,Close Contact
-Second Complex,Close Contact,VAL 254,CG2,CTX,C14,3.8,Close Contact
-Second Complex,Close Contact,VAL 254,CG2,CTX,C15,3.8,Close Contact
-Second Complex,Close Contact,LEU 304,C,CTX,CA1,3.8,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,OL,3.77,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,CA1,2.96,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,CB1,3.98,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,C1,3.88,Close Contact
-Second Complex,Close Contact,LEU 304,O,CTX,C2,3.26,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,OL,3.31,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,CA1,3.3,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C1,3.48,Close Contact
-Second Complex,Close Contact,LEU 304,CB,CTX,C2,3.67,Close Contact
-Second Complex,Close Contact,LEU 304,CG,CTX,OL,3.93,Close Contact
-Second Complex,Close Contact,LEU 304,CG,CTX,C1,3.88,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,OL,3.43,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C1,3.58,Close Contact
-Second Complex,Close Contact,LEU 304,CD1,CTX,C6,3.57,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C16,3.66,Close Contact
-Second Complex,Close Contact,LEU 304,CD2,CTX,C17,3.65,Close Contact
-Second Complex,Close Contact,SER 305,OG,CTX,C22,3.79,Close Contact
-Second Complex,Close Contact,PRO 317,O,CTX,C16,3.86,Close Contact
-Second Complex,Close Contact,PRO 317,CB,CTX,C15,3.57,Close Contact
-Second Complex,Close Contact,LEU 318,CD2,CTX,C16,3.58,Close Contact
-Second Complex,Close Contact,GLY 356,O,CTX,C12,3.55,Close Contact
-Second Complex,Close Contact,TRP 357,CA,CTX,C12,3.8,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C12,3.66,Close Contact
-Second Complex,Close Contact,TRP 357,CD1,CTX,C13,3.85,Close Contact
-Second Complex,Close Contact,LEU 358,CG,CTX,C12,3.87,Close Contact
-Second Complex,Close Contact,LEU 358,CD2,CTX,C12,3.78,Close Contact
-Second Complex,Close Contact,ILE 359,CG1,CTX,C13,3.68,Close Contact
-Second Complex,Close Contact,ILE 359,CD1,CTX,CB,4.0,Close Contact
-Second Complex,Close Contact,PRO 360,CB,CTX,C11,3.71,Close Contact
-Second Complex,Close Contact,LEU 363,C,CTX,CA1,3.96,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,CA1,3.08,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,CB1,3.71,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,NI,3.04,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,C21,3.83,Close Contact
-Second Complex,Close Contact,LEU 363,O,CTX,C22,3.78,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C1,3.98,Close Contact
-Second Complex,Close Contact,LEU 363,CB,CTX,C2,3.75,Close Contact
-Second Complex,Close Contact,MET 364,CG,CTX,C2,3.85,Close Contact
-Second Complex,Close Contact,MET 364,CG,CTX,C3,3.81,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C14,3.59,Close Contact
-Second Complex,Close Contact,MET 364,SD,CTX,C15,3.92,Close Contact
-Second Complex,Close Contact,MET 364,CE,CTX,C15,3.91,Close Contact
-Second Complex,Close Contact,LEU 368,C,CTX,C9,3.91,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C5,3.25,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C7,3.82,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C8,3.8,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C9,3.04,Close Contact
-Second Complex,Close Contact,LEU 368,O,CTX,C10,3.96,Close Contact
-Second Complex,Close Contact,LEU 368,CB,CTX,C9,3.67,Close Contact
-Second Complex,Close Contact,LEU 368,CB,CTX,C10,3.65,Close Contact
-Second Complex,Close Contact,LEU 368,CD1,CTX,C10,3.92,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C5,3.69,Close Contact
-Second Complex,Close Contact,SER 369,CA,CTX,C6,3.74,Close Contact
-Second Complex,Close Contact,SER 369,O,CTX,C5,3.88,Close Contact
-Second Complex,Close Contact,SER 369,O,CTX,C6,3.84,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,CA,3.84,Close Contact
-Second Complex,Close Contact,GLY 371,CA,CTX,C17,3.5,Close Contact
-Second Complex,Close Contact,LEU 388,CG,CTX,C14,3.83,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C14,3.34,Close Contact
-Second Complex,Close Contact,LEU 388,CD2,CTX,C19,3.83,Close Contact
-Second Complex,Close Contact,LYS 414,CD,CTX,CA,3.19,Close Contact
-Second Complex,Close Contact,LYS 414,CE,CTX,CA,3.19,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CA,3.1,Close Contact
-Second Complex,Close Contact,LYS 414,NZ,CTX,CB,3.38,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C10,4.0,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C11,3.45,Close Contact
-Second Complex,Close Contact,HIS 468,CD2,CTX,C12,3.57,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C10,3.86,Close Contact
-Second Complex,Close Contact,HIS 468,NE2,CTX,C11,3.79,Close Contact
-Second Complex,Hydrogen Bond,LEU 363,O,CTX,NI,3.37,Ligand Donor -> Protein Acceptor
-Second Complex,Hydrogen Bond,LEU 363,O,CTX,NI,3.04,Ligand Donor -> Protein Acceptor
-Second Complex,Non-Bonded,ALA 93,CB,CTX,CB1,3.99,Non-Bonded
-Second Complex,Non-Bonded,LEU 97,CD1,CTX,C11,3.89,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CE2,CTX,C11,3.77,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CZ,CTX,C11,3.54,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,N,CTX,C10,3.9,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C9,3.88,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C10,3.97,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,N,CTX,C9,3.62,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,CA,CTX,CA,3.98,Non-Bonded
-Second Complex,Non-Bonded,SER 221,CB,CTX,C10,3.69,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,CA,3.45,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C9,3.4,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C10,3.28,Non-Bonded
-Second Complex,Non-Bonded,PHE 303,O,CTX,C21,3.46,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,C,CTX,C21,3.76,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,CA1,3.63,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,C2,3.7,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,C21,3.78,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,OL,3.4,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,CA1,3.58,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C1,3.55,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C2,3.88,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C21,3.44,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CG,CTX,OL,3.89,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CG,CTX,C1,3.95,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,OL,3.36,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C1,3.75,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C6,3.72,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C1,3.94,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C6,3.72,Non-Bonded
-Second Complex,Non-Bonded,SER 305,OG,CTX,C21,3.13,Non-Bonded
-Second Complex,Non-Bonded,SER 305,OG,CTX,C22,3.39,Non-Bonded
-Second Complex,Non-Bonded,PRO 317,CB,CTX,C15,3.86,Non-Bonded
-Second Complex,Non-Bonded,LEU 318,CD2,CTX,C16,3.6,Non-Bonded
-Second Complex,Non-Bonded,LEU 318,CD2,CTX,C17,3.85,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C12,3.6,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C13,3.45,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,NE1,CTX,C12,3.82,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,NE1,CTX,C13,3.76,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,C,CTX,C11,3.53,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,O,CTX,C11,3.83,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,CB,CTX,C10,3.83,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,CB,CTX,C11,3.64,Non-Bonded
-Second Complex,Non-Bonded,MET 361,N,CTX,C11,3.3,Non-Bonded
-Second Complex,Non-Bonded,MET 361,N,CTX,C12,3.76,Non-Bonded
-Second Complex,Non-Bonded,MET 361,CA,CTX,C11,3.43,Non-Bonded
-Second Complex,Non-Bonded,MET 361,CA,CTX,C12,3.55,Non-Bonded
-Second Complex,Non-Bonded,MET 361,CB,CTX,C11,3.94,Non-Bonded
-Second Complex,Non-Bonded,MET 361,CB,CTX,C12,3.49,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,CA1,3.8,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,C22,3.38,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C2,3.67,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CD1,CTX,C13,3.85,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C14,3.6,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C19,3.96,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CE,CTX,C14,3.57,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CE,CTX,C15,3.69,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,C,CTX,C5,3.93,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C5,3.04,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C6,3.85,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C4,3.89,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C9,3.71,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CB,CTX,C9,3.5,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CB,CTX,C10,3.93,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C5,3.7,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C6,3.51,Non-Bonded
-Second Complex,Non-Bonded,SER 369,C,CTX,C6,3.86,Non-Bonded
-Second Complex,Non-Bonded,SER 369,O,CTX,C6,3.6,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,C16,3.6,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,C17,3.4,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,O,CTX,C16,3.98,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CG,CTX,C14,3.83,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C14,3.3,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C19,3.74,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CD,CTX,CA,3.41,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CD,CTX,C17,3.65,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CE,CTX,CA,3.35,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CE,CTX,C17,3.94,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CA,3.28,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CB,3.55,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C15,3.87,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C16,3.36,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C17,3.05,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C18,3.33,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C19,3.84,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,C20,3.97,Non-Bonded
-Second Complex,Non-Bonded,LEU 418,CD1,CTX,CA,3.42,Non-Bonded
-Second Complex,Non-Bonded,PRO 461,CB,CTX,C19,3.75,Non-Bonded
-Second Complex,Non-Bonded,PRO 461,CG,CTX,C19,3.95,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C11,3.52,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C12,3.66,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C10,3.84,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C11,3.77,Non-Bonded
-Second Complex,Non-Bonded,LEU 97,CD1,CTX,C11,3.91,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CE2,CTX,C11,3.64,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CZ,CTX,C11,3.36,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CZ,CTX,C12,3.98,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,N,CTX,C10,3.89,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C9,3.84,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C10,4.0,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,N,CTX,C9,3.77,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,CA,CTX,CA,3.98,Non-Bonded
-Second Complex,Non-Bonded,SER 221,CB,CTX,C10,3.81,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,CA,3.61,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C9,3.49,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C10,3.37,Non-Bonded
-Second Complex,Non-Bonded,VAL 254,CG2,CTX,C14,3.98,Non-Bonded
-Second Complex,Non-Bonded,VAL 254,CG2,CTX,C15,3.91,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,CA1,3.46,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,C2,3.41,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,OL,3.55,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,CA1,3.73,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C1,3.58,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C2,3.79,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,OL,3.67,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C1,3.76,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C6,3.61,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C6,3.95,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C16,3.53,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C17,3.45,Non-Bonded
-Second Complex,Non-Bonded,SER 305,OG,CTX,C22,3.88,Non-Bonded
-Second Complex,Non-Bonded,PRO 317,CB,CTX,C15,3.72,Non-Bonded
-Second Complex,Non-Bonded,LEU 318,CD2,CTX,C16,3.98,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CA,CTX,C12,3.91,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,O,CTX,C12,3.73,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C12,3.29,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C13,3.34,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,NE1,CTX,C12,3.93,Non-Bonded
-Second Complex,Non-Bonded,LEU 358,CD2,CTX,C12,3.83,Non-Bonded
-Second Complex,Non-Bonded,ILE 359,CG1,CTX,C13,3.78,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,C,CTX,C11,3.75,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,O,CTX,C11,3.97,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,CB,CTX,C11,3.64,Non-Bonded
-Second Complex,Non-Bonded,MET 361,N,CTX,C11,3.7,Non-Bonded
-Second Complex,Non-Bonded,MET 361,CA,CTX,C11,3.94,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,C,CTX,CA1,3.83,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,CA1,3.13,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,CB1,3.84,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,C21,3.13,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C1,3.82,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C2,3.42,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C3,3.99,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CD1,CTX,C13,3.81,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CG,CTX,C3,3.92,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C14,3.46,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C15,3.91,Non-Bonded
-Second Complex,Non-Bonded,TYR 366,O,CTX,C10,3.89,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,C,CTX,C9,3.92,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C6,3.73,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C4,3.94,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C8,3.95,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C10,3.67,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CB,CTX,C9,3.86,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C5,3.91,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C6,3.57,Non-Bonded
-Second Complex,Non-Bonded,SER 369,C,CTX,C6,3.52,Non-Bonded
-Second Complex,Non-Bonded,SER 369,O,CTX,C6,3.33,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,C16,3.75,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,C17,3.42,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CG,CTX,C14,3.85,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C14,3.29,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C19,3.84,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CD,CTX,CA,3.63,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CE,CTX,CA,3.64,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CE,CTX,C17,3.69,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CA,3.03,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CB,3.51,Non-Bonded
-Second Complex,Non-Bonded,LEU 418,CD1,CTX,CA,3.41,Non-Bonded
-Second Complex,Non-Bonded,PRO 461,CB,CTX,C19,3.83,Non-Bonded
-Second Complex,Non-Bonded,PRO 461,CG,CTX,C19,3.95,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C10,3.95,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C11,3.5,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C12,3.57,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C10,3.91,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C11,3.93,Non-Bonded
-Second Complex,Non-Bonded,LEU 97,CD1,CTX,C11,3.75,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CE2,CTX,C11,3.8,Non-Bonded
-Second Complex,Non-Bonded,PHE 101,CZ,CTX,C11,3.44,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C9,3.83,Non-Bonded
-Second Complex,Non-Bonded,GLY 142,CA,CTX,C10,3.99,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,N,CTX,C9,3.78,Non-Bonded
-Second Complex,Non-Bonded,GLY 143,CA,CTX,CA,3.95,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,CA,3.21,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,CB,3.99,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C9,3.86,Non-Bonded
-Second Complex,Non-Bonded,SER 221,OG,CTX,C10,3.81,Non-Bonded
-Second Complex,Non-Bonded,VAL 254,CG2,CTX,C14,3.8,Non-Bonded
-Second Complex,Non-Bonded,VAL 254,CG2,CTX,C15,3.8,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,C,CTX,CA1,3.8,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,CB1,3.98,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,C1,3.88,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,O,CTX,C2,3.26,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,OL,3.31,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,CA1,3.3,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C1,3.48,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CB,CTX,C2,3.67,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CG,CTX,OL,3.93,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CG,CTX,C1,3.88,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,OL,3.43,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C1,3.58,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD1,CTX,C6,3.57,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C16,3.66,Non-Bonded
-Second Complex,Non-Bonded,LEU 304,CD2,CTX,C17,3.65,Non-Bonded
-Second Complex,Non-Bonded,SER 305,OG,CTX,C22,3.79,Non-Bonded
-Second Complex,Non-Bonded,PRO 317,O,CTX,C16,3.86,Non-Bonded
-Second Complex,Non-Bonded,PRO 317,CB,CTX,C15,3.57,Non-Bonded
-Second Complex,Non-Bonded,LEU 318,CD2,CTX,C16,3.58,Non-Bonded
-Second Complex,Non-Bonded,GLY 356,O,CTX,C12,3.55,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CA,CTX,C12,3.8,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C12,3.66,Non-Bonded
-Second Complex,Non-Bonded,TRP 357,CD1,CTX,C13,3.85,Non-Bonded
-Second Complex,Non-Bonded,LEU 358,CG,CTX,C12,3.87,Non-Bonded
-Second Complex,Non-Bonded,LEU 358,CD2,CTX,C12,3.78,Non-Bonded
-Second Complex,Non-Bonded,ILE 359,CG1,CTX,C13,3.68,Non-Bonded
-Second Complex,Non-Bonded,ILE 359,CD1,CTX,CB,4.0,Non-Bonded
-Second Complex,Non-Bonded,PRO 360,CB,CTX,C11,3.71,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,C,CTX,CA1,3.96,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,CA1,3.08,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,CB1,3.71,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,C21,3.83,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,O,CTX,C22,3.78,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C1,3.98,Non-Bonded
-Second Complex,Non-Bonded,LEU 363,CB,CTX,C2,3.75,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CG,CTX,C2,3.85,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CG,CTX,C3,3.81,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C14,3.59,Non-Bonded
-Second Complex,Non-Bonded,MET 364,SD,CTX,C15,3.92,Non-Bonded
-Second Complex,Non-Bonded,MET 364,CE,CTX,C15,3.91,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,C,CTX,C9,3.91,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C5,3.25,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C7,3.82,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C8,3.8,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C9,3.04,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,O,CTX,C10,3.96,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CB,CTX,C9,3.67,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CB,CTX,C10,3.65,Non-Bonded
-Second Complex,Non-Bonded,LEU 368,CD1,CTX,C10,3.92,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C5,3.69,Non-Bonded
-Second Complex,Non-Bonded,SER 369,CA,CTX,C6,3.74,Non-Bonded
-Second Complex,Non-Bonded,SER 369,O,CTX,C5,3.88,Non-Bonded
-Second Complex,Non-Bonded,SER 369,O,CTX,C6,3.84,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,CA,3.84,Non-Bonded
-Second Complex,Non-Bonded,GLY 371,CA,CTX,C17,3.5,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CG,CTX,C14,3.83,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C14,3.34,Non-Bonded
-Second Complex,Non-Bonded,LEU 388,CD2,CTX,C19,3.83,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CD,CTX,CA,3.19,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,CE,CTX,CA,3.19,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CA,3.1,Non-Bonded
-Second Complex,Non-Bonded,LYS 414,NZ,CTX,CB,3.38,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C10,4.0,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C11,3.45,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,CD2,CTX,C12,3.57,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C10,3.86,Non-Bonded
-Second Complex,Non-Bonded,HIS 468,NE2,CTX,C11,3.79,Non-Bonded
+Native or First Complex,Close Contact,ARG 115,CD,ASD,O2,3.66,Close Contact
+Native or First Complex,Close Contact,ARG 115,NE,ASD,C12,3.84,Close Contact
+Native or First Complex,Close Contact,ARG 115,NE,ASD,O2,3.97,Close Contact
+Native or First Complex,Close Contact,ARG 115,CZ,ASD,C12,3.85,Close Contact
+Native or First Complex,Close Contact,ARG 115,CZ,ASD,O2,3.91,Close Contact
+Native or First Complex,Close Contact,ARG 115,NH1,ASD,O2,3.44,Close Contact
+Native or First Complex,Close Contact,ARG 115,NH2,ASD,C12,4.1,Close Contact
+Native or First Complex,Close Contact,ILE 133,CG2,ASD,C1,3.89,Close Contact
+Native or First Complex,Close Contact,ILE 133,CG2,ASD,C11,3.78,Close Contact
+Native or First Complex,Close Contact,ILE 133,CG2,ASD,C12,4.03,Close Contact
+Native or First Complex,Close Contact,ILE 133,CD1,ASD,C1,4.08,Close Contact
+Native or First Complex,Close Contact,ILE 133,CD1,ASD,C2,4.09,Close Contact
+Native or First Complex,Close Contact,PHE 134,CZ,ASD,C17,4.01,Close Contact
+Native or First Complex,Close Contact,PHE 134,CZ,ASD,O2,3.99,Close Contact
+Native or First Complex,Close Contact,TRP 224,CZ3,ASD,C3,3.95,Close Contact
+Native or First Complex,Close Contact,TRP 224,CZ3,ASD,C4,4.04,Close Contact
+Native or First Complex,Close Contact,TRP 224,CZ3,ASD,O1,3.61,Close Contact
+Native or First Complex,Close Contact,TRP 224,CH2,ASD,C1,4.09,Close Contact
+Native or First Complex,Close Contact,TRP 224,CH2,ASD,C3,3.81,Close Contact
+Native or First Complex,Close Contact,TRP 224,CH2,ASD,C4,3.87,Close Contact
+Native or First Complex,Close Contact,TRP 224,CH2,ASD,C5,4.08,Close Contact
+Native or First Complex,Close Contact,TRP 224,CH2,ASD,O1,3.87,Close Contact
+Native or First Complex,Close Contact,ILE 305,C,ASD,O1,4.08,Close Contact
+Native or First Complex,Close Contact,ILE 305,O,ASD,O1,3.98,Close Contact
+Native or First Complex,Close Contact,ILE 305,CG1,ASD,O1,3.89,Close Contact
+Native or First Complex,Close Contact,ILE 305,CD1,ASD,O1,4.0,Close Contact
+Native or First Complex,Close Contact,ALA 306,N,ASD,O1,3.95,Close Contact
+Native or First Complex,Close Contact,ALA 306,CA,ASD,C2,3.95,Close Contact
+Native or First Complex,Close Contact,ALA 306,CA,ASD,C3,3.99,Close Contact
+Native or First Complex,Close Contact,ALA 306,CA,ASD,O1,3.45,Close Contact
+Native or First Complex,Close Contact,ALA 306,O,ASD,C3,4.05,Close Contact
+Native or First Complex,Close Contact,ALA 306,O,ASD,O1,3.9,Close Contact
+Native or First Complex,Close Contact,ALA 306,CB,ASD,C2,4.04,Close Contact
+Native or First Complex,Close Contact,ASP 309,CB,ASD,C3,3.77,Close Contact
+Native or First Complex,Close Contact,ASP 309,CB,ASD,C4,3.64,Close Contact
+Native or First Complex,Close Contact,ASP 309,CB,ASD,O1,3.32,Close Contact
+Native or First Complex,Close Contact,ASP 309,CG,ASD,O1,3.44,Close Contact
+Native or First Complex,Close Contact,ASP 309,OD2,ASD,C3,3.68,Close Contact
+Native or First Complex,Close Contact,ASP 309,OD2,ASD,C4,3.9,Close Contact
+Native or First Complex,Close Contact,ASP 309,OD2,ASD,O1,2.72,Close Contact
+Native or First Complex,Close Contact,THR 310,CG2,ASD,C19,3.65,Close Contact
+Native or First Complex,Close Contact,THR 310,CG2,ASD,C4,3.66,Close Contact
+Native or First Complex,Close Contact,THR 310,CG2,ASD,C5,3.61,Close Contact
+Native or First Complex,Close Contact,THR 310,CG2,ASD,C6,3.75,Close Contact
+Native or First Complex,Close Contact,VAL 370,CG1,ASD,C18,3.42,Close Contact
+Native or First Complex,Close Contact,LEU 372,O,ASD,C15,3.65,Close Contact
+Native or First Complex,Close Contact,LEU 372,O,ASD,C16,3.45,Close Contact
+Native or First Complex,Close Contact,LEU 372,O,ASD,C17,3.87,Close Contact
+Native or First Complex,Close Contact,LEU 372,O,ASD,C18,3.48,Close Contact
+Native or First Complex,Close Contact,VAL 373,CA,ASD,C17,4.1,Close Contact
+Native or First Complex,Close Contact,VAL 373,CA,ASD,O2,3.83,Close Contact
+Native or First Complex,Close Contact,VAL 373,C,ASD,O2,3.79,Close Contact
+Native or First Complex,Close Contact,MET 374,N,ASD,C16,3.98,Close Contact
+Native or First Complex,Close Contact,MET 374,N,ASD,C17,3.63,Close Contact
+Native or First Complex,Close Contact,MET 374,N,ASD,O2,2.84,Close Contact
+Native or First Complex,Close Contact,MET 374,CA,ASD,O2,3.63,Close Contact
+Native or First Complex,Close Contact,MET 374,O,ASD,O2,3.79,Close Contact
+Native or First Complex,Close Contact,MET 374,CB,ASD,O2,3.5,Close Contact
+Native or First Complex,Close Contact,MET 374,CG,ASD,C16,4.01,Close Contact
+Native or First Complex,Close Contact,MET 374,SD,ASD,C16,4.03,Close Contact
+Native or First Complex,Close Contact,LEU 477,O,ASD,C15,3.56,Close Contact
+Native or First Complex,Close Contact,LEU 477,CD1,ASD,C7,3.81,Close Contact
+Native or First Complex,Close Contact,LEU 477,CD2,ASD,C15,3.48,Close Contact
+Native or First Complex,Close Contact,LEU 477,CD2,ASD,C16,3.8,Close Contact
+Native or First Complex,Hydrophobic,ILE 133,CG2,ASD,C1,3.89,Hydrophobic
+Native or First Complex,Hydrophobic,TRP 224,CZ3,ASD,C3,3.95,Hydrophobic
+Native or First Complex,Hydrophobic,TRP 224,CH2,ASD,C3,3.81,Hydrophobic
+Native or First Complex,Hydrophobic,TRP 224,CH2,ASD,C4,3.87,Hydrophobic
+Native or First Complex,Hydrophobic,LEU 477,CD1,ASD,C7,3.81,Hydrophobic
+Mutated or Second Complex,Close Contact,MET 107,SD,HEM,O2A,3.95,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NE,HEM,O2D,3.51,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,CZ,HEM,O1A,3.22,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,CZ,HEM,O2D,3.49,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH1,HEM,CAA,4.09,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH1,HEM,CGA,3.86,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH1,HEM,O1A,2.65,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CHA,3.96,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CAA,3.57,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CBA,3.84,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CGA,3.77,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,O1A,2.94,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CAD,3.79,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CBD,3.66,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,CGD,3.53,Close Contact
+Mutated or Second Complex,Close Contact,ARG 115,NH2,HEM,O2D,2.79,Close Contact
+Mutated or Second Complex,Close Contact,ILE 132,O,HEM,O2D,3.78,Close Contact
+Mutated or Second Complex,Close Contact,ILE 132,CG1,HEM,CMD,3.75,Close Contact
+Mutated or Second Complex,Close Contact,ILE 132,CD1,HEM,CMD,3.27,Close Contact
+Mutated or Second Complex,Close Contact,ILE 132,CD1,HEM,CBD,4.03,Close Contact
+Mutated or Second Complex,Close Contact,ILE 132,CD1,HEM,O1D,3.92,Close Contact
+Mutated or Second Complex,Close Contact,ILE 133,CA,HEM,CAD,3.82,Close Contact
+Mutated or Second Complex,Close Contact,ILE 133,O,HEM,O2D,3.66,Close Contact
+Mutated or Second Complex,Close Contact,ILE 133,CG1,HEM,CMD,4.08,Close Contact
+Mutated or Second Complex,Close Contact,ILE 133,CG1,HEM,CAD,4.1,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,CD1,HEM,O1D,3.95,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,NE1,HEM,CGD,3.83,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,NE1,HEM,O1D,2.9,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,NE1,HEM,O2D,4.01,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,CE2,HEM,O1D,3.76,Close Contact
+Mutated or Second Complex,Close Contact,TRP 141,CZ2,HEM,O1D,3.97,Close Contact
+Mutated or Second Complex,Close Contact,ARG 145,CD,HEM,O1D,3.63,Close Contact
+Mutated or Second Complex,Close Contact,ARG 145,CZ,HEM,O1D,3.82,Close Contact
+Mutated or Second Complex,Close Contact,ARG 145,NH1,HEM,CBD,3.38,Close Contact
+Mutated or Second Complex,Close Contact,ARG 145,NH1,HEM,CGD,3.43,Close Contact
+Mutated or Second Complex,Close Contact,ARG 145,NH1,HEM,O1D,2.77,Close Contact
+Mutated or Second Complex,Close Contact,LEU 152,CD1,HEM,CAC,4.06,Close Contact
+Mutated or Second Complex,Close Contact,LEU 152,CD2,HEM,CAC,3.92,Close Contact
+Mutated or Second Complex,Close Contact,LEU 152,CD2,HEM,CBC,4.03,Close Contact
+Mutated or Second Complex,Close Contact,ALA 306,CB,HEM,C3C,3.77,Close Contact
+Mutated or Second Complex,Close Contact,ALA 306,CB,HEM,C4C,4.02,Close Contact
+Mutated or Second Complex,Close Contact,ALA 306,CB,HEM,CAC,3.7,Close Contact
+Mutated or Second Complex,Close Contact,ALA 306,CB,HEM,CBC,3.58,Close Contact
+Mutated or Second Complex,Close Contact,THR 310,CB,HEM,C3B,4.08,Close Contact
+Mutated or Second Complex,Close Contact,THR 310,CB,HEM,CAB,4.08,Close Contact
+Mutated or Second Complex,Close Contact,THR 310,OG1,HEM,CHC,3.7,Close Contact
+Mutated or Second Complex,Close Contact,THR 310,OG1,HEM,C3B,4.09,Close Contact
+Mutated or Second Complex,Close Contact,THR 310,OG1,HEM,C4B,3.87,Close Contact
+Mutated or Second Complex,Close Contact,MET 311,CG,HEM,CMC,3.98,Close Contact
+Mutated or Second Complex,Close Contact,SER 314,OG,HEM,CBB,3.58,Close Contact
+Mutated or Second Complex,Close Contact,MET 364,CE,HEM,CMB,3.46,Close Contact
+Mutated or Second Complex,Close Contact,MET 364,CE,HEM,CBB,4.08,Close Contact
+Mutated or Second Complex,Close Contact,VAL 370,CG1,HEM,C3A,4.06,Close Contact
+Mutated or Second Complex,Close Contact,VAL 370,CG1,HEM,CMA,3.75,Close Contact
+Mutated or Second Complex,Close Contact,VAL 370,CG2,HEM,CHB,4.08,Close Contact
+Mutated or Second Complex,Close Contact,VAL 370,CG2,HEM,C2B,4.1,Close Contact
+Mutated or Second Complex,Close Contact,VAL 370,CG2,HEM,CMB,3.76,Close Contact
+Mutated or Second Complex,Close Contact,VAL 373,CG1,HEM,CAA,4.09,Close Contact
+Mutated or Second Complex,Close Contact,VAL 373,CG1,HEM,CGA,3.56,Close Contact
+Mutated or Second Complex,Close Contact,VAL 373,CG1,HEM,O1A,3.12,Close Contact
+Mutated or Second Complex,Close Contact,VAL 373,CG1,HEM,O2A,3.9,Close Contact
+Mutated or Second Complex,Close Contact,VAL 373,CG2,HEM,CMA,3.83,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,CD,HEM,O1A,4.08,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NE,HEM,CGA,3.81,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NE,HEM,O1A,3.03,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NE,HEM,O2A,3.77,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,CZ,HEM,CGA,4.06,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,CZ,HEM,O1A,3.59,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,CZ,HEM,O2A,3.71,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NH2,HEM,CGA,3.41,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NH2,HEM,O1A,3.35,Close Contact
+Mutated or Second Complex,Close Contact,ARG 375,NH2,HEM,O2A,2.79,Close Contact
+Mutated or Second Complex,Close Contact,PRO 429,O,HEM,CHB,3.87,Close Contact
+Mutated or Second Complex,Close Contact,PRO 429,O,HEM,CMA,3.78,Close Contact
+Mutated or Second Complex,Close Contact,PRO 429,O,HEM,CMB,3.8,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CA,HEM,CMA,3.91,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,C,HEM,C3A,3.95,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,C,HEM,CMA,3.58,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,O,HEM,C2A,3.74,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,O,HEM,C3A,3.42,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,O,HEM,C4A,3.92,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,O,HEM,CMA,3.49,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,O,HEM,CBA,3.45,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CD2,HEM,C1B,3.81,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CD2,HEM,C2B,3.87,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CE2,HEM,C2B,3.83,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CE2,HEM,C3B,3.82,Close Contact
+Mutated or Second Complex,Close Contact,PHE 430,CE2,HEM,CBB,4.06,Close Contact
+Mutated or Second Complex,Close Contact,GLY 431,CA,HEM,O2A,3.81,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,C,HEM,CGA,4.01,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,C,HEM,O2A,4.0,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,O,HEM,CBA,3.47,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,O,HEM,CGA,3.03,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,O,HEM,O1A,3.16,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,O,HEM,O2A,3.33,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CG,HEM,CGD,3.59,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CG,HEM,O1D,3.55,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CG,HEM,O2D,3.34,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CD,HEM,O1D,4.03,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CD,HEM,O2D,3.55,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,NE,HEM,CGD,3.45,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,NE,HEM,O1D,3.54,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,NE,HEM,O2D,2.63,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,CZ,HEM,O2D,3.43,Close Contact
+Mutated or Second Complex,Close Contact,ARG 435,NH2,HEM,O2D,3.39,Close Contact
+Mutated or Second Complex,Close Contact,GLY 436,CA,HEM,CBA,3.75,Close Contact
+Mutated or Second Complex,Close Contact,GLY 436,CA,HEM,CGA,3.88,Close Contact
+Mutated or Second Complex,Close Contact,GLY 436,CA,HEM,O2A,3.63,Close Contact
+Mutated or Second Complex,Close Contact,GLY 436,C,HEM,CBA,3.72,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,N,HEM,CBA,3.37,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,CHA,3.65,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,C1A,3.59,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,C4D,3.84,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,NA,3.84,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,ND,3.97,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CA,HEM,FE,4.09,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,CHA,4.05,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,CHB,4.1,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,C1A,3.52,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,C2A,3.98,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,C3A,3.99,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,C4A,3.53,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,NA,3.24,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,NB,4.08,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,ND,4.06,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,CB,HEM,FE,3.38,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C1A,4.09,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C4A,3.94,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C1B,3.92,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C4B,3.86,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C1C,3.84,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,C4C,3.97,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,NA,3.36,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,NB,3.11,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,NC,3.25,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,ND,3.45,Close Contact
+Mutated or Second Complex,Close Contact,CYS 437,SG,HEM,FE,2.4,Close Contact
+Mutated or Second Complex,Close Contact,ALA 438,N,HEM,C1D,3.98,Close Contact
+Mutated or Second Complex,Close Contact,ALA 438,N,HEM,C4D,3.99,Close Contact
+Mutated or Second Complex,Close Contact,ALA 438,N,HEM,ND,3.89,Close Contact
+Mutated or Second Complex,Close Contact,ALA 438,CB,HEM,C2D,3.93,Close Contact
+Mutated or Second Complex,Close Contact,ALA 438,CB,HEM,CMD,3.91,Close Contact
+Mutated or Second Complex,Close Contact,GLY 439,N,HEM,CHD,3.96,Close Contact
+Mutated or Second Complex,Close Contact,GLY 439,N,HEM,C4C,3.96,Close Contact
+Mutated or Second Complex,Close Contact,GLY 439,CA,HEM,C3C,4.02,Close Contact
+Mutated or Second Complex,Close Contact,GLY 439,CA,HEM,C4C,4.08,Close Contact
+Mutated or Second Complex,Close Contact,ALA 443,CB,HEM,CHC,4.08,Close Contact
+Mutated or Second Complex,Close Contact,MET 446,CE,HEM,CMC,3.59,Close Contact
+Mutated or Second Complex,Close Contact,MET 447,SD,HEM,CBB,3.91,Close Contact
+Mutated or Second Complex,Close Contact,MET 447,CE,HEM,CBB,3.57,Close Contact

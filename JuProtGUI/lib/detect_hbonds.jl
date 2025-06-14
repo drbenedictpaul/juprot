@@ -1,40 +1,51 @@
-using BioStructures
-using LinearAlgebra
-using JuProtGUI.Utils: hbond_distance
+using PythonCall
 
-function is_donor(atom)
-    atom_name = atomname(atom)
-    return startswith(atom_name, "N") && !startswith(atom_name, "NE2")  # Nitrogen donors (exclude histidine NE2)
-end
+   function detect_hbonds(pdb_file, ligand_resname)
+       println("Starting H-bond detection with Python PLIP for ", pdb_file)
+       try
+           plip = pyimport("plip.structure.preparation")
+           mol = plip.PDBComplex()
+           mol.load_pdb(pdb_file)
+           mol.analyze()
+           binding_sites = mol.interaction_sets
+           hbonds = []
+           for site_key in keys(binding_sites)
+               site = binding_sites[site_key]
+               if occursin(ligand_resname, site_key)
+                   for hbond in site.hbonds
+                       donor_res = hbond.d_res
+                       donor_num = hbond.d_resno
+                       donor_atom = hbond.d_atom
+                       acceptor_atom = hbond.a_atom
+                       distance = hbond.distance_ad
+                       angle = hbond.angle
+                       interaction = (
+                           resn=donor_res,
+                           resi=donor_num,
+                           atom=donor_atom,
+                           ligand_atom=acceptor_atom,
+                           distance=distance,
+                           angle=angle
+                       )
+                       push!(hbonds, (interaction, py"None", distance, "Hydrogen Bond"))
+                       println("H-bond detected: Protein ", donor_atom, " (", donor_res, " ", donor_num, ") - Ligand ", acceptor_atom, " (", ligand_resname, "), Distance: ", round(distance, digits=2), " Å, Angle: ", round(angle, digits=2), "°")
+                   end
+               end
+           end
+           println("Total filtered H-bonds: ", length(hbonds))
+           return hbonds
+       catch e
+           println("Error running PLIP: ", e)
+           return []
+       end
+   end
 
-function is_acceptor(atom)
-    atom_name = atomname(atom)
-    return startswith(atom_name, "O") || (startswith(atom_name, "N") && startswith(atom_name, "NE2"))  # Oxygen or histidine NE2 acceptors
-end
-
-function detect_hbonds(protein_atoms, ligand_atoms, min_distance::Float64, max_distance::Float64)
-    hbonds = []
-    for p_atom in protein_atoms
-        for l_atom in ligand_atoms
-            dist = hbond_distance(p_atom, l_atom)
-            if min_distance <= dist <= max_distance
-                if is_donor(p_atom) && is_acceptor(l_atom)
-                    push!(hbonds, (p_atom, l_atom, dist, "Protein Donor -> Ligand Acceptor"))
-                elseif is_donor(l_atom) && is_acceptor(p_atom)
-                    push!(hbonds, (p_atom, l_atom, dist, "Ligand Donor -> Protein Acceptor"))
-                end
-            end
-        end
-    end
-    return hbonds
-end
-
-function print_hbonds(hbonds)
-    println("\nNumber of hydrogen bonds: ", length(hbonds))
-    for hbond in hbonds[1:min(5, length(hbonds))]
-        p_atom, l_atom, dist, bond_type = hbond
-        println("H-bond: Protein atom: ", atomname(p_atom), " (", resname(p_atom), " ", resnumber(p_atom), ")",
-                " - Ligand atom: ", atomname(l_atom), " (", resname(l_atom), ")",
-                " - Distance: ", round(dist, digits=2), " Å, Type: ", bond_type)
-    end
-end
+   function print_hbonds(hbonds)
+       println("\nNumber of hydrogen bonds: ", length(hbonds))
+       for hbond in hbonds[1:min(5, length(hbonds))]
+           p_atom, _, dist, bond_type = hbond
+           println("H-bond: Protein atom: ", p_atom.atom, " (", p_atom.resn, " ", p_atom.resi, ")",
+                   " - Ligand atom: ", p_atom.ligand_atom,
+                   " - Distance: ", round(dist, digits=2), " Å, Angle: ", round(p_atom.angle, digits=2), "°, Type: ", bond_type)
+       end
+   end
