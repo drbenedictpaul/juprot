@@ -3,7 +3,7 @@
 <!-- Optional: If you have a logo image file (e.g., in a folder like `assets/logo.png` in your repo), you can uncomment and use this:
 -->
 <p align="center">
-  <img src="public/juprot_logo.png" alt="juProt Logo" width="200"/>
+  <img src="/public/img/juProt_logo.png" alt="juProt Logo" width="200"/>
 </p>
 
 
@@ -41,10 +41,12 @@ Understanding detailed changes in protein-ligand interactions (e.g., due to muta
 <!-- 
 Replace these with actual paths to screenshots in your repository (e.g., create an 'assets' folder)
 Example:
-![juProt Upload Page](./assets/screenshot_upload.png)
-![juProt Results Page](./assets/screenshot_results.png)
 -->
-*(Please add 2-3 screenshots here showing the juProt interface: e.g., the main upload page, the ligand selection step, and an example of the results page with the plot and tables.)*
+![juProt Input Page](./public/img/juProt_input_page.png)
+![juProt Select Ligands Page](./public/img/juProt_select_ligands_page.png)
+![juProt Results Page](./public/img/aromatase_native_mutant.png)
+
+<!-- *(Please add 2-3 screenshots here showing the juProt interface: e.g., the main upload page, the ligand selection step, and an example of the results page with the plot and tables.)* -->
 
 ## How to Use juProt
 
@@ -118,8 +120,8 @@ If you use juProt in your research, please cite:
 
 1.  **The juProt Web Application:** `https://juprot.info/`
 2.  **This GitHub Repository:** Benedict et al. 2025. *juProt: Protein-Ligand Interaction Analysis*. GitHub. Retrieved from `https://github.com/drbenedictpaul/juprot`
-3.  **Our Publication:** *In communication*
-    `Benedict Christopher Paul, Deepak S P, Siva V, & Surya Sekaran. (Year). juProt: A Web Application for Comparative Analysis of Protein-Ligand Interactomes. Journal of Biomedical Informatics, Volume, Pages. DOI.` *(Adjust author list and title if the paper title differs slightly).*
+3.  **Our Publication:** *Manuscript In Communication*
+    <!-- `Benedict Christopher Paul, Deepak S P, Siva V, & Surya Sekaran. (Year). juProt: A Web Application for Comparative Analysis of Protein-Ligand Interactomes. Journal of Biomedical Informatics, Volume, Pages. DOI.` *(Adjust author list and title if the paper title differs slightly).* -->
 
 <!-- ## License
 
