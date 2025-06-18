@@ -228,46 +228,62 @@ module JuProtGUI
        end
    end
 
-   route("/") do
-       html("""
-       <!DOCTYPE html>
-       <html>
-       <head>
-           <title>juProt</title>
-           <style>
-               body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
-               .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-               .form-group { margin-bottom: 20px; }
-               label { display: block; margin-bottom: 8px; font-weight: bold; }
-               input[type=file], select { width: calc(100% - 18px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-               button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; font-size: 16px; }
-               button:hover { background: #0056b3; }
-               h1 { color: #0056b3; text-align: center; }
-               a { color: #007bff; text-decoration: none; }
-               a:hover { text-decoration: underline; }
-               .footer-link { text-align: center; margin-top: 20px; }
-           </style>
-       </head>
-       <body>
-           <div class="container">
-               <h1>juProt: Protein-Ligand Interaction Analysis</h1>
-               <form action="/select-ligands" method="post" enctype="multipart/form-data">
-                   <div class="form-group">
-                       <label for="first_pdb">First Complex PDB File:</label>
-                       <input type="file" id="first_pdb" name="first_pdb" accept=".pdb" required>
-                   </div>
-                   <div class="form-group">
-                       <label for="second_pdb">Second Complex PDB File:</label>
-                       <input type="file" id="second_pdb" name="second_pdb" accept=".pdb" required>
-                   </div>
-                   <button type="submit">Load Ligands</button>
-               </form>
-               <div class="footer-link"><p><a href="/how-to-use">How to Use</a></p></div>
-           </div>
-       </body>
-       </html>
-       """)
-   end
+   # In src/JuProtGUI.jl
+route("/") do
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>juProt</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
+            .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+            .form-group { margin-bottom: 20px; }
+            label { display: block; margin-bottom: 8px; font-weight: bold; }
+            input[type=file], select { width: calc(100% - 18px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; font-size: 16px; }
+            button:hover { background: #0056b3; }
+            h1 { color: #0056b3; text-align: center; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .footer-links-container { 
+                display: flex; 
+                justify-content: center; 
+                gap: 30px; /* Increased gap for better separation */
+                margin-top: 40px; 
+                padding-top: 20px;
+                border-top: 1px solid #eee; 
+            }
+            .footer-links-container p {
+                margin: 0; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>juProt: Protein-Ligand Interaction Analysis</h1>
+            <form action="/select-ligands" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="first_pdb">First Complex PDB File:</label>
+                    <input type="file" id="first_pdb" name="first_pdb" accept=".pdb" required>
+                </div>
+                <div class="form-group">
+                    <label for="second_pdb">Second Complex PDB File:</label>
+                    <input type="file" id="second_pdb" name="second_pdb" accept=".pdb" required>
+                </div>
+                <button type="submit">Load Ligands</button>
+            </form>
+
+            <div class="footer-links-container">
+                <p><a href="/how-to-use">How to Use & Applications</a></p>
+                <p><a href="/about">About juProt</a></p>
+            </div>
+
+        </div>
+    </body>
+    </html>
+    """)
+end
 
    route("/select-ligands", method=POST) do
        first_file_payload = filespayload("first_pdb")
@@ -416,20 +432,170 @@ module JuProtGUI
 
    route("/how-to-use") do
        html("""
-       <!DOCTYPE html><html><head><title>juProt: How to Use</title>
-       <style>
-           body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
-           .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-           h1, h2 { color: #0056b3; } h1 { text-align: center; margin-bottom: 30px; } h2 { margin-top: 25px; }
-           p, li { line-height: 1.6; } a { color: #007bff; text-decoration: none; } a:hover { text-decoration: underline; }
-           ol, ul { padding-left: 20px; } .footer-link { text-align: center; margin-top: 30px; }
-       </style></head><body><div class="container"><h1>How to Use juProt</h1>
-       <p>juProt is a web-based tool designed for identifying and comparing protein-ligand hydrogen bond interactions between two structural complexes.</p>
-       <h2>Protocol</h2><ol><li><strong>Prepare PDB Files</strong>: You will need two PDB (Protein Data Bank) files...</li>
-       <li><strong>Access the Application</strong>: Navigate to the juProt home page... (<a href="/">Go to juProt Home</a>)</li>
-       <li><strong>Upload PDB Files</strong>:...</li><li><strong>Select Ligands</strong>:...</li><li><strong>View and Download Results</strong>:...</li></ol>
-       <h2>Applications</h2><ul><li><strong>Structural Biology</strong>:...</li><li><strong>Drug Design & Discovery</strong>:...</li><li><strong>Protein Engineering</strong>:...</li></ul>
-       <div class="footer-link"><p><a href="/">Back to Home</a></p></div></div></body></html>""")
+       <!DOCTYPE html>
+<html>
+<head>
+    <title>juProt: How to Use & Applications</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        h2 { margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+        h3 { margin-top: 20px; color: #007bff; }
+        p, li { line-height: 1.6; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ol, ul { padding-left: 20px; }
+        .footer-link { text-align: center; margin-top: 30px; }
+        code { background-color: #e9ecef; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How to Use juProt & Its Applications</h1>
+
+        <h2>Protocol</h2>
+        <ol>
+            <li><strong>Prepare PDB Files</strong>: Obtain two protein-ligand complex PDB files (e.g., from RCSB PDB or molecular modeling). Ensure HETATM records for ligands are present.</li>
+            <li><strong>Access the App</strong>: Visit juProt at <code>https://juprot.info/</code>.</li>
+            <li><strong>Upload Files</strong>:
+                <ul>
+                    <li>Upload the first PDB file under "First Complex PDB File".</li>
+                    <li>Upload the second PDB file under "Second Complex PDB File".</li>
+                    <li>Click "Load Ligands".</li>
+                </ul>
+            </li>
+            <li><strong>Select Ligands</strong>:
+                <ul>
+                    <li>juProt will auto-detect potential ligands from each PDB.</li>
+                    <li>Select the specific ligand of interest from the dropdown menu for each complex.</li>
+                    <li>Click "Run Analysis".</li>
+                </ul>
+            </li>
+            <li><strong>View Results</strong>:
+                <ul>
+                    <li>Examine the textual "Analytical Summary" for a quick overview.</li>
+                    <li>View the "Residue Interaction Plot" (bar chart) for a visual comparison of H-bond frequencies per residue.</li>
+                    <li>Download the "Comparison Table (CSV)" for a structured summary of differences and commonalities.</li>
+                    <li>Download "Detailed Interactions (CSV)" for a complete list of all H-bonds for both complexes with their geometric parameters.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Applications & Use Cases for juProt</h2>
+        <p>juProt is designed to provide rapid comparative insights into protein-ligand interactions, with a current focus on hydrogen bonds. Here are some scenarios where juProt can be particularly useful:</p>
+
+        <h3>1. Understanding the Impact of Mutations</h3>
+        <p><strong>Scenario:</strong> You have a wild-type protein-ligand structure and a mutant form (e.g., from a SNP or site-directed mutagenesis) bound to the same ligand.</p>
+        <p><strong>How juProt Helps:</strong> Compare the native-ligand and mutant-ligand complexes. juProt highlights how the mutation alters the H-bond network, which can help explain changes in binding affinity, drug efficacy, or resistance mechanisms. (e.g., comparing a wild-type kinase-inhibitor complex with a gatekeeper mutant-inhibitor complex).</p>
+
+        <h3>2. Comparing Different Ligands to the Same Target</h3>
+        <p><strong>Scenario:</strong> You have several drug candidates or chemical probes binding to the same protein target.</p>
+        <p><strong>How juProt Helps:</strong> Compare Protein+LigandA with Protein+LigandB. juProt helps identify which ligand forms more/different H-bonds and which residues are key common or unique H-bond partners, aiding in SAR studies and lead optimization.</p>
+
+        <h3>3. Analyzing Ligand Binding to Different Protein Conformations or Isoforms</h3>
+        <p><strong>Scenario:</strong> A protein exists in different states (e.g., active/inactive) or as different isoforms, and you have structures of a ligand bound to these variants.</p>
+        <p><strong>How juProt Helps:</strong> Compare ProteinState1+Ligand with ProteinState2+Ligand. juProt can reveal how protein structural changes influence H-bonding with a common ligand.</p>
+
+        <h3>4. Validating Docking Poses</h3>
+        <p><strong>Scenario:</strong> You have multiple potential binding poses for a ligand from molecular docking.</p>
+        <p><strong>How juProt Helps:</strong> Compare the H-bond profile of different docked poses or a docked pose against an experimental structure (if available) to assess H-bonding consistency.</p>
+
+        <h3>5. Educational Purposes</h3>
+        <p><strong>Scenario:</strong> Teaching students about protein-ligand interactions.</p>
+        <p><strong>How juProt Helps:</strong> Provides an easy-to-use tool for students to explore H-bonds and understand differential interactions without complex software or scripting.</p>
+
+        <h3>Future Enhancements</h3>
+        <p>juProt is an actively developed open-source project. Future versions aim to expand comparative analysis to other interaction types (hydrophobic contacts, π-stacking, salt bridges, etc.) for a more comprehensive view of protein-ligand interactomes.</p>
+
+        <div class="footer-link"><p><a href="/">Back to Home</a></p></div>
+    </div>
+</body>
+</html>""")
    end
+
+   route("/about") do
+    html("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>About juProt</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
+            .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+            h1, h2, h3 { color: #0056b3; }
+            h1 { text-align: center; margin-bottom: 30px; }
+            h2 { margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+            h3 { margin-top: 20px; color: #007bff; }
+            p, li { line-height: 1.6; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .footer-link { text-align: center; margin-top: 30px; }
+            code { background-color: #e9ecef; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>About juProt</h1>
+
+            <p>juProt (<code>https://juprot.info/</code>) is an open-source web application designed to facilitate the rapid and user-friendly comparative analysis of protein-ligand interaction networks, with an initial focus on hydrogen bonds. Understanding how ligands interact with their protein targets, and how these interactions change due to mutations or when comparing different ligands, is fundamental in structural biology, bioinformatics, and drug discovery.</p>
+
+            <h2>Motivation</h2>
+            <p>While powerful tools exist for analyzing interactions in a single protein-ligand complex, comparing these interactions across two different complexes often requires manual data extraction, scripting, and collation of results. juProt aims to simplify this process, making comparative interaction analysis accessible to a broader range of researchers and students without requiring extensive computational expertise.</p>
+
+            <h2>Core Technology</h2>
+            <p>juProt is developed using the Julia programming language, leveraging the high-performance Genie.jl web framework for its backend and user interface. The core interaction detection is powered by the well-established Protein-Ligand Interaction Profiler (PLIP), a Python-based tool. juProt interfaces with PLIP using the PythonCall.jl package, allowing seamless integration of PLIP's robust algorithms.</p>
+
+            <h2>Current Features</h2>
+            <ul>
+                <li>Upload of two PDB files for comparison.</li>
+                <li>Automated identification of potential ligands with user selection.</li>
+                <li>Detection and quantification of hydrogen bonds for each complex.</li>
+                <li>Generation of:
+                    <ul>
+                        <li>A comparative summary table (CSV) highlighting common and differential H-bonds and interacting residues.</li>
+                        <li>A detailed list of all H-bonds for both complexes (CSV).</li>
+                        <li>A bar chart visually comparing H-bond counts per residue across the two complexes (PNG).</li>
+                        <li>An on-page analytical summary of key findings.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Future Development</h2>
+            <p>juProt is an ongoing project. Future development plans include:</p>
+            <ul>
+                <li>Expanding comparative analysis to other interaction types (hydrophobic, pi-stacking, salt bridges, etc.).</li>
+                <li>Enhanced visualization options, potentially including 2D comparative interaction diagrams.</li>
+                <li>Allowing analysis of more than two complexes.</li>
+                <li>User-configurable parameters for interaction detection.</li>
+            </ul>
+
+            <h2>Development Team</h2>
+            <p>juProt was conceived and developed by:<br>
+               <p><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><p>
+               <p>Department of Biotechnology, Sri Ramachandra Institute of Higher Education and Research, Chennai - 600116, Tamil Nadu, India.</p>
+            
+            <p>Siva V, MSc Biotechnology</p>
+            <p>Deepak Shankar, MSc Biotechnology</p>
+            <p>Surya Sekaran, [PhD]</p>
+            
+            <p>We also acknowledge the developers of the core libraries used in juProt, including Julia, Genie.jl, PythonCall.jl, PLIP, OpenBabel, and Plots.jl.</p>
+
+            <h2>Open Source & Citation</h2>
+            <p>juProt is an open-source project. The source code is available on GitHub at <a href="https://github.com/drbenedictpaul/juprot" target="_blank">https://github.com/drbenedictpaul/juprot</a>.</p>
+            <p>We encourage contributions and feedback from the community.</p>
+            <p>If you use juProt in your research, please cite:<br>
+               <em>[Manuscript is in communication. For now, please cite our GitHub repository.]</em></p>
+
+            <h2>Contact/Feedback</h2>
+            <p>For questions, suggestions, or to report issues, please visit our GitHub issues page at <a href="https://github.com/drbenedictpaul/juprot/issues" target="_blank">GitHub Issues</a> or contact <a href="mailto:benedictpaulc@sriramachandra.edu.in">benedictpaulc@sriramachandra.edu.in</a>.</p>
+
+            <div class="footer-link"><p><a href="/">Back to Home</a></p></div>
+        </div>
+    </body>
+    </html>
+    """)
+end
 
 end # module JuProtGUI
