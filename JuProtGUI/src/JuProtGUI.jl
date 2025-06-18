@@ -574,11 +574,11 @@ end
             <h2>Development Team</h2>
             <p>juProt was conceived and developed by:<br>
                <p><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><p>
-               <p>Department of Biotechnology, Sri Ramachandra Institute of Higher Education and Research, Chennai - 600116, Tamil Nadu, India.</p>
-            
-            <p>Siva V, MSc Biotechnology</p>
-            <p>Deepak Shankar, MSc Biotechnology</p>
-            <p>Surya Sekaran, [PhD]</p>
+               <p>Assistant Professor, Department of Biotechnology, Sri Ramachandra Institute of Higher Education and Research, Chennai - 600116, Tamil Nadu, India.</p>
+                
+                <p>Siva V, MSc Biotechnology</p>
+                <p>Deepak S P, MSc Biotechnology</p>
+                <p>Surya Sekaran, [PhD]</p>
             
             <p>We also acknowledge the developers of the core libraries used in juProt, including Julia, Genie.jl, PythonCall.jl, PLIP, OpenBabel, and Plots.jl.</p>
 
