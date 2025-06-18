@@ -235,6 +235,7 @@ route("/") do
     <html>
     <head>
         <title>juProt</title>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
         <style>
             body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
             .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -261,6 +262,9 @@ route("/") do
     </head>
     <body>
         <div class="container">
+            <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
             <h1>juProt: Protein-Ligand Interaction Analysis</h1>
             <form action="/select-ligands" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -335,6 +339,7 @@ end
 
            html_body = """
            <!DOCTYPE html><html><head><title>juProt: Select Ligands</title>
+           <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
            <style>
                body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
                .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -344,7 +349,11 @@ end
                button:hover { background: #0056b3; } h1 { color: #0056b3; text-align: center; }
                a { color: #007bff; text-decoration: none; } a:hover { text-decoration: underline; }
                .footer-link { text-align: center; margin-top: 20px; }
-           </style></head><body><div class="container"><h1>juProt: Select Ligands</h1>
+           </style></head><body><div class="container">
+           <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
+           <h1>juProt: Select Ligands</h1>
            <form action="/analyze" method="post">
            <input type="hidden" name="first_pdb_path" value="$temp_first_path">
            <input type="hidden" name="second_pdb_path" value="$temp_second_path">
@@ -417,7 +426,11 @@ end
            ul { list-style-type: none; padding-left: 0; } ul li { margin-bottom: 8px; }
            ul li a { display: inline-block; padding: 8px 12px; background-color: #007bff; color: white; border-radius: 4px; }
            ul li a:hover { background-color: #0056b3; } .footer-link { text-align: center; margin-top: 30px; }
-       </style></head><body><div class="container"><h1>Analysis Results</h1>
+       </style></head><body><div class="container">
+       <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
+       <h1>Analysis Results</h1>
        <p>Comparison of H-bond interactions for the selected ligands in the First and Second Complexes.</p>
        <div class="result-section"><h2>Downloads</h2><ul>
        <li><a href="$(result["comparison_table"])" download>Download Comparison Table (CSV)</a></li>
@@ -436,6 +449,7 @@ end
 <html>
 <head>
     <title>juProt: How to Use & Applications</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
         .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -453,6 +467,9 @@ end
 </head>
 <body>
     <div class="container">
+    <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
         <h1>How to Use juProt & Its Applications</h1>
 
         <h2>Protocol</h2>
@@ -521,6 +538,7 @@ end
     <html>
     <head>
         <title>About juProt</title>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
         <style>
             body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
             .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -537,6 +555,9 @@ end
     </head>
     <body>
         <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
             <h1>About juProt</h1>
 
             <p>juProt (<code>https://juprot.info/</code>) is an open-source web application designed to facilitate the rapid and user-friendly comparative analysis of protein-ligand interaction networks, with an initial focus on hydrogen bonds. Understanding how ligands interact with their protein targets, and how these interactions change due to mutations or when comparing different ligands, is fundamental in structural biology, bioinformatics, and drug discovery.</p>
