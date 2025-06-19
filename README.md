@@ -16,8 +16,7 @@
 ## Key Features
 
 *   **User-Friendly Web Interface:** No installation required. Simply upload two PDB files and select ligands for comparison.
-*   **Automated Interaction Analysis:** Leverages the PLIP engine for robust detection of interactions (currently specializing in H-bonds).
-        * Sebastian Salentin, Sven Schreiber, V. Joachim Haupt, Melissa F. Adasme, Michael Schroeder, PLIP: fully automated protein–ligand interaction profiler, Nucleic Acids Research, Volume 43, Issue W1, 1 July 2015, Pages W443–W447, https://doi.org/10.1093/nar/gkv315
+*   **Automated Interaction Analysis:** Leverages the PLIP engine [**https://doi.org/10.1093/nar/gkv315**](Sebastian et al., 2015) for robust detection of interactions (currently specializing in H-bonds).
 *   **Comparative Outputs:**
     *   Side-by-side summary tables (CSV) highlighting key H-bond differences and statistics.
     *   Detailed lists of all detected H-bonds (CSV) for both complexes.
