@@ -1,4 +1,4 @@
-# juProt: Protein-Ligand Interaction Analysis
+# juProt: Protein-Ligand Interaction Analyzer
 
 <!-- Optional: If you have a logo image file (e.g., in a folder like `assets/logo.png` in your repo), you can uncomment and use this:
 -->
@@ -31,7 +31,8 @@ Understanding detailed changes in protein-ligand interactions (e.g., due to muta
 ## Technology Stack
 
 *   **Backend & Web Framework:** [Julia](https://julialang.org/) with [Genie.jl](https://genieframework.com/)
-*   **Interaction Engine:** [PLIP](https://github.com/pharmai/plip) (Python-based)
+*   **Interaction Engine:** [PLIP]#(https://github.com/pharmai/plip) (Python-based)
+    # Sebastian Salentin, Sven Schreiber, V. Joachim Haupt, Melissa F. Adasme, Michael Schroeder, PLIP: fully automated protein–ligand interaction profiler, Nucleic Acids Research, Volume 43, Issue W1, 1 July 2015, Pages W443–W447, https://doi.org/10.1093/nar/gkv315
 *   **Julia-Python Interoperability:** [PythonCall.jl](https://github.com/cjdoris/PythonCall.jl)
 *   **Plotting:** [Plots.jl](http://docs.juliaplots.org/latest/) (for server-side plot generation)
 *   **Core Python Dependencies (for PLIP):** OpenBabel
@@ -114,16 +115,30 @@ juProt is designed for deployment on Google Cloud Run using Docker. The `Dockerf
 
 We welcome contributions to juProt! Please feel free to fork the repository, make improvements, and submit pull requests. You can also report bugs or suggest features via the GitHub Issues page: `https://github.com/drbenedictpaul/juprot/issues`
 
+## Contributors
+
+juProt was conceived and developed by:
+
+Dr. Benedict Christopher Paul | https://github.com/drbenedictpaul/
+
+Deepak S P, MSc Biotechnology | https://github.com/deepakshankar810
+
+Siva V, MSc Biotechnology | https://github.com/siva1106
+
+Surya Sekaran, [PhD] | https://github.com/suryasmilez21
+
+We also acknowledge the developers of the core libraries used in juProt, including Julia, Genie.jl, PythonCall.jl, PLIP, OpenBabel, and Plots.jl.
+
 ## Citation
 
 If you use juProt in your research, please cite:
 
 1.  **The juProt Web Application:** `https://juprot.info/`
-2.  **This GitHub Repository:** Benedict et al. 2025. *juProt: Protein-Ligand Interaction Analysis*. GitHub. Retrieved from `https://github.com/drbenedictpaul/juprot`
+2.  **This GitHub Repository:** Benedict et al. 2025. *juProt: Protein-Ligand Interaction Analyzer*. GitHub. Retrieved from `https://github.com/drbenedictpaul/juprot`
 3.  **Our Publication:** *Manuscript In Communication*
     <!-- `Benedict Christopher Paul, Deepak S P, Siva V, & Surya Sekaran. (Year). juProt: A Web Application for Comparative Analysis of Protein-Ligand Interactomes. Journal of Biomedical Informatics, Volume, Pages. DOI.` *(Adjust author list and title if the paper title differs slightly).* -->
 
-<!-- ## License
+## License
 
-This project is licensed under the **MIT License**. See the `LICENSE.md` file for details.
-*(Remember to create a LICENSE.md file and put the MIT license text in it. You can get it from: https://opensource.org/licenses/MIT)* -->
+juProt is licensed under the **GNU AGPLv3**. See the `LICENSE.md` file for details.
+<!-- *(Remember to create a LICENSE.md file and put the MIT license text in it. You can get it from: https://opensource.org/licenses/MIT)* -->
