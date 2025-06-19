@@ -32,7 +32,7 @@ Understanding detailed changes in protein-ligand interactions (e.g., due to muta
 
 *   **Backend & Web Framework:** [Julia](https://julialang.org/) with [Genie.jl](https://genieframework.com/)
 *   **Interaction Engine:** [PLIP]#(https://github.com/pharmai/plip) (Python-based)
-    Sebastian Salentin, Sven Schreiber, V. Joachim Haupt, Melissa F. Adasme, Michael Schroeder, PLIP: fully automated protein–ligand interaction profiler, Nucleic Acids Research, Volume 43, Issue W1, 1 July 2015, Pages W443–W447, https://doi.org/10.1093/nar/gkv315
+    *Sebastian Salentin, Sven Schreiber, V. Joachim Haupt, Melissa F. Adasme, Michael Schroeder, PLIP: fully automated protein–ligand interaction profiler, Nucleic Acids Research, Volume 43, Issue W1, 1 July 2015, Pages W443–W447, https://doi.org/10.1093/nar/gkv315*
 *   **Julia-Python Interoperability:** [PythonCall.jl](https://github.com/cjdoris/PythonCall.jl)
 *   **Plotting:** [Plots.jl](http://docs.juliaplots.org/latest/) (for server-side plot generation)
 *   **Core Python Dependencies (for PLIP):** OpenBabel
