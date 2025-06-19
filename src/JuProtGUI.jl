@@ -265,7 +265,7 @@ route("/") do
             <div style="text-align: center; margin-bottom: 20px;"> 
             <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
             </div>
-            <h1>juProt: Protein-Ligand Interaction Analysis</h1>
+            <h1>juProt: Protein-Ligand Interaction Analyzer</h1>
             <form action="/select-ligands" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="first_pdb">First Complex PDB File:</label>
@@ -566,7 +566,7 @@ end
             <p>While powerful tools exist for analyzing interactions in a single protein-ligand complex, comparing these interactions across two different complexes often requires manual data extraction, scripting, and collation of results. juProt aims to simplify this process, making comparative interaction analysis accessible to a broader range of researchers and students without requiring extensive computational expertise.</p>
 
             <h2>Core Technology</h2>
-            <p>juProt is developed using the Julia programming language, leveraging the high-performance Genie.jl web framework for its backend and user interface. The core interaction detection is powered by the well-established Protein-Ligand Interaction Profiler (PLIP), a Python-based tool. juProt interfaces with PLIP using the PythonCall.jl package, allowing seamless integration of PLIP's robust algorithms.</p>
+            <p>juProt is developed using the Julia programming language, leveraging the high-performance Genie.jl web framework for its backend and user interface. The core interaction detection is powered by the well-established Protein-Ligand Interaction Profiler (PLIP), a Python-based tool (Sebastian Salentin, Sven Schreiber, V. Joachim Haupt, Melissa F. Adasme, Michael Schroeder, PLIP: fully automated protein–ligand interaction profiler, Nucleic Acids Research, Volume 43, Issue W1, 1 July 2015, Pages W443–W447, https://doi.org/10.1093/nar/gkv315). juProt interfaces with PLIP using the PythonCall.jl package, allowing seamless integration of PLIP's robust algorithms.</p>
 
             <h2>Current Features</h2>
             <ul>
@@ -594,12 +594,10 @@ end
 
             <h2>Development Team</h2>
             <p>juProt was conceived and developed by:<br>
-               <p><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><p>
-               <p>Assistant Professor, Department of Biotechnology, Sri Ramachandra Institute of Higher Education and Research, Chennai - 600116, Tamil Nadu, India.</p>
-                
-                <p>Siva V, MSc Biotechnology</p>
-                <p>Deepak S P, MSc Biotechnology</p>
-                <p>Surya Sekaran, [PhD]</p>
+               <p><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><p>                
+               <p>Deepak S P, MSc Biotechnology</p> 
+               <p>Siva V, MSc Biotechnology</p>
+               <p>Surya Sekaran, [PhD]</p>
             
             <p>We also acknowledge the developers of the core libraries used in juProt, including Julia, Genie.jl, PythonCall.jl, PLIP, OpenBabel, and Plots.jl.</p>
 
