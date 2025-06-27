@@ -11,7 +11,7 @@
 
 **juProt is an open-source web application designed to streamline the comparative analysis of protein-ligand interaction networks, with a current focus on hydrogen bonds.** It helps researchers quickly identify differences and commonalities in how ligands bind to proteins under varying conditions, such as structural mutations or when comparing different molecules.
 
-**Live Application:** Access juProt at [**https://juprot.info/**](https://juprot-gui-1013240748285.us-central1.run.app/)
+**Live Application:** Access juProt at [**https://juprot.info/**](https://juprot.info/)
 
 ## Key Features
 
@@ -51,12 +51,12 @@ Example:
 ## How to Use juProt
 
 juProt is designed for ease of use through its web interface:
-1.  Navigate to the live application: [**https://juprot.info/**](https://juprot-gui-1013240748285.us-central1.run.app/)
+1.  Navigate to the live application: [**https://juprot.info/**](https://juprot.info/)
 2.  Follow the on-screen instructions to upload your two PDB complex files.
 3.  Select the ligand of interest for each complex from the auto-detected options.
 4.  Click "Run Analysis" to view and download your comparative results.
 
-For more detailed instructions and application examples, please visit the **[How to Use & Applications page](https://juprot.info/how-to-use)** on the web application. An **[About juProt page](https://juprot-gui-1013240748285.us-central1.run.app/about)** is also available.
+For more detailed instructions and application examples, please visit the **[How to Use & Applications page](https://juprot.info/how-to-use)** on the web application. An **[About juProt page](https://juprot.info/about)** is also available.
 
 ## For Developers: Local Setup & Contribution
 
