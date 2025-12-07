@@ -1,7 +1,18 @@
-Metric,First_Complex,Second_Complex
-Ligand Name,DHT,EST
-Total H-Bonds Detected,2,3
-Difference in H-Bonds (Second - First),,1
-Top Interacting Residues (ResID Count),"TYR 155 (1), GLU 282 (1)","GLY 186 (1), SER 142 (1), GLU 282 (1)"
-Residues with Changed Interaction Counts,,"GLY 186: First=0, Second=1; SER 142: First=0, Second=1; TYR 155: First=1, Second=0"
-Unique Residues Forming H-Bonds,"GLU 282, TYR 155","GLU 282, GLY 186, SER 142"
+Residue,C1,C2,Total
+VAL370,1,2,3
+ARG115,1,2,3
+LEU477,2,0,2
+ARG435,0,1,1
+PHE430,0,1,1
+TRP224,1,0,1
+ASP309,1,0,1
+ALA306,0,1,1
+ARG375,0,1,1
+THR310,1,0,1
+ILE132,0,1,1
+ILE133,0,1,1
+ALA438,0,1,1
+VAL373,0,1,1
+MET374,1,0,1
+LEU152,0,1,1
+ARG145,0,1,1

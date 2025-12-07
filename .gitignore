@@ -8,6 +8,9 @@ sessions/*
 !*.gitkeep
 Manifest.toml
 .env
+public/outputs/*
+*code-workspace
+*.csv
 
 # Vagrant
 .vagrant

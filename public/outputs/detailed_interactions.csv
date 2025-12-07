@@ -1,6 +1,23 @@
-Complex_Name,Interaction_Type,Protein_Residue_ID,Protein_Atom_PDB_Name,Protein_Atom_Type,Ligand_Residue_Name,Ligand_Atom_PDB_Name,Ligand_Atom_Type,Distance_Angstrom,Angle_Degrees
-First Complex (DHT),Hydrogen Bond,GLU 282,OE2,O2,DHT,O3,O3,3.27,120.94
-First Complex (DHT),Hydrogen Bond,TYR 155,OH,O3,DHT,O17,O3,3.68,136.92
-Second Complex (EST),Hydrogen Bond,GLY 186,O,O2,EST,O17,O3,3.87,124.59
-Second Complex (EST),Hydrogen Bond,GLU 282,OE2,O2,EST,O3,O3,2.77,115.1
-Second Complex (EST),Hydrogen Bond,SER 142,OG,O3,EST,O17,O3,3.16,117.8
+Complex_Source,type,prot_resn,prot_resi,prot_atom_name,lig_atom_name,distance
+first_complex.pdb,Hydrogen Bond,ARG,115,NH1,O2,3.439147278032737
+first_complex.pdb,Hydrogen Bond,MET,374,N,O2,2.8397684764783206
+first_complex.pdb,Hydrophobic,TRP,224,UNK,UNK,3.8670961974070477
+first_complex.pdb,Hydrophobic,ASP,309,UNK,UNK,3.644449615511237
+first_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.4223297620188493
+first_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.810794274163849
+first_complex.pdb,Hydrophobic,THR,310,UNK,UNK,3.608632566499393
+first_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.482888025762527
+second_complex.pdb,Hydrogen Bond,ILE,133,O,O2D,3.663679298191917
+second_complex.pdb,Hydrophobic,ILE,132,UNK,UNK,3.2679101884843753
+second_complex.pdb,Hydrophobic,LEU,152,UNK,UNK,3.9228594162931665
+second_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.746495562522397
+second_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.7609909598402456
+second_complex.pdb,Hydrophobic,VAL,373,UNK,UNK,3.829937989054134
+second_complex.pdb,Hydrophobic,ALA,306,UNK,UNK,3.5840509203971966
+second_complex.pdb,Hydrophobic,PHE,430,UNK,UNK,3.8193938000682826
+second_complex.pdb,Hydrophobic,ALA,438,UNK,UNK,3.9119519424451044
+second_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.313585856853254
+second_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.4914300648877745
+second_complex.pdb,Salt Bridge,ARG,145,UNK,UNK,4.742847729300751
+second_complex.pdb,Salt Bridge,ARG,375,UNK,UNK,3.4796532154799578
+second_complex.pdb,Salt Bridge,ARG,435,UNK,UNK,3.7441321090474333
