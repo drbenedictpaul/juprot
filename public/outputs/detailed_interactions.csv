@@ -1,23 +1,23 @@
 Complex_Source,type,prot_resn,prot_resi,prot_atom_name,lig_atom_name,distance
-first_complex.pdb,Hydrogen Bond,ARG,115,NH1,O2,3.439147278032737
-first_complex.pdb,Hydrogen Bond,MET,374,N,O2,2.8397684764783206
-first_complex.pdb,Hydrophobic,TRP,224,UNK,UNK,3.8670961974070477
-first_complex.pdb,Hydrophobic,ASP,309,UNK,UNK,3.644449615511237
-first_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.4223297620188493
-first_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.810794274163849
-first_complex.pdb,Hydrophobic,THR,310,UNK,UNK,3.608632566499393
-first_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.482888025762527
-second_complex.pdb,Hydrogen Bond,ILE,133,O,O2D,3.663679298191917
-second_complex.pdb,Hydrophobic,ILE,132,UNK,UNK,3.2679101884843753
-second_complex.pdb,Hydrophobic,LEU,152,UNK,UNK,3.9228594162931665
-second_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.746495562522397
-second_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.7609909598402456
-second_complex.pdb,Hydrophobic,VAL,373,UNK,UNK,3.829937989054134
-second_complex.pdb,Hydrophobic,ALA,306,UNK,UNK,3.5840509203971966
-second_complex.pdb,Hydrophobic,PHE,430,UNK,UNK,3.8193938000682826
-second_complex.pdb,Hydrophobic,ALA,438,UNK,UNK,3.9119519424451044
-second_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.313585856853254
-second_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.4914300648877745
-second_complex.pdb,Salt Bridge,ARG,145,UNK,UNK,4.742847729300751
-second_complex.pdb,Salt Bridge,ARG,375,UNK,UNK,3.4796532154799578
-second_complex.pdb,Salt Bridge,ARG,435,UNK,UNK,3.7441321090474333
+first_complex.pdb,Hydrogen Bond,ILE,133,O,O2D,3.663679298191917
+first_complex.pdb,Hydrophobic,ILE,132,UNK,UNK,3.2679101884843753
+first_complex.pdb,Hydrophobic,LEU,152,UNK,UNK,3.9228594162931665
+first_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.746495562522397
+first_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.7609909598402456
+first_complex.pdb,Hydrophobic,VAL,373,UNK,UNK,3.829937989054134
+first_complex.pdb,Hydrophobic,ALA,306,UNK,UNK,3.5840509203971966
+first_complex.pdb,Hydrophobic,PHE,430,UNK,UNK,3.8193938000682826
+first_complex.pdb,Hydrophobic,ALA,438,UNK,UNK,3.9119519424451044
+first_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.313585856853254
+first_complex.pdb,Salt Bridge,ARG,115,UNK,UNK,4.4914300648877745
+first_complex.pdb,Salt Bridge,ARG,145,UNK,UNK,4.742847729300751
+first_complex.pdb,Salt Bridge,ARG,375,UNK,UNK,3.4796532154799578
+first_complex.pdb,Salt Bridge,ARG,435,UNK,UNK,3.7441321090474333
+second_complex.pdb,Hydrogen Bond,ARG,115,NH1,O2,3.439147278032737
+second_complex.pdb,Hydrogen Bond,MET,374,N,O2,2.8397684764783206
+second_complex.pdb,Hydrophobic,TRP,224,UNK,UNK,3.8670961974070477
+second_complex.pdb,Hydrophobic,ASP,309,UNK,UNK,3.644449615511237
+second_complex.pdb,Hydrophobic,VAL,370,UNK,UNK,3.4223297620188493
+second_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.810794274163849
+second_complex.pdb,Hydrophobic,THR,310,UNK,UNK,3.608632566499393
+second_complex.pdb,Hydrophobic,LEU,477,UNK,UNK,3.482888025762527

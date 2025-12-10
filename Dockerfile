@@ -1,44 +1,36 @@
-# Use an official Julia image as a parent image
-# Or your preferred stable Julia 1.x version
-FROM julia:1.11.5
+# Stage 1: The Builder - Compiles the application in a clean environment
+FROM julia:1.10 AS builder
 
-# Set the working directory in the container
+ENV JULIA_PROJECT=/app
+ENV GENIE_ENV=prod
 WORKDIR /app
 
-# Install system dependencies for Python, OpenBabel, and PLIP
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-venv \
-    python3-dev \
-    cmake \         
-    build-essential \
-    swig \
-    pkg-config \
-    libopenbabel-dev \
-    && rm -rf /var/lib/apt/lists/*
-    
+# Copy ONLY Project.toml and CondaPkg.toml. DO NOT copy Manifest.toml.
+COPY Project.toml CondaPkg.toml ./
 
-# Create a Python virtual environment
-ENV VENV_PATH=/opt/venv
-RUN python3 -m venv $VENV_PATH 
+# This will create a fresh, Debian-compatible Manifest.toml inside the container
+RUN julia -e 'using Pkg; Pkg.instantiate()'
 
-# Add venv to PATH for subsequent RUN commands
-ENV PATH="$VENV_PATH/bin:$PATH"
-
-# Install PLIP and OpenBabel Python bindings into the venv
-RUN pip install --no-cache-dir plip openbabel-wheel
-
-# --- Julia Application Setup ---
-COPY Project.toml Manifest.toml ./
-RUN julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.precompile()'
+# Now copy the rest of the source code
 COPY . .
 
-# --- Environment Variables for Runtime ---
-ENV JULIA_PYTHONCALL_EXE=$VENV_PATH/bin/python
-ENV JULIA_CONDAPKG_BACKEND=Null
-ENV PYTHON=""
-ENV JULIA_PYTHONCALL_LIB=/usr/lib/x86_64-linux-gnu/libpython3.11.so
+# Pre-compile everything
+RUN julia --project -e 'using Pkg; Pkg.precompile()'
 
-EXPOSE 8080
+
+# Stage 2: The Runner - A minimal image to run the app
+FROM julia:1.10
+
+ENV JULIA_PROJECT=/app
+ENV GENIE_ENV=prod
+ENV GKSwstype=100
+WORKDIR /app
+
+# Copy the entire pre-built application from the builder stage
+COPY --from=builder /app .
+# Copy the pre-compiled packages and the Conda environment
+COPY --from=builder /usr/local/julia/packages /usr/local/julia/packages
+COPY --from=builder /app/.CondaPkg /app/.CondaPkg
+
+# The command to run the server
 CMD ["julia", "--project=.", "bootstrap.jl"]

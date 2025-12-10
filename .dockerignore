@@ -1,0 +1,9 @@
+.git
+.CondaPkg
+.dockerignore
+Dockerfile
+*.bak
+public/outputs/
+detailed_interactions.csv
+juprot.code-workspace
+LocalPreferences.toml
