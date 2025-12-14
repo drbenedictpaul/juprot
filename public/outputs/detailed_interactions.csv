@@ -1,6 +1,23 @@
-Complex_Name,Interaction_Type,Protein_Residue_ID,Protein_Atom_PDB_Name,Protein_Atom_Type,Ligand_Residue_Name,Ligand_Atom_PDB_Name,Ligand_Atom_Type,Distance_Angstrom,Angle_Degrees
-First Complex (DHT),Hydrogen Bond,GLU 282,OE2,O2,DHT,O3,O3,3.27,120.94
-First Complex (DHT),Hydrogen Bond,TYR 155,OH,O3,DHT,O17,O3,3.68,136.92
-Second Complex (EST),Hydrogen Bond,GLY 186,O,O2,EST,O17,O3,3.87,124.59
-Second Complex (EST),Hydrogen Bond,GLU 282,OE2,O2,EST,O3,O3,2.77,115.1
-Second Complex (EST),Hydrogen Bond,SER 142,OG,O3,EST,O17,O3,3.16,117.8
+Complex_Source,type,prot_resn,prot_resi
+first_complex.pdb,Hydrogen Bond,ILE,133
+first_complex.pdb,Hydrophobic,ILE,132
+first_complex.pdb,Hydrophobic,LEU,152
+first_complex.pdb,Hydrophobic,VAL,370
+first_complex.pdb,Hydrophobic,VAL,370
+first_complex.pdb,Hydrophobic,VAL,373
+first_complex.pdb,Hydrophobic,ALA,306
+first_complex.pdb,Hydrophobic,PHE,430
+first_complex.pdb,Hydrophobic,ALA,438
+first_complex.pdb,Salt Bridge,ARG,115
+first_complex.pdb,Salt Bridge,ARG,115
+first_complex.pdb,Salt Bridge,ARG,145
+first_complex.pdb,Salt Bridge,ARG,375
+first_complex.pdb,Salt Bridge,ARG,435
+second_complex.pdb,Hydrogen Bond,ARG,115
+second_complex.pdb,Hydrogen Bond,MET,374
+second_complex.pdb,Hydrophobic,TRP,224
+second_complex.pdb,Hydrophobic,ASP,309
+second_complex.pdb,Hydrophobic,VAL,370
+second_complex.pdb,Hydrophobic,LEU,477
+second_complex.pdb,Hydrophobic,THR,310
+second_complex.pdb,Hydrophobic,LEU,477

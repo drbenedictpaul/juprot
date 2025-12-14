@@ -1,44 +1,50 @@
-# Use an official Julia image as a parent image
-# Or your preferred stable Julia 1.x version
-FROM julia:1.11.5
+# 1. Base Image
+FROM julia:1.12
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Install system dependencies for Python, OpenBabel, and PLIP
+# 2. Install System Basics + GRAPHICS LIBRARIES (Required for Plots.jl)
+# Added: libgl1, libxrender1, libxext6, libglib2.0-0
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-venv \
-    python3-dev \
-    cmake \         
-    build-essential \
-    swig \
-    pkg-config \
-    libopenbabel-dev \
+    curl \
+    bzip2 \
+    ca-certificates \
+    git \
+    libgl1 \
+    libxrender1 \
+    libxext6 \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
-    
 
-# Create a Python virtual environment
-ENV VENV_PATH=/opt/venv
-RUN python3 -m venv $VENV_PATH 
+# 3. Install Micromamba
+RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 
-# Add venv to PATH for subsequent RUN commands
-ENV PATH="$VENV_PATH/bin:$PATH"
+# 4. Create the Bioinformatics Environment
+ENV MAMBA_ROOT_PREFIX=/opt/conda
+RUN ./bin/micromamba create -y -n bio -c conda-forge \
+    python=3.11 \
+    openbabel \
+    plip \
+    numpy
 
-# Install PLIP and OpenBabel Python bindings into the venv
-RUN pip install --no-cache-dir plip openbabel-wheel
+# 5. Tell Julia to use this specific Python
+ENV JULIA_CONDAPKG_BACKEND=Null
+ENV JULIA_PYTHONCALL_EXE=/opt/conda/envs/bio/bin/python
 
-# --- Julia Application Setup ---
-COPY Project.toml Manifest.toml ./
-RUN julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.precompile()'
+# Headless Plotting Mode
+ENV GKSwstype=100
+
+# 6. Julia Setup
+COPY Project.toml ./
+RUN julia -e 'using Pkg; Pkg.Registry.add("General"); Pkg.activate("."); Pkg.resolve(); Pkg.instantiate()'
+
+# 7. Copy Application Code
 COPY . .
 
-# --- Environment Variables for Runtime ---
-ENV JULIA_PYTHONCALL_EXE=$VENV_PATH/bin/python
-ENV JULIA_CONDAPKG_BACKEND=Null
-ENV PYTHON=""
-ENV JULIA_PYTHONCALL_LIB=/usr/lib/x86_64-linux-gnu/libpython3.11.so
+# 8. Precompile
+RUN julia --project=. -e 'using Pkg; Pkg.precompile()'
 
+# 9. Runtime Configuration
+ENV GENIE_ENV=prod
 EXPOSE 8080
 CMD ["julia", "--project=.", "bootstrap.jl"]
