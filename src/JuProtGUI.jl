@@ -102,16 +102,106 @@ module JuProtGUI
 
     function generate_pymol_script(complex_results)
         script_content = IOBuffer()
-        path1 = complex_results["first_complex.pdb"][:original_path]; path2 = complex_results["second_complex.pdb"][:original_path]
-        name1 = "c1_" * replace(basename(path1), r"[^a-zA-Z0-9]" => "_"); name2 = "c2_" * replace(basename(path2), r"[^a-zA-Z0-9]" => "_")
-        println(script_content, "load \"$path1\", $name1"); println(script_content, "load \"$path2\", $name2"); println(script_content, "align $name2, $name1")
-        println(script_content, "bg_color white; hide everything, all; show cartoon, polymer.protein; color gray80, polymer.protein")
-        function get_resi_string(d); s=String[]; for k in keys(d); p=split(k); if length(p)>=2; push!(s,"resi $(p[2])"); end; end; return join(s," or "); end
-        r1=get_resi_string(complex_results["first_complex.pdb"][:interacting_residues]); r2=get_resi_string(complex_results["second_complex.pdb"][:interacting_residues])
-        if !isempty(r1); println(script_content,"select r1,($r1) and $name1; color marine, r1; show sticks, r1; util.cbac('blue','r1')"); end
-        if !isempty(r2); println(script_content,"select r2,($r2) and $name2; color firebrick, r2; show sticks, r2; util.cba(214,'r2')"); end
-        l1=complex_results["first_complex.pdb"][:ligand_resname]; l2=complex_results["second_complex.pdb"][:ligand_resname]
-        println(script_content,"show sticks,(resn $l1 and $name1)or(resn $l2 and $name2)"); println(script_content,"zoom (resn $l1 and $name1)or(resn $l2 and $name2)")
+        
+        # 1. Fetch Paths and Names
+        path1 = complex_results["first_complex.pdb"][:original_path]
+        path2 = complex_results["second_complex.pdb"][:original_path]
+        lig1 = complex_results["first_complex.pdb"][:ligand_resname]
+        lig2 = complex_results["second_complex.pdb"][:ligand_resname]
+        
+        name1 = "Complex1"
+        name2 = "Complex2"
+
+        # 2. Start PyMOL Script
+        println(script_content, "reinitialize")
+        println(script_content, "bg_color white")
+        
+        # 3. EMBED PDBs USING PYTHON BLOCK (The Fix)
+        # We start a python block, read the file content into a variable, 
+        # and load it using cmd.read_pdbstr. This prevents SyntaxErrors.
+        println(script_content, "python")
+        println(script_content, "import pymol")
+        println(script_content, "from pymol import cmd")
+        
+        # --- Embed First Complex ---
+        if isfile(path1)
+            println(script_content, "pdb1_string = \"\"\"")
+            for line in eachline(path1)
+                println(script_content, line)
+            end
+            println(script_content, "\"\"\"")
+            println(script_content, "cmd.read_pdbstr(pdb1_string, '$name1')")
+        end
+
+        # --- Embed Second Complex ---
+        if isfile(path2)
+            println(script_content, "pdb2_string = \"\"\"")
+            for line in eachline(path2)
+                println(script_content, line)
+            end
+            println(script_content, "\"\"\"")
+            println(script_content, "cmd.read_pdbstr(pdb2_string, '$name2')")
+        end
+        
+        println(script_content, "python end")
+        # --- End of Python Block ---
+
+        # 4. Visualization Logic (Standard PyMOL Commands)
+        println(script_content, "hide everything")
+        println(script_content, "show cartoon")
+        println(script_content, "color gray80")
+        println(script_content, "align $name2, $name1")
+
+        # Helper to format residue numbers for selection (e.g., "resi 10+12+15")
+        function get_resi_selection(d)
+            s = Int[]
+            for k in keys(d)
+                parts = split(k)
+                if length(parts) >= 2
+                    # parts[2] is the residue number
+                    push!(s, parse(Int, parts[2]))
+                end
+            end
+            if isempty(s); return "none"; end
+            # Sort and join with '+' which is the PyMOL operator for OR in selections
+            return "resi " * join(sort(unique(s)), "+")
+        end
+
+        r1_sel = get_resi_selection(complex_results["first_complex.pdb"][:interacting_residues])
+        r2_sel = get_resi_selection(complex_results["second_complex.pdb"][:interacting_residues])
+
+        # Highlight Complex 1 Interactions (Blue Theme)
+        if r1_sel != "none"
+            println(script_content, "select int_res1, ($name1 and ($r1_sel))")
+            println(script_content, "show sticks, int_res1")
+            println(script_content, "color marine, int_res1")
+            println(script_content, "util.cnc int_res1") # Colors N blue, O red, etc.
+        end
+
+        # Highlight Complex 2 Interactions (Red Theme)
+        if r2_sel != "none"
+            println(script_content, "select int_res2, ($name2 and ($r2_sel))")
+            println(script_content, "show sticks, int_res2")
+            println(script_content, "color firebrick, int_res2")
+            println(script_content, "util.cnc int_res2")
+        end
+
+        # Highlight Ligands
+        println(script_content, "select lig1, ($name1 and resn $lig1)")
+        println(script_content, "select lig2, ($name2 and resn $lig2)")
+        
+        println(script_content, "show sticks, lig1")
+        println(script_content, "color marine, lig1")
+        println(script_content, "util.cnc lig1")
+
+        println(script_content, "show sticks, lig2")
+        println(script_content, "color firebrick, lig2")
+        println(script_content, "util.cnc lig2")
+
+        # Final Camera Setup
+        println(script_content, "zoom lig1 or lig2, 5")
+        println(script_content, "deselect")
+        
         return String(take!(script_content))
     end
     
