@@ -62,7 +62,8 @@ module JuProtGUI
                 mat = hcat([y_data[t] for t in active_types]...)
                 cols = reshape([type_colors[t] for t in active_types], 1, :)
                 labels = reshape(active_types, 1, :)
-                bar!(p, sorted_res, mat, label=labels, color=cols, bar_position=:stack)
+                # bar!(p, sorted_res, mat, label=labels, color=cols, bar_position=:stack)
+                bar!(p, sorted_res, mat, label=labels, color=cols)
             end
             return p
         end
@@ -103,82 +104,79 @@ module JuProtGUI
     function generate_pymol_script(complex_results)
         script_content = IOBuffer()
         
-        # 1. Fetch Paths and Names
         path1 = complex_results["first_complex.pdb"][:original_path]
         path2 = complex_results["second_complex.pdb"][:original_path]
-        lig1 = complex_results["first_complex.pdb"][:ligand_resname]
-        lig2 = complex_results["second_complex.pdb"][:ligand_resname]
+        
+        # 1. Retrieve Ligand Data
+        l1_data = complex_results["first_complex.pdb"][:ligand_data]
+        l2_data = complex_results["second_complex.pdb"][:ligand_data]
+        
+        # 2. Retrieve Ligand Names (Needed for the fix)
+        ln1 = complex_results["first_complex.pdb"][:ligand_resname]
+        ln2 = complex_results["second_complex.pdb"][:ligand_resname]
         
         name1 = "Complex1"
         name2 = "Complex2"
 
-        # 2. Start PyMOL Script
         println(script_content, "reinitialize")
         println(script_content, "bg_color white")
         
-        # 3. EMBED PDBs USING PYTHON BLOCK (The Fix)
-        # We start a python block, read the file content into a variable, 
-        # and load it using cmd.read_pdbstr. This prevents SyntaxErrors.
+        # --- Python Block for Safe Loading ---
         println(script_content, "python")
         println(script_content, "import pymol")
         println(script_content, "from pymol import cmd")
         
-        # --- Embed First Complex ---
         if isfile(path1)
             println(script_content, "pdb1_string = \"\"\"")
-            for line in eachline(path1)
-                println(script_content, line)
-            end
+            for line in eachline(path1); println(script_content, line); end
             println(script_content, "\"\"\"")
             println(script_content, "cmd.read_pdbstr(pdb1_string, '$name1')")
         end
 
-        # --- Embed Second Complex ---
         if isfile(path2)
             println(script_content, "pdb2_string = \"\"\"")
-            for line in eachline(path2)
-                println(script_content, line)
-            end
+            for line in eachline(path2); println(script_content, line); end
             println(script_content, "\"\"\"")
             println(script_content, "cmd.read_pdbstr(pdb2_string, '$name2')")
         end
         
         println(script_content, "python end")
-        # --- End of Python Block ---
 
-        # 4. Visualization Logic (Standard PyMOL Commands)
+        # --- Visualization ---
         println(script_content, "hide everything")
         println(script_content, "show cartoon")
         println(script_content, "color gray80")
         println(script_content, "align $name2, $name1")
 
-        # Helper to format residue numbers for selection (e.g., "resi 10+12+15")
-        function get_resi_selection(d)
-            s = Int[]
+        # Helper for Protein Residues (Keep Chain logic here as proteins usually have chains)
+        function get_selection_string(d)
+            sel_parts = String[]
             for k in keys(d)
                 parts = split(k)
-                if length(parts) >= 2
-                    # parts[2] is the residue number
-                    push!(s, parse(Int, parts[2]))
+                if length(parts) >= 3
+                    c_id = parts[1]
+                    r_id = parts[3]
+                    if c_id == "_"
+                        push!(sel_parts, "(resi $r_id)")
+                    else
+                        push!(sel_parts, "(chain $c_id and resi $r_id)")
+                    end
                 end
             end
-            if isempty(s); return "none"; end
-            # Sort and join with '+' which is the PyMOL operator for OR in selections
-            return "resi " * join(sort(unique(s)), "+")
+            if isempty(sel_parts); return "none"; end
+            return join(sel_parts, " or ")
         end
 
-        r1_sel = get_resi_selection(complex_results["first_complex.pdb"][:interacting_residues])
-        r2_sel = get_resi_selection(complex_results["second_complex.pdb"][:interacting_residues])
+        r1_sel = get_selection_string(complex_results["first_complex.pdb"][:interacting_residues])
+        r2_sel = get_selection_string(complex_results["second_complex.pdb"][:interacting_residues])
 
-        # Highlight Complex 1 Interactions (Blue Theme)
         if r1_sel != "none"
             println(script_content, "select int_res1, ($name1 and ($r1_sel))")
             println(script_content, "show sticks, int_res1")
             println(script_content, "color marine, int_res1")
-            println(script_content, "util.cnc int_res1") # Colors N blue, O red, etc.
+            println(script_content, "util.cnc int_res1")
         end
 
-        # Highlight Complex 2 Interactions (Red Theme)
         if r2_sel != "none"
             println(script_content, "select int_res2, ($name2 and ($r2_sel))")
             println(script_content, "show sticks, int_res2")
@@ -186,9 +184,19 @@ module JuProtGUI
             println(script_content, "util.cnc int_res2")
         end
 
-        # Highlight Ligands
-        println(script_content, "select lig1, ($name1 and resn $lig1)")
-        println(script_content, "select lig2, ($name2 and resn $lig2)")
+        # --- FIXED LIGAND SELECTION ---
+        # We rely on Residue Number AND Residue Name.
+        # We deliberately IGNORE the Chain ID to avoid mismatches in docked files.
+        function make_lig_sel(name, data, lig_name)
+            r = data["resi"]
+            return "($name and resi $r and resn $lig_name)"
+        end
+
+        l1_sel_cmd = make_lig_sel(name1, l1_data, ln1)
+        l2_sel_cmd = make_lig_sel(name2, l2_data, ln2)
+
+        println(script_content, "select lig1, $l1_sel_cmd")
+        println(script_content, "select lig2, $l2_sel_cmd")
         
         println(script_content, "show sticks, lig1")
         println(script_content, "color marine, lig1")
@@ -198,7 +206,6 @@ module JuProtGUI
         println(script_content, "color firebrick, lig2")
         println(script_content, "util.cnc lig2")
 
-        # Final Camera Setup
         println(script_content, "zoom lig1 or lig2, 5")
         println(script_content, "deselect")
         
@@ -222,41 +229,162 @@ module JuProtGUI
         catch e; err_msg = sprint(showerror, e); return ["ERROR: $err_msg"]; end
     end
     
-    function process_pdb_files(p1,p2,l1,l2)
-        cr=Dict{String,Dict}(); fk="first_complex.pdb"; sk="second_complex.pdb"
-        files=[(path=p1,ligand=l1,key=fk),(path=p2,ligand=l2,key=sk)]; ok=true
+    function process_pdb_files(p1, p2, l1, l2)
+        cr = Dict{String, Dict}()
+        fk = "first_complex.pdb"
+        sk = "second_complex.pdb"
+        files = [(path=p1, ligand=l1, key=fk), (path=p2, ligand=l2, key=sk)]
+        ok = true
+        
         for i in files
             try
-                ints=detect_hbonds(i.path,i.ligand)
-                ir=Dict{String,Int}()
-                for d in ints; rk="$(d.prot_resn) $(d.prot_resi)"; ir[rk]=get(ir,rk,0)+1; end
-                cr[i.key]=Dict(:hbonds=>ints,:interacting_residues=>ir,:ligand_resname=>i.ligand,:original_path=>i.path)
-            catch; ok=false; end
+                (ints, lig_meta) = detect_hbonds(i.path, i.ligand)
+                ir = Dict{String, Int}()
+                for d in ints
+                     c_display = isempty(d.prot_chain) ? "_" : d.prot_chain
+                     rk = "$(c_display) $(d.prot_resn) $(d.prot_resi)"
+                     ir[rk] = get(ir, rk, 0) + 1
+                end
+                cr[i.key] = Dict(
+                    :hbonds => ints,
+                    :interacting_residues => ir,
+                    :ligand_resname => i.ligand,
+                    :ligand_data => lig_meta,
+                    :original_path => i.path
+                )
+            catch e; println("Error processing $(i.path): $e"); ok=false; end
         end
-        if !ok; return Dict("error"=>"Processing failed."); end
+        
+        if !ok; return Dict("error" => "Processing failed."); end
         
         session_id = string(abs(rand(Int)))[1:6]
-        ocsv=joinpath(OUTPUT_DIR,"comparison_table_$(session_id).csv")
-        dcsv=joinpath(OUTPUT_DIR,"detailed_interactions_$(session_id).csv")
-        ppath=joinpath(OUTPUT_DIR,"residue_interactions_$(session_id).png")
+        ocsv = joinpath(OUTPUT_DIR, "comparison_table_$(session_id).csv")
+        dcsv = joinpath(OUTPUT_DIR, "detailed_interactions_$(session_id).csv")
+        ppath = joinpath(OUTPUT_DIR, "residue_interactions_$(session_id).png")
+        net_path = joinpath(OUTPUT_DIR, "network_map_$(session_id).png") # NEW MAP
  
         try
             generate_stacked_chart(cr, fk, sk, ppath)
-            compare_and_save_results(cr,fk,sk,ocsv,dcsv, "dummy.png") 
-            st=capture_analytical_summary(cr,fk,sk)
+            generate_2d_network_map(cr, fk, sk, net_path) # Call the new function
+            compare_and_save_results(cr, fk, sk, ocsv, dcsv, "dummy.png") 
+            st = capture_analytical_summary(cr, fk, sk)
             tables_html = generate_interaction_tables(cr, fk, sk)
-            comp_b64 = base64encode(read(ocsv)); det_b64 = base64encode(read(dcsv)); plot_b64 = base64encode(read(ppath))
-            rm(ocsv, force=true); rm(dcsv, force=true); rm(ppath, force=true)
+            
+            comp_b64 = base64encode(read(ocsv))
+            det_b64 = base64encode(read(dcsv))
+            plot_b64 = base64encode(read(ppath))
+            net_b64 = base64encode(read(net_path)) # Encode Map
+            
+            rm(ocsv, force=true); rm(dcsv, force=true); rm(ppath, force=true); rm(net_path, force=true)
  
-            return Dict("comp_b64"=>comp_b64, "det_b64"=>det_b64, "plot_b64"=>plot_b64, "summary"=>st, "tables_html"=>tables_html, "session_data"=>cr)
-        catch e; return Dict("error"=>"Viz failed: $(sprint(showerror, e))"); end
+            return Dict(
+                "comp_b64" => comp_b64, 
+                "det_b64" => det_b64, 
+                "plot_b64" => plot_b64, 
+                "net_b64" => net_b64, 
+                "summary" => st, 
+                "tables_html" => tables_html, 
+                "session_data" => cr
+            )
+        catch e; return Dict("error" => "Visualization failed: $(sprint(showerror, e))"); end
     end
     
     function capture_analytical_summary(cr,fk,sk);try;io=IOBuffer();print_analytical_summary(io,cr,fk,sk);return String(take!(io));catch;return"Summary failed.";end;end
  
+    # route("/") do
+    #  html("""
+    #  <!DOCTYPE html><html><head><title>juProt</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.form-group{margin-bottom:20px}label{display:block;margin-bottom:8px;font-weight:700}input[type=file],input[type=text]{width:calc(100% - 22px);padding:10px;border:1px solid #ccc;border-radius:4px}button{padding:10px 20px;background:#007bff;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:16px}button:hover{background:#0056b3}h1{color:#0056b3;text-align:center}a{color:#007bff;text-decoration:none}.footer-links-container{display:flex;justify-content:center;gap:30px;margin-top:40px;padding-top:20px;border-top:1px solid #eee}.divider{text-align:center;font-weight:700;color:#aaa;margin:20px 0}.validation-popup{display:none;position:absolute;top:35px;left:110px;background-color:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.15);padding:8px 12px;z-index:100;white-space:nowrap;font-size:14px;color:#333}.validation-popup::before{content:'';position:absolute;bottom:100%;left:20px;border-width:7px;border-style:solid;border-color:transparent transparent #ccc transparent}.validation-popup::after{content:'';position:absolute;bottom:100%;left:21px;border-width:6px;border-style:solid;border-color:transparent transparent #fff transparent}.validation-popup .icon{display:inline-block;background-color:#ff8552;color:#fff;width:16px;height:16px;border-radius:3px;text-align:center;font-weight:700;line-height:16px;margin-right:8px;font-size:12px}</style><script>function validateForm(){document.getElementById('alert_1').style.display='none';document.getElementById('alert_2').style.display='none';var f1=document.getElementById('first_pdb').value;var i1=document.getElementById('first_pdb_id').value.trim();var c1=(f1!==""||i1!=="");var f2=document.getElementById('second_pdb').value;var i2=document.getElementById('second_pdb_id').value.trim();var c2=(f2!==""||i2!=="");var v=true;if(!c1){document.getElementById('alert_1').style.display='flex';v=false}if(!c2){document.getElementById('alert_2').style.display='flex';v=false}return v}</script></head><body><div class=container><div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div><h1>juProt: Protein-Ligand Interaction Analyzer</h1><p style="text-align:center;color:#666">Comparative analysis of the complete protein-ligand interactome.</p><form action=/select-ligands method=post enctype=multipart/form-data onsubmit="return validateForm()"><div class=form-group><label for=first_pdb>Upload First Complex (PDB File):</label><input type=file id=first_pdb name=first_pdb accept=.pdb><div id=alert_1 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div></div><div class=form-group><label for=second_pdb>Upload Second Complex (PDB File):</label><input type=file id=second_pdb name=second_pdb accept=.pdb><div id=alert_2 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div></div><div class=divider>OR</div><div class=form-group><label for=first_pdb_id>Enter First PDB ID (e.g., 3EQM):</label><input type=text id=first_pdb_id name=first_pdb_id placeholder="PDB ID"></div><div class=form-group><label for=second_pdb_id>Enter Second PDB ID:</label><input type=text id=second_pdb_id name=second_pdb_id placeholder="PDB ID"></div><button type=submit>Load Ligands</button></form><div class=footer-links-container><p><a href=/how-to-use>How to Use & Applications</a></p><p><a href=/about>About juProt</a></p></div></div></body></html>
+    #  """)
+    # end
+
     route("/") do
      html("""
-     <!DOCTYPE html><html><head><title>juProt</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.form-group{margin-bottom:20px}label{display:block;margin-bottom:8px;font-weight:700}input[type=file],input[type=text]{width:calc(100% - 22px);padding:10px;border:1px solid #ccc;border-radius:4px}button{padding:10px 20px;background:#007bff;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:16px}button:hover{background:#0056b3}h1{color:#0056b3;text-align:center}a{color:#007bff;text-decoration:none}.footer-links-container{display:flex;justify-content:center;gap:30px;margin-top:40px;padding-top:20px;border-top:1px solid #eee}.divider{text-align:center;font-weight:700;color:#aaa;margin:20px 0}.validation-popup{display:none;position:absolute;top:35px;left:110px;background-color:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.15);padding:8px 12px;z-index:100;white-space:nowrap;font-size:14px;color:#333}.validation-popup::before{content:'';position:absolute;bottom:100%;left:20px;border-width:7px;border-style:solid;border-color:transparent transparent #ccc transparent}.validation-popup::after{content:'';position:absolute;bottom:100%;left:21px;border-width:6px;border-style:solid;border-color:transparent transparent #fff transparent}.validation-popup .icon{display:inline-block;background-color:#ff8552;color:#fff;width:16px;height:16px;border-radius:3px;text-align:center;font-weight:700;line-height:16px;margin-right:8px;font-size:12px}</style><script>function validateForm(){document.getElementById('alert_1').style.display='none';document.getElementById('alert_2').style.display='none';var f1=document.getElementById('first_pdb').value;var i1=document.getElementById('first_pdb_id').value.trim();var c1=(f1!==""||i1!=="");var f2=document.getElementById('second_pdb').value;var i2=document.getElementById('second_pdb_id').value.trim();var c2=(f2!==""||i2!=="");var v=true;if(!c1){document.getElementById('alert_1').style.display='flex';v=false}if(!c2){document.getElementById('alert_2').style.display='flex';v=false}return v}</script></head><body><div class=container><div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div><h1>juProt: Protein-Ligand Interaction Analyzer</h1><p style="text-align:center;color:#666">Comparative analysis of the complete protein-ligand interactome.</p><form action=/select-ligands method=post enctype=multipart/form-data onsubmit="return validateForm()"><div class=form-group><label for=first_pdb>Upload First Complex (PDB File):</label><input type=file id=first_pdb name=first_pdb accept=.pdb><div id=alert_1 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div></div><div class=form-group><label for=second_pdb>Upload Second Complex (PDB File):</label><input type=file id=second_pdb name=second_pdb accept=.pdb><div id=alert_2 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div></div><div class=divider>OR</div><div class=form-group><label for=first_pdb_id>Enter First PDB ID (e.g., 3EQM):</label><input type=text id=first_pdb_id name=first_pdb_id placeholder="PDB ID"></div><div class=form-group><label for=second_pdb_id>Enter Second PDB ID:</label><input type=text id=second_pdb_id name=second_pdb_id placeholder="PDB ID"></div><button type=submit>Load Ligands</button></form><div class=footer-links-container><p><a href=/how-to-use>How to Use & Applications</a></p><p><a href=/about>About juProt</a></p></div></div></body></html>
+     <!DOCTYPE html><html><head><title>juProt</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+     <style>
+        body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}
+        .container{max-width:800px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}
+        .form-group{margin-bottom:20px}
+        label{display:block;margin-bottom:8px;font-weight:700}
+        input[type=file],input[type=text]{width:calc(100% - 22px);padding:10px;border:1px solid #ccc;border-radius:4px}
+        button{padding:10px 20px;background:#007bff;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:16px}
+        button:hover{background:#0056b3}
+        h1{color:#0056b3;text-align:center}
+        a{color:#007bff;text-decoration:none}
+        .footer-links-container{display:flex;justify-content:center;gap:30px;margin-top:40px;padding-top:20px;border-top:1px solid #eee}
+        .divider{text-align:center;font-weight:700;color:#aaa;margin:20px 0}
+        .validation-popup{display:none;position:absolute;top:35px;left:110px;background-color:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.15);padding:8px 12px;z-index:100;white-space:nowrap;font-size:14px;color:#333}.validation-popup::before{content:'';position:absolute;bottom:100%;left:20px;border-width:7px;border-style:solid;border-color:transparent transparent #ccc transparent}.validation-popup::after{content:'';position:absolute;bottom:100%;left:21px;border-width:6px;border-style:solid;border-color:transparent transparent #fff transparent}.validation-popup .icon{display:inline-block;background-color:#ff8552;color:#fff;width:16px;height:16px;border-radius:3px;text-align:center;font-weight:700;line-height:16px;margin-right:8px;font-size:12px}
+        
+        /* LOADING OVERLAY CSS */
+        #loader {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.9);
+            z-index: 1000;
+            flex-direction: column; justify-content: center; align-items: center;
+        }
+        .spinner {
+            border: 8px solid #f3f3f3; border-top: 8px solid #007bff;
+            border-radius: 50%; width: 60px; height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .loading-text { margin-top: 20px; font-size: 18px; color: #0056b3; font-weight: bold; }
+     </style>
+     <script>
+        function validateForm(){
+            document.getElementById('alert_1').style.display='none';
+            document.getElementById('alert_2').style.display='none';
+            var f1=document.getElementById('first_pdb').value;
+            var i1=document.getElementById('first_pdb_id').value.trim();
+            var c1=(f1!==""||i1!=="");
+            var f2=document.getElementById('second_pdb').value;
+            var i2=document.getElementById('second_pdb_id').value.trim();
+            var c2=(f2!==""||i2!=="");
+            var v=true;
+            if(!c1){document.getElementById('alert_1').style.display='flex';v=false}
+            if(!c2){document.getElementById('alert_2').style.display='flex';v=false}
+            
+            // SHOW LOADER IF VALID
+            if(v) {
+                document.getElementById('loader').style.display = 'flex';
+            }
+            return v;
+        }
+     </script>
+     </head>
+     <body>
+        <!-- LOADER DIV -->
+        <div id="loader">
+            <div class="spinner"></div>
+            <div class="loading-text">Uploading and Parsing Structures...<br><span style="font-size:14px;color:#666;font-weight:normal">This may take a few seconds.</span></div>
+        </div>
+
+        <div class=container>
+            <div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div>
+            <h1>juProt: Protein-Ligand Interaction Analyzer</h1>
+            <p style="text-align:center;color:#666">Comparative analysis of the complete protein-ligand interactome.</p>
+            <form action=/select-ligands method=post enctype=multipart/form-data onsubmit="return validateForm()">
+                <div class=form-group>
+                    <label for=first_pdb>Upload First Complex (PDB File):</label>
+                    <input type=file id=first_pdb name=first_pdb accept=.pdb>
+                    <div id=alert_1 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div>
+                </div>
+                <div class=form-group>
+                    <label for=second_pdb>Upload Second Complex (PDB File):</label>
+                    <input type=file id=second_pdb name=second_pdb accept=.pdb>
+                    <div id=alert_2 class=validation-popup><span class=icon>!</span>Please select a file or enter a PDB ID.</div>
+                </div>
+                <div class=divider>OR</div>
+                <div class=form-group><label for=first_pdb_id>Enter First PDB ID (e.g., 3EQM):</label><input type=text id=first_pdb_id name=first_pdb_id placeholder="PDB ID"></div>
+                <div class=form-group><label for=second_pdb_id>Enter Second PDB ID:</label><input type=text id=second_pdb_id name=second_pdb_id placeholder="PDB ID"></div>
+                <button type=submit>Load Ligands</button>
+            </form>
+            <div class=footer-links-container>
+                <p><a href=/how-to-use>How to Use & Applications</a></p>
+                <p><a href=/about>About juProt</a></p>
+            </div>
+        </div>
+     </body></html>
      """)
     end
     
@@ -275,23 +403,147 @@ module JuProtGUI
             lig1=get_ligand_names(tp1); lig2=get_ligand_names(tp2)
             if isempty(lig1)&&isempty(lig2); return html("<h1>Error</h1><p>No ligands found.</p>"); end
             opt1=join(["<option value='$l'>$l</option>" for l in lig1],""); opt2=join(["<option value='$l'>$l</option>" for l in lig2],"")
-            html_body="""<!DOCTYPE html><html><head><title>juProt: Select Ligands</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.form-group{margin-bottom:20px}label{display:block;margin-bottom:8px;font-weight:700}select{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}button{padding:10px 20px;background:#007bff;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:16px}button:hover{background:#0056b3}h1{color:#0056b3;text-align:center}.footer-link{text-align:center;margin-top:20px}a{color:#007bff;text-decoration:none}</style></head><body><div class=container><div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div><h1>Select Target Ligands</h1><form action=/analyze method=post><input type=hidden name=first_pdb_path value="$tp1"><input type=hidden name=second_pdb_path value="$tp2"><div class=form-group><label>First Complex Ligand ($fn1):</label><select name=first_ligand required>$opt1</select></div><div class=form-group><label>Second Complex Ligand ($fn2):</label><select name=second_ligand required>$opt2</select></div><button type=submit>Run Analysis</button></form><div class=footer-link><p><a href=/>Back</a></p></div></div></body></html>"""
+            
+            # --- UPDATED HTML WITH LOADER ---
+            html_body="""<!DOCTYPE html><html><head><title>juProt: Select Ligands</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+            <style>
+                body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}
+                .container{max-width:800px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}
+                .form-group{margin-bottom:20px}label{display:block;margin-bottom:8px;font-weight:700}
+                select{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}
+                button{padding:10px 20px;background:#007bff;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:16px}
+                button:hover{background:#0056b3}h1{color:#0056b3;text-align:center}.footer-link{text-align:center;margin-top:20px}a{color:#007bff;text-decoration:none}
+                
+                /* LOADER CSS */
+                #loader {
+                    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(255,255,255,0.9); z-index: 1000;
+                    flex-direction: column; justify-content: center; align-items: center;
+                }
+                .spinner {
+                    border: 8px solid #f3f3f3; border-top: 8px solid #007bff;
+                    border-radius: 50%; width: 60px; height: 60px;
+                    animation: spin 1s linear infinite;
+                }
+                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                .loading-text { margin-top: 20px; font-size: 18px; color: #0056b3; font-weight: bold; }
+            </style>
+            <script>
+                function showLoader() {
+                    document.getElementById('loader').style.display = 'flex';
+                }
+            </script>
+            </head>
+            <body>
+                <!-- LOADER DIV -->
+                <div id="loader">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Calculating Interactions...<br><span style="font-size:14px;color:#666;font-weight:normal">This involves complex calculations (H-bonds, Pi-Stacking, etc).<br>Please wait...</span></div>
+                </div>
+
+                <div class=container>
+                    <div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div>
+                    <h1>Select Target Ligands</h1>
+                    <form action=/analyze method=post onsubmit="showLoader()">
+                        <input type=hidden name=first_pdb_path value="$tp1">
+                        <input type=hidden name=second_pdb_path value="$tp2">
+                        <div class=form-group>
+                            <label>First Complex Ligand ($fn1):</label>
+                            <select name=first_ligand required>$opt1</select>
+                        </div>
+                        <div class=form-group>
+                            <label>Second Complex Ligand ($fn2):</label>
+                            <select name=second_ligand required>$opt2</select>
+                        </div>
+                        <button type=submit>Run Analysis</button>
+                    </form>
+                    <div class=footer-link><p><a href=/>Back</a></p></div>
+                </div>
+            </body></html>"""
             return html(html_body)
         catch e; return html("<h1>Error</h1><p>$(sprint(showerror,e))</p>"); end
     end
     
     SESSION_DATA=Ref{Any}(nothing)
-    route("/analyze",method=POST) do
-        p1=postpayload(:first_pdb_path);p2=postpayload(:second_pdb_path);l1=postpayload(:first_ligand);l2=postpayload(:second_ligand)
-        result=process_pdb_files(p1,p2,l1,l2)
-        if haskey(result,"session_data");SESSION_DATA[]=result["session_data"];end
-        if haskey(result,"error");return html("<h1>Error</h1><p>$(result["error"])</p>");end
-        ss=replace(result["summary"],"&"=>"&amp;","<"=>"&lt;",">"=>"&gt;","\n"=>"<br>")
-        html_body="""<!DOCTYPE html><html><head><title>juProt Analysis Results</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:950px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.result-section{margin-top:20px;padding-bottom:20px;border-bottom:1px solid #eee}.result-section:last-child{border-bottom:none}h1{color:#0056b3;text-align:center;margin-bottom:30px}h2{color:#007bff;margin-bottom:5px;margin-top:0}a{color:#007bff;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto;border:none;margin-top:0;display:block;margin-left:auto;margin-right:auto}pre{background:#e9ecef;padding:15px;border-radius:5px;white-space:pre-wrap;word-wrap:break-word;font-size:.9em}ul{list-style-type:none;padding-left:0}ul li{margin-bottom:8px}ul li a{display:inline-block;padding:8px 12px;background-color:#007bff;color:#fff;border-radius:4px}ul li a:hover{background-color:#0056b3}.footer-link{text-align:center;margin-top:30px}</style></head><body><div class=container><div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div><h1>Analysis Results</h1><p>Comparison of full interaction profiles for the selected ligands.</p><div class=result-section><h2>Downloads</h2><ul><li><a href="data:text/csv;base64,$(result["comp_b64"])" download="comparison_table.csv">Download Summary CSV</a></li><li><a href="data:text/csv;base64,$(result["det_b64"])" download="detailed_interactions.csv">Download Detailed CSV</a></li><li><a href="data:image/png;base64,$(result["plot_b64"])" download="residue_interactions.png">Download Chart Image (PNG)</a></li><li><a href="/pymol-script" download="juprot_session.pml">Download PyMOL Session (.pml)</a></li></ul></div><div class=result-section><h2>Residue Interaction Profile (Interaction Type Specific)</h2><img src="data:image/png;base64,$(result["plot_b64"])" alt="Interaction Chart"></div><div class=result-section><h2>Detailed Residue Interactions</h2>$(result["tables_html"])</div><div class=result-section><h2>Analytical Summary</h2><pre>$(ss)</pre></div><div class=footer-link><p><a href=/>Run Another Analysis</a></p></div></div></body></html>"""
+    # route("/analyze",method=POST) do
+    #     p1=postpayload(:first_pdb_path);p2=postpayload(:second_pdb_path);l1=postpayload(:first_ligand);l2=postpayload(:second_ligand)
+    #     result=process_pdb_files(p1,p2,l1,l2)
+    #     if haskey(result,"session_data");SESSION_DATA[]=result["session_data"];end
+    #     if haskey(result,"error");return html("<h1>Error</h1><p>$(result["error"])</p>");end
+    #     ss=replace(result["summary"],"&"=>"&amp;","<"=>"&lt;",">"=>"&gt;","\n"=>"<br>")
+    #     html_body="""<!DOCTYPE html><html><head><title>juProt Analysis Results</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:950px;margin:auto;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.result-section{margin-top:20px;padding-bottom:20px;border-bottom:1px solid #eee}.result-section:last-child{border-bottom:none}h1{color:#0056b3;text-align:center;margin-bottom:30px}h2{color:#007bff;margin-bottom:5px;margin-top:0}a{color:#007bff;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto;border:none;margin-top:0;display:block;margin-left:auto;margin-right:auto}pre{background:#e9ecef;padding:15px;border-radius:5px;white-space:pre-wrap;word-wrap:break-word;font-size:.9em}ul{list-style-type:none;padding-left:0}ul li{margin-bottom:8px}ul li a{display:inline-block;padding:8px 12px;background-color:#007bff;color:#fff;border-radius:4px}ul li a:hover{background-color:#0056b3}.footer-link{text-align:center;margin-top:30px}</style></head><body><div class=container><div style=text-align:center;margin-bottom:20px><img src=/img/juProt_logo.png alt="JuProt Logo" style=max-height:70px;margin-top:10px></div><h1>Analysis Results</h1><p>Comparison of full interaction profiles for the selected ligands.</p><div class=result-section><h2>Downloads</h2><ul><li><a href="data:text/csv;base64,$(result["comp_b64"])" download="comparison_table.csv">Download Summary CSV</a></li><li><a href="data:text/csv;base64,$(result["det_b64"])" download="detailed_interactions.csv">Download Detailed CSV</a></li><li><a href="data:image/png;base64,$(result["plot_b64"])" download="residue_interactions.png">Download Chart Image (PNG)</a></li><li><a href="/pymol-script" download="juprot_session.pml">Download PyMOL Session (.pml)</a></li></ul></div><div class=result-section><h2>Residue Interaction Profile (Interaction Type Specific)</h2><img src="data:image/png;base64,$(result["plot_b64"])" alt="Interaction Chart"></div><div class=result-section><h2>Detailed Residue Interactions</h2>$(result["tables_html"])</div><div class=result-section><h2>Analytical Summary</h2><pre>$(ss)</pre></div><div class=footer-link><p><a href=/>Run Another Analysis</a></p></div></div></body></html>"""
+    #     return html(html_body)
+    # end
+
+route("/analyze", method=POST) do
+        p1 = postpayload(:first_pdb_path); p2 = postpayload(:second_pdb_path)
+        l1 = postpayload(:first_ligand); l2 = postpayload(:second_ligand)
+        
+        result = process_pdb_files(p1, p2, l1, l2)
+        
+        if haskey(result, "session_data"); SESSION_DATA[] = result["session_data"]; end
+        if haskey(result, "error"); return html("<h1>Error</h1><p>$(result["error"])</p>"); end
+        
+        ss = replace(result["summary"], "&"=>"&amp;", "<"=>"&lt;", ">"=>"&gt;", "\n"=>"<br>")
+        
+        html_body = """
+        <!DOCTYPE html><html><head><title>Results</title><link rel="icon" href="/img/favicon.ico"><style>body{font-family:Arial,sans-serif;margin:40px;background:#f4f7f6;color:#333}.container{max-width:900px;margin:auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)}.btn{display:inline-block;padding:10px 15px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;margin-right:10px}.btn:hover{background:#0056b3}h1{text-align:center;color:#0056b3}h2{color:#007bff;border-bottom:1px solid #eee;padding-bottom:5px;margin-top:30px}img{max-width:100%;height:auto;display:block;margin:0 auto}pre{background:#e9ecef;padding:15px;border-radius:5px;white-space:pre-wrap}</style></head><body><div class="container">
+        <div style="text-align:center"><img src="/img/juProt_logo.png" style="height:60px"></div>
+        <h1>Analysis Results</h1>
+        
+        <!-- 1. BAR PLOT (Interaction Profile) -->
+        <div>
+            <h2>Interaction Count Profile</h2>
+            <p>Comparison of interaction frequencies per residue across the two complexes.</p>
+            <img src="data:image/png;base64,$(result["plot_b64"])">
+        </div>
+
+        <!-- 2. ANALYTICAL SUMMARY -->
+        <div>
+            <h2>Analytical Summary</h2>
+            <pre>$ss</pre>
+        </div>
+
+        <!-- 3. 2D SPATIAL MAP (Real Geometry) -->
+        <div>
+            <h2>2D Spatial Pocket Projection</h2>
+            <p><strong>Geometric Map:</strong> Residues plotted at their <strong>actual X/Y coordinates</strong> relative to the ligand center (Star). This reveals the physical shape of the binding pocket and the spatial distribution of interactions.</p>
+            <img src="data:image/png;base64,$(result["net_b64"])" style="border:1px solid #ddd;padding:10px">
+            <div style="text-align:center;margin-top:10px">
+                <a href="data:image/png;base64,$(result["net_b64"])" download="spatial_projection.png" class="btn">Download Spatial Map</a>
+            </div>
+        </div>
+
+        <!-- 4. TABLES -->
+        <div>
+            <h2>Interaction Details</h2>
+            $(result["tables_html"])
+        </div>
+
+        <!-- 5. DOWNLOADS -->
+        <div style="margin-top:30px;padding-top:20px;border-top:1px solid #eee">
+            <h2>Downloads</h2>
+            <a href="/pymol-script" download="session.pml" class="btn" style="background:#6c757d">Download PyMOL Script</a>
+            <a href="data:text/csv;base64,$(result["comp_b64"])" download="comparison.csv" class="btn">Summary CSV</a>
+            <a href="data:text/csv;base64,$(result["det_b64"])" download="detailed.csv" class="btn">Detailed CSV</a>
+            <a href="data:image/png;base64,$(result["plot_b64"])" download="chart.png" class="btn">Download Bar Chart</a>
+        </div>
+        
+        <div style="text-align:center;margin-top:30px"><a href="/">Run Another Analysis</a></div>
+        </div></body></html>
+        """
         return html(html_body)
     end
  
-    route("/pymol-script") do;if SESSION_DATA[]!==nothing;st=generate_pymol_script(SESSION_DATA[]);SESSION_DATA[]=nothing;return st;else;return"No session data.";end;end
+    route("/pymol-script") do
+        if SESSION_DATA[] !== nothing
+            # Generate the script but DO NOT clear the session data
+            return generate_pymol_script(SESSION_DATA[])
+        else
+            # Return a valid PyMOL command that displays an error on screen
+            return "reinitialize; bg_color white; label (0,0,0), \"Error: Session Data Expired. Please Re-run Analysis.\""
+        end
+    end
     
     route("/how-to-use") do
      html("""
