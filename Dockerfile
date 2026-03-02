@@ -1,14 +1,20 @@
-# 1. Base Image
+# --- STAGE 1: Python Environment Builder ---
+FROM mambaorg/micromamba:latest as conda_builder
+
+ENV MAMBA_ROOT_PREFIX=/opt/conda
+RUN micromamba create -y --prefix /opt/conda/envs/bio -c conda-forge \
+    python=3.11 \
+    openbabel \
+    plip \
+    numpy
+
+
+# --- STAGE 2: Julia Application Builder ---
 FROM julia:1.12
 
 WORKDIR /app
 
-# 2. Install System Basics + GRAPHICS LIBRARIES (Required for Plots.jl)
-# Added: libgl1, libxrender1, libxext6, libglib2.0-0
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    bzip2 \
-    ca-certificates \
     git \
     libgl1 \
     libxrender1 \
@@ -16,35 +22,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# 3. Install Micromamba
-RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+COPY --from=conda_builder /opt/conda/envs/bio /opt/conda/envs/bio
 
-# 4. Create the Bioinformatics Environment
-ENV MAMBA_ROOT_PREFIX=/opt/conda
-RUN ./bin/micromamba create -y -n bio -c conda-forge \
-    python=3.11 \
-    openbabel \
-    plip \
-    numpy
-
-# 5. Tell Julia to use this specific Python
 ENV JULIA_CONDAPKG_BACKEND=Null
 ENV JULIA_PYTHONCALL_EXE=/opt/conda/envs/bio/bin/python
-
-# Headless Plotting Mode
 ENV GKSwstype=100
 
-# 6. Julia Setup
-COPY Project.toml ./
-RUN julia -e 'using Pkg; Pkg.Registry.add("General"); Pkg.activate("."); Pkg.resolve(); Pkg.instantiate()'
+COPY Project.toml Manifest.toml ./
+RUN julia -e 'using Pkg; Pkg.instantiate()'
 
-# 7. Copy Application Code
 COPY . .
-
-# 8. Precompile
 RUN julia --project=. -e 'using Pkg; Pkg.precompile()'
 
-# 9. Runtime Configuration
 ENV GENIE_ENV=prod
-EXPOSE 8080
-CMD ["julia", "--project=.", "bootstrap.jl"]
+EXPOSE 8888
+
+# --- CORRECTED COMMAND ---
+# We use 'bash' to execute the server script, which then starts Julia.
+CMD ["bash", "bin/server", "0.0.0.0", "8888"]

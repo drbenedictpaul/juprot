@@ -1,5 +1,14 @@
-Manifest.toml
+# Git files
 .git
 .gitignore
-Dockerfile
-README.md
+
+# Local environment cache
+.CondaPkg
+
+# Logs and temporary files
+*.log
+*.csv
+*.png
+
+# OS-specific files
+.DS_Store
