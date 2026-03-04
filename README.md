@@ -46,7 +46,7 @@ The first time you run this, all Julia and Python dependencies will be automatic
 
 If you use juProt in your research, please cite our publication:
 
-> *[Your Full Citation Here, e.g., Paul, B.C., et al. juProt: a web application... in silico Pharmacology (2024). DOI: XXXXX]*
+> *[Paul BC, S P D, V S, Sekaran S. juProt: A web application for comparative analysis of protein-ligand interactomes. In Silico Pharmacol. 2026 Feb 26;14(1):81. doi: 10.1007/s40203-026-00588-6. PMID: 41767850; PMCID: PMC12936254.]*
 
 ### License
 
