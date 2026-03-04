@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# --- PART 1: Banner & Info ---
+# --- PART 1: Banner & Info (Restored "& Team") ---
 echo "========================================================================"
 echo "          juProt v1.0 - Comparative Protein-Ligand Analyzer"
 echo
-echo "     Published in: in silico Pharmacology (Springer Nature)"
-echo "     Developed by: Dr. Benedict Christopher Paul & Team"
+echo "           Developed by: Dr. Benedict Christopher Paul & Team"
+echo "           Website: http://www.drpaul.cc"
 echo "========================================================================"
 echo
 
@@ -19,26 +19,21 @@ if ! docker info > /dev/null 2>&1; then
   exit 1
 fi
 
-# Check if the user has loaded the application image from the .tar file
+# Check if the user has loaded the application image
 if ! docker image inspect $IMAGE_NAME > /dev/null 2>&1; then
     echo "🔎 juProt image not found. Loading it from juprot.tar..."
-    echo "   This is a one-time setup and may take a minute."
-    
     if [ -f "juprot.tar" ]; then
         docker load < juprot.tar
         echo "✅ Image loaded successfully."
     else
-        echo "❌ Error: juprot.tar file not found. Make sure it is in the same folder as this script."
+        echo "❌ Error: juprot.tar file not found. Make sure it's in the same folder."
         exit 1
-    fi
-    echo
+    fi; echo
 fi
 
-# Check if the container is already running from a previous session
+# Check if the container is already running
 if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
-    echo "🟢 juProt is already running in another terminal."
-    echo "   Access it at http://localhost:8888"
-    echo "   To stop it, run ./stop_juprot.sh"
+    echo "🟢 juProt is already running. Access it at http://localhost:8888"
     exit 0
 fi
 
@@ -46,14 +41,10 @@ fi
 read -p "Press [Enter] to launch the juProt server..."
 echo
 echo "🚀 Starting the juProt application server..."
-echo "   Waiting for server to be ready... (this may take a few seconds)"
 echo "   When ready, access the application at http://localhost:8888"
-echo "   Press [Ctrl+C] in this terminal to stop the server."
+echo "   Press [Ctrl+C] in this terminal (once) to stop the server."
 echo
 
-# Run the container in INTERACTIVE mode (--rm -it)
-# This shows logs directly and cleans up automatically on exit.
-docker run --rm -it -p 8888:8080 --name $CONTAINER_NAME $IMAGE_NAME
-
-echo
-echo "✅ Server stopped successfully."
+# Use 'exec' to ensure Ctrl+C works on the first press.
+# Update port mapping to 8888:8888 to match the Dockerfile.
+exec docker run --rm -it -p 8888:8888 --name $CONTAINER_NAME $IMAGE_NAME
