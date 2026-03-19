@@ -1,14 +1,18 @@
-# Git files
+# Git files should not be in the image
 .git
 .gitignore
 
-# Local environment cache
+# This is the most important line:
+# Ignore the local Python environment created during local testing.
 .CondaPkg
 
-# Logs and temporary files
-*.log
-*.csv
-*.png
+# Ignore local Julia artifacts if they exist
+.julia
+
+# Documentation and other non-code files
+README.md
+INSTALL_GUIDE.md
+LICENSE
 
 # OS-specific files
 .DS_Store
