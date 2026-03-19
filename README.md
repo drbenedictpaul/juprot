@@ -11,17 +11,20 @@
 
 ---
 
-### **Status Update: Transition to a Standalone Application**
+### **Accessing juProt**
 
-This project was originally published as a web service. To ensure its **long-term availability** and provide a more robust, cost-effective distribution model, **juProt has been transitioned into a standalone, Dockerized application** that runs locally on your machine.
+juProt is currently available in two distinct formats to serve the needs of all researchers:
+
+1. **Web Application:** Run your comparative analysis effortlessly in the cloud without installing any dependencies. **[Access the Web App Here](https://app.juprot.info)**
+2. **Standalone Docker Application:** Built for long-term availability, sensitive local data execution, and headless/offline functionality.
 
 ---
 
-## Quick Start for Users (Linux & Windows)
+## Quick Start for the Standalone Application (Linux & Windows)
 
 **➡️ Step 1: Download the application from the [Official Releases Page](https://github.com/drbenedictpaul/juprot/releases).**
 
-**➡️ Step 2: The downloaded package (`.tar.gz`) contains a file named `INSTALL_GUIDE.md`. Follow the simple instructions in that guide to run the application.**
+**➡️ Step 2: The downloaded package (`.tar.gz`) contains a file named `INSTALL_GUIDE.md`. Follow the simple instructions in that guide to run the application locally via Docker.**
 
 ---
 

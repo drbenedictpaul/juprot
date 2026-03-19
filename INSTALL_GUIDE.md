@@ -1,6 +1,8 @@
 # juProt v1.0 - Installation and User Guide
 
-This guide will walk you through the setup and execution of the juProt application on either a native Linux computer or on Windows via the Windows Subsystem for Linux (WSL).
+> **Don't want to install anything?** You can run juProt entirely in your browser using our Web Application at: **[app.juprot.info](https://app.juprot.info)** (No downloads required).
+
+This guide will walk you through the setup and execution of the standalone juProt Docker application on either a native Linux computer or on Windows via the Windows Subsystem for Linux (WSL).
 
 ---
 
