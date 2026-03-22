@@ -1,2 +1,8 @@
 #!/bin/sh
-julia --color=yes --depwarn=no --project=@. -q -i -- $(dirname $0)/../bootstrap.jl -s=true "$@"
+
+# Set the environment variable to ensure the correct Python is used
+export JULIA_PYTHONCALL_EXE="@CondaPkg"
+
+# Use exec to replace the shell process with the Julia process.
+# We call bootstrap.jl directly without any extra Genie flags.
+exec julia --project=. bootstrap.jl

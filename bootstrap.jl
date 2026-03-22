@@ -14,7 +14,7 @@ using Genie # This makes Genie.config and Genie.up available
 # --- Configure Genie for Cloud Run ---
 # Directly modify the Genie.config object
 Genie.config.server_host = "0.0.0.0"
-Genie.config.server_port = parse(Int, get(ENV, "PORT", "8080")) # Default to 8080
+Genie.config.server_port = parse(Int, get(ENV, "PORT", "8888")) # Default to 8888
 Genie.config.run_as_server = true # Important for production
 # Genie.config.websockets_port = parse(Int, get(ENV, "WS_PORT", "8081")) # If using websockets, uncomment and adjust
 

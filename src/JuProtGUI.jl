@@ -344,53 +344,90 @@ module JuProtGUI
     end
     
     route("/how-to-use") do
-     html("""
-     <!DOCTYPE html><html><head><title>juProt: How to Use & Applications</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px 40px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1)}h1,h2,h3{color:#0056b3}h1{text-align:center;margin-bottom:30px}h2{margin-top:25px;border-bottom:1px solid #eee;padding-bottom:5px}h3{margin-top:20px;color:#007bff}p,li{line-height:1.6}a{color:#007bff;text-decoration:none}a:hover{text-decoration:underline}ol,ul{padding-left:20px}.footer-link{text-align:center;margin-top:30px}code{background-color:#e9ecef;padding:2px 4px;border-radius:3px;font-family:monospace}footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #eee;font-size:0.9em;color:#6c757d}</style></head><body><div class="container">
-     <div style="text-align:center;margin-bottom:20px"><img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height:70px;margin-top:10px"></div>
-     <h1>How to Use juProt & Its Applications</h1>
-     <h2>Protocol</h2>
-     <ol>
-         <li><strong>Provide Input Complexes:</strong> You have two options for each complex. Either upload PDB files directly from your computer, or enter the 4-character RCSB PDB IDs (e.g., <code>3EQM</code>) to fetch structures from the database.</li>
-         <li><strong>Load & Select Ligands:</strong> Click "Load Ligands." On the next page, select the specific ligand for each complex from the auto-detected options.</li>
-         <li><strong>Run Analysis & View Results:</strong> Click "Run Analysis" to view the results. Key outputs include:
-             <ul>
-                 <li>An <b>Analytical Summary</b> with key statistics, including fold-changes and residue differences.</li>
-                 <li>An <b>Interaction Count Profile</b> (Bar Chart) for a quantitative comparison of interaction frequencies.</li>
-                 <li>A <b>2D Spatial Pocket Projection</b>, which is a geometric map revealing the physical shape of the binding site.</li>
-                 <li>Downloadable <b>CSV files</b> with detailed interaction data.</li>
-             </ul>
-         </li>
-     </ol>
+       html("""
+       <!DOCTYPE html>
+<html>
+<head>
+    <title>juProt: How to Use & Applications</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 800px; margin: auto; background-color: #fff; padding: 20px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        h2 { margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+        h3 { margin-top: 20px; color: #007bff; }
+        p, li { line-height: 1.6; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ol, ul { padding-left: 20px; }
+        .footer-link { text-align: center; margin-top: 30px; }
+        code { background-color: #e9ecef; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9em; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div style="text-align: center; margin-bottom: 20px;"> 
+            <img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height: 70px; margin-top: 10px;"> 
+            </div>
+        <h1>How to Use juProt & Its Applications</h1>
 
-     <h2>Applications & Use Cases for juProt</h2>
-     <p>juProt is designed to provide rapid comparative insights into the <b>full non-covalent interactome</b> (Hydrogen bonds, Hydrophobic contacts, Salt Bridges, Pi-Stacking, etc.).</p>
-     
-     <h3>1. Understanding the Impact of Mutations</h3>
-     <p><b>Scenario:</b> You have a wild-type protein-ligand structure and a mutant form bound to the same ligand.</p>
-     <p><b>How juProt Helps:</b> Compare the native-ligand and mutant-ligand complexes. juProt highlights how the mutation alters the interaction network, which can help explain changes in binding affinity, drug efficacy, or resistance mechanisms.</p>
-     
-     <h3>2. Comparing Different Ligands to the Same Target</h3>
-     <p><b>Scenario:</b> You have several drug candidates or chemical probes binding to the same protein target.</p>
-     <p><b>How juProt Helps:</b> Comparing Protein+LigandA with Protein+LigandB helps identify which ligand forms more or different interactions and which residues are key common or unique interaction partners, aiding in SAR studies and lead optimization.</p>
-     
-     <h3>3. Validating Docking Poses</h3>
-     <p><b>Scenario:</b> You have a docked pose from a program like AutoDock Vina and a known experimental crystal structure.</p>
-     <p><b>How juProt Helps:</b> By comparing the docked complex to the crystal complex, you can quickly see if your docked pose reproduces the key interactions observed experimentally. This provides a much deeper validation than a simple RMSD calculation.</p>
-     
-     <h3>4. Educational Purposes</h3>
-     <p><b>Scenario:</b> Teaching students about protein-ligand interactions.</p>
-     <p><b>How juProt Helps:</b> Provides an easy-to-use tool for students to explore differential interactions without complex software or scripting.</p>
+        <h2>Protocol</h2>
+        <ol>
+            <li><b>Provide Input Complexes:</b> You have two options for each complex. Either upload PDB files directly from your computer, or enter the 4-character RCSB PDB IDs (e.g., <code>3EQM</code>) to fetch structures from the database.</li>
+            <li><b>Load & Select Ligands:</b> Click "Load Ligands." On the next page, juProt will auto-detect potential ligands. Select the specific ligand of interest for each complex from the dropdown menu.</li>
+            <li><b>Run Analysis & View Results:</b> Click "Run Analysis" to view the results page, which provides:
+                <ul>
+                    <li>An <b>Analytical Summary</b> for a quick overview of key statistics.</li>
+                    <li>An <b>Interaction Count Profile</b> (bar chart) for a quantitative comparison of interactions per residue.</li>
+                    <li>A <b>2D Spatial Pocket Projection</b>, which is a geometric map revealing the physical shape of the binding site.</li>
+                    <li>Downloadable <b>CSV files</b> (Comparison Table and Detailed Interactions) for offline analysis.</li>
+                </ul>
+            </li>
+        </ol>
 
-     <div class="footer-link"><p><a href="/">Back to Home</a></p></div>
-     </div>
-     <footer><p>Developed by<br><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><br><a href="https://deepakshankar810.github.io/portfolio/" target="_blank">Deepak S P</a>, MSc Biotechnology<br><a href="https://siva1106.github.io/website/" target="_blank">Siva V</a>, MSc Biotechnology<br>Surya Sekaran, PhD</p></footer>
-     </body></html>
-     """, forceparse=false)
-    end
+        <h2>Applications & Use Cases for juProt</h2>
+        <p>juProt is designed to provide rapid comparative insights into the <b>full non-covalent interactome</b> (Hydrogen bonds, Hydrophobic contacts, Salt Bridges, Pi-Stacking, etc.). Here are some scenarios where juProt can be particularly useful:</p>
+
+        <h3>1. Understanding the Impact of Mutations</h3>
+        <p><b>Scenario:</b> You have a wild-type protein-ligand structure and a mutant form (e.g., from a SNP or site-directed mutagenesis) bound to the same ligand.</p>
+        <p><b>How juProt Helps:</b> Compare the native-ligand and mutant-ligand complexes. juProt highlights how the mutation alters the interaction network, which can help explain changes in binding affinity, drug efficacy, or resistance mechanisms.</p>
+
+        <h3>2. Comparing Different Ligands to the Same Target</h3>
+        <p><b>Scenario:</b> You have several drug candidates or chemical probes binding to the same protein target.</p>
+        <p><b>How juProt Helps:</b> Compare Protein+LigandA with Protein+LigandB. juProt helps identify which ligand forms more or different interactions and which residues are key common or unique interaction partners, aiding in SAR studies and lead optimization.</p>
+
+        <h3>3. Analyzing Ligand Binding to Different Protein Conformations or Isoforms</h3>
+        <p><b>Scenario:</b> A protein exists in different states (e.g., active/inactive) or as different isoforms, and you have structures of a ligand bound to these variants.</p>
+        <p><b>How juProt Helps:</b> Compare ProteinState1+Ligand with ProteinState2+Ligand. juProt can reveal how protein structural changes influence the interaction profile with a common ligand.</p>
+
+        <h3>4. Validating Docking Poses</h3>
+        <p><b>Scenario:</b> You have multiple potential binding poses for a ligand from molecular docking.</p>
+        <p><b>How juProt Helps:</b> Compare the interaction profile of a docked pose against an experimental structure (if available) to assess interaction consistency.</p>
+
+        <h3>5. Educational Purposes</h3>
+        <p><b>Scenario:</b> Teaching students about protein-ligand interactions.</p>
+        <p><b>How juProt Helps:</b> Provides an easy-to-use tool for students to explore differential interactions without complex software or scripting.</p>
+
+        <div class="footer-link"><p><a href="/">Back to Home</a></p></div>
+    </div>
+    <footer>
+        <p>Developed by<br>
+        <a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><br>
+        <a href="https://deepakshankar810.github.io/portfolio/" target="_blank">Deepak S P</a>, MSc Biotechnology<br>
+        <a href="https://siva1106.github.io/website/" target="_blank">Siva V</a>, MSc Biotechnology<br>
+        Surya Sekaran, [PhD]
+        </p>
+    </footer>
+</body>
+</html>
+""", forceparse=false)
+   end
  
     route("/about") do
      html("""
-     <!DOCTYPE html><html><head><title>About juProt</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px 40px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1)}h1,h2,h3{color:#0056b3}h1{text-align:center;margin-bottom:30px}h2{margin-top:25px;border-bottom:1px solid #eee;padding-bottom:5px}p,li{line-height:1.6}a{color:#007bff;text-decoration:none}a:hover{text-decoration:underline}.footer-link{text-align:center;margin-top:30px}blockquote{background:#e9ecef;border-left:5px solid #007bff;padding:15px;margin:20px 0;font-style:italic}footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #eee;font-size:0.9em;color:#6c757d}</style></head><body><div class="container">
+     <!DOCTYPE html><html><head><title>About juProt</title><link rel="icon" href="/img/favicon.ico" type="image/x-icon"><style>body{font-family:Arial,sans-serif;margin:40px;background-color:#f4f7f6;color:#333}.container{max-width:800px;margin:auto;background-color:#fff;padding:20px 40px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1)}h1,h2{color:#0056b3}h1{text-align:center;margin-bottom:30px}h2{margin-top:25px;border-bottom:1px solid #eee;padding-bottom:5px}p,li{line-height:1.6}a{color:#007bff;text-decoration:none}a:hover{text-decoration:underline}.footer-link{text-align:center;margin-top:30px}blockquote{background:#e9ecef;border-left:5px solid #007bff;padding:15px;margin:20px 0;font-style:italic}footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #eee;font-size:0.9em;color:#6c757d}</style></head><body><div class="container">
      <div style="text-align:center;margin-bottom:20px"><img src="/img/juProt_logo.png" alt="JuProt Logo" style="max-height:70px;margin-top:10px"></div>
      <h1>About juProt</h1>
      <p><b>juProt</b> is an open-source standalone application designed to facilitate the rapid and user-friendly comparative analysis of protein-ligand interaction networks, covering the complete spectrum of non-covalent interactions.</p>
@@ -422,7 +459,7 @@ module JuProtGUI
      <a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><br>
      <a href="https://deepakshankar810.github.io/portfolio/" target="_blank">Deepak S P</a>, MSc Biotechnology<br>
      <a href="https://siva1106.github.io/website/" target="_blank">Siva V</a>, MSc Biotechnology<br>
-     Surya Sekaran, PhD</p>
+     Surya Sekaran, [PhD]</p>
      
      <p>We also acknowledge the developers of the core libraries used in juProt, including Julia, Genie.jl, PythonCall.jl, PLIP, OpenBabel, and Plots.jl.</p>
 
@@ -430,7 +467,7 @@ module JuProtGUI
      <p>juProt is an open-source project. The source code is available on GitHub. If you use this tool in your research, please cite our publication:</p>
      <blockquote>
          <b>[Citation]</b><br>
-         Paul, Benedict Christopher, Deepak SP, and Surya Sekaran. "juProt: A web application for comparative analysis of protein–ligand interactomes." In Silico Pharmacology 14.1 (2026): 81.
+         Benedict Christopher Paul, Deepak S P, Siva V, Surya Sekaran. juProt: A web application for comparative analysis of protein-ligand interactomes. In Silico Pharmacol. 2026 Feb 26;14(1):81. doi: 10.1007/s40203-026-00588-6. PMID: 41767850; PMCID: PMC12936254. <a href="https://doi.org/10.1007/s40203-026-00588-6" target="_blank">https://doi.org/10.1007/s40203-026-00588-6</a>
      </blockquote>
 
      <h2>Contact/Feedback</h2>
@@ -438,7 +475,7 @@ module JuProtGUI
 
      <div class="footer-link"><p><a href="/">Back to Home</a></p></div>
      </div>
-     <footer><p>Developed by<br><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><br><a href="https://deepakshankar810.github.io/portfolio/" target="_blank">Deepak S P</a>, MSc Biotechnology<br><a href="https://siva1106.github.io/website/" target="_blank">Siva V</a>, MSc Biotechnology<br>Surya Sekaran, PhD</p></footer>
+     <footer><p>Developed by<br><a href="https://www.drpaul.cc/" target="_blank">Dr. Benedict Christopher Paul</a><br><a href="https://deepakshankar810.github.io/portfolio/" target="_blank">Deepak S P</a>, MSc Biotechnology<br><a href="https://siva1106.github.io/website/" target="_blank">Siva V</a>, MSc Biotechnology<br>Surya Sekaran, [PhD]</p></footer>
      </body></html>
      """, forceparse=false)
     end
